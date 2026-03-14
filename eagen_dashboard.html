@@ -1,269 +1,584 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jessie Eagen Real Estate Dashboard</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
-            min-height: 100vh;
-            color: #333;
-        }
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        header {
-            background: rgba(255,255,255,0.95);
-            padding: 30px;
-            border-radius: 15px;
-            margin-bottom: 30px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.2);
-        }
-        h1 {
-            color: #1e3c72;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-        .subtitle {
-            color: #666;
-            font-size: 1.2em;
-        }
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 25px;
-        }
-        .card {
-            background: rgba(255,255,255,0.95);
-            padding: 25px;
-            border-radius: 15px;
-            box-shadow: 0 8px 32px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .card:hover {
-            transform: translateY(-5px);
-        }
-        .card h2 {
-            color: #1e3c72;
-            margin-bottom: 20px;
-            font-size: 1.5em;
-            border-bottom: 3px solid #2a5298;
-            padding-bottom: 10px;
-        }
-        .metric {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-            border-bottom: 1px solid #eee;
-        }
-        .metric:last-child {
-            border-bottom: none;
-        }
-        .metric-label {
-            font-weight: 600;
-            color: #555;
-        }
-        .metric-value {
-            font-size: 1.3em;
-            font-weight: bold;
-            color: #2a5298;
-        }
-        .status {
-            display: inline-block;
-            padding: 5px 15px;
-            border-radius: 20px;
-            font-size: 0.85em;
-            font-weight: 600;
-        }
-        .status-active {
-            background: #d4edda;
-            color: #155724;
-        }
-        .status-pending {
-            background: #fff3cd;
-            color: #856404;
-        }
-        .status-review {
-            background: #d1ecf1;
-            color: #0c5460;
-        }
-        .progress-bar {
-            width: 100%;
-            height: 20px;
-            background: #e9ecef;
-            border-radius: 10px;
-            overflow: hidden;
-            margin-top: 10px;
-        }
-        .progress-fill {
-            height: 100%;
-            background: linear-gradient(90deg, #1e3c72, #2a5298);
-            border-radius: 10px;
-            transition: width 0.5s ease;
-        }
-        .task-list {
-            list-style: none;
-        }
-        .task-list li {
-            padding: 12px 0;
-            border-bottom: 1px solid #eee;
-            display: flex;
-            align-items: center;
-        }
-        .task-list li:before {
-            content: "✓";
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 24px;
-            height: 24px;
-            background: #28a745;
-            color: white;
-            border-radius: 50%;
-            margin-right: 12px;
-            font-size: 0.8em;
-        }
-        .task-list li.pending:before {
-            content: "○";
-            background: #ffc107;
-        }
-        footer {
-            text-align: center;
-            padding: 30px;
-            color: rgba(255,255,255,0.8);
-            margin-top: 30px;
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eagen Real Estate — GoJo Agency Dashboard</title>
+<link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500;9..40,600&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root {
+  --bg: #0a0c09;
+  --surface: #111410;
+  --card: #161a12;
+  --card2: #1a1f15;
+  --border: #242b1c;
+  --border2: #2e3824;
+  --green: #8cc63f;
+  --green-dim: #5a8a28;
+  --green-glow: rgba(140,198,63,0.1);
+  --green-glow2: rgba(140,198,63,0.06);
+  --amber: #d4922a;
+  --amber-dim: rgba(212,146,42,0.12);
+  --red: #c44a3a;
+  --red-dim: rgba(196,74,58,0.1);
+  --blue: #4a9fd4;
+  --blue-dim: rgba(74,159,212,0.1);
+  --text: #e8f0dc;
+  --text2: #8fa07a;
+  --text3: #4a5a3a;
+  --serif: 'DM Serif Display', serif;
+  --sans: 'DM Sans', sans-serif;
+  --mono: 'DM Mono', monospace;
+}
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body { background: var(--bg); color: var(--text); font-family: var(--sans); font-size: 14px; line-height: 1.6; min-height: 100vh; }
+
+.shell { max-width: 1060px; margin: 0 auto; padding: 40px 20px 80px; }
+
+/* HEADER */
+.hdr { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 32px; flex-wrap: wrap; gap: 16px; }
+.hdr-left { display: flex; align-items: center; gap: 14px; }
+.avatar { width: 48px; height: 48px; border-radius: 12px; background: var(--green-glow); border: 1px solid var(--green); display: flex; align-items: center; justify-content: center; font-family: var(--serif); font-size: 20px; color: var(--green); flex-shrink: 0; }
+.client-name { font-family: var(--serif); font-size: 24px; color: var(--text); line-height: 1.1; }
+.client-sub { font-size: 12px; color: var(--text2); margin-top: 3px; }
+.hdr-right { text-align: right; }
+.hdr-date { font-family: var(--mono); font-size: 11px; color: var(--text3); letter-spacing: 0.06em; }
+.hdr-status { font-size: 12px; color: var(--green); margin-top: 4px; display: flex; align-items: center; gap: 5px; justify-content: flex-end; }
+.pulse { width: 6px; height: 6px; border-radius: 50%; background: var(--green); animation: pulse 2s infinite; }
+@keyframes pulse { 0%,100%{opacity:1;} 50%{opacity:0.3;} }
+
+/* MONTH TABS */
+.tabs { display: flex; gap: 3px; margin-bottom: 28px; flex-wrap: wrap; }
+.tab { padding: 7px 16px; border-radius: 99px; font-size: 12px; font-weight: 500; cursor: pointer; border: 1px solid var(--border2); background: var(--surface); color: var(--text3); transition: all 0.15s; font-family: var(--mono); letter-spacing: 0.04em; }
+.tab:hover { color: var(--text2); border-color: var(--border2); }
+.tab.on { background: var(--green-glow); border-color: var(--green); color: var(--green); }
+
+/* EDIT PANEL */
+.edit-toggle { margin-bottom: 20px; }
+.edit-panel { background: var(--card); border: 1px solid var(--border2); border-radius: 12px; padding: 20px; margin-bottom: 24px; display: none; }
+.edit-title { font-family: var(--mono); font-size: 10px; color: var(--green); letter-spacing: 0.1em; margin-bottom: 16px; }
+.edit-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 10px; }
+.ef { display: flex; flex-direction: column; gap: 4px; }
+.ef label { font-size: 11px; color: var(--text3); font-family: var(--mono); }
+.ef input { background: var(--surface); border: 1px solid var(--border2); border-radius: 6px; padding: 7px 10px; color: var(--text); font-size: 13px; font-family: var(--sans); }
+.ef input:focus { outline: none; border-color: var(--green); }
+.btn-row { display: flex; gap: 8px; margin-top: 14px; }
+button { background: transparent; border: 1px solid var(--border2); border-radius: 6px; padding: 7px 16px; color: var(--text2); font-size: 12px; cursor: pointer; font-family: var(--sans); transition: all 0.15s; }
+button:hover { border-color: var(--green); color: var(--green); }
+button.primary { border-color: var(--green); color: var(--green); background: var(--green-glow); }
+
+/* SCORE ROW */
+.score-row { display: grid; grid-template-columns: 2fr 1fr 1fr; gap: 10px; margin-bottom: 20px; }
+.score-card { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px; }
+.score-card.main { border-color: var(--border2); }
+.score-big { font-family: var(--serif); font-size: 48px; line-height: 1; }
+.score-label { font-size: 11px; color: var(--text2); margin-top: 6px; font-family: var(--mono); letter-spacing: 0.06em; }
+.score-track { height: 5px; border-radius: 99px; background: var(--surface); margin-top: 14px; overflow: hidden; border: 1px solid var(--border); }
+.score-fill { height: 100%; border-radius: 99px; transition: width 1.2s cubic-bezier(.4,0,.2,1); }
+.score-legend { display: flex; gap: 12px; margin-top: 10px; flex-wrap: wrap; }
+.sleg { font-size: 10px; color: var(--text3); display: flex; align-items: center; gap: 4px; font-family: var(--mono); }
+.sleg-dot { width: 6px; height: 6px; border-radius: 50%; flex-shrink: 0; }
+.delta-label { font-size: 11px; color: var(--text3); font-family: var(--mono); letter-spacing: 0.06em; margin-bottom: 8px; }
+.delta-val { font-family: var(--serif); font-size: 32px; }
+
+/* SECTION */
+.sec-title { font-family: var(--mono); font-size: 10px; letter-spacing: 0.12em; color: var(--green); margin-bottom: 12px; margin-top: 28px; }
+.sec-title:first-child { margin-top: 0; }
+
+/* KPI ROW */
+.kpi-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 4px; }
+.kpi { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px; }
+.kpi-label { font-size: 11px; color: var(--text3); font-family: var(--mono); margin-bottom: 6px; letter-spacing: 0.04em; }
+.kpi-val { font-family: var(--serif); font-size: 24px; color: var(--text); line-height: 1.1; }
+.kpi-trend { font-size: 11px; margin-top: 6px; }
+.t-up { color: var(--green); } .t-dn { color: var(--red); } .t-flat { color: var(--text3); }
+
+/* GAUGES */
+.gauge-row { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; margin-bottom: 4px; }
+.gauge-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px; text-align: center; }
+.gauge-name { font-size: 10px; color: var(--text3); font-family: var(--mono); margin-bottom: 10px; letter-spacing: 0.06em; }
+.gauge-status { font-size: 11px; font-weight: 500; margin-top: 6px; }
+.gauge-note { font-size: 10px; color: var(--text3); margin-top: 3px; }
+.g-green { color: var(--green); } .g-amber { color: var(--amber); } .g-red { color: var(--red); } .g-gray { color: var(--text3); }
+
+/* KEYWORD TABLE */
+.kw-wrap { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 4px; }
+.kw-table { width: 100%; border-collapse: collapse; font-size: 12px; }
+.kw-table th { background: var(--surface); padding: 10px 14px; text-align: left; font-family: var(--mono); font-size: 10px; color: var(--text3); letter-spacing: 0.08em; border-bottom: 1px solid var(--border); font-weight: 400; }
+.kw-table th.center { text-align: center; }
+.kw-table td { padding: 10px 14px; border-bottom: 1px solid var(--border); color: var(--text2); }
+.kw-table td.center { text-align: center; }
+.kw-table tr:last-child td { border-bottom: none; }
+.kw-table tr:hover td { background: var(--card2); }
+.pill { display: inline-block; padding: 2px 9px; border-radius: 99px; font-size: 11px; font-weight: 500; font-family: var(--mono); }
+.p-green { background: rgba(140,198,63,0.12); color: var(--green); border: 1px solid rgba(140,198,63,0.3); }
+.p-amber { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(212,146,42,0.3); }
+.p-red { background: var(--red-dim); color: var(--red); border: 1px solid rgba(196,74,58,0.3); }
+.p-gray { background: var(--surface); color: var(--text3); border: 1px solid var(--border2); }
+.kw-name { font-family: var(--mono); font-size: 11px; color: var(--text2); }
+
+/* CHARTS */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 4px; }
+.chart-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 16px; }
+.chart-title { font-family: var(--mono); font-size: 10px; color: var(--text3); letter-spacing: 0.08em; margin-bottom: 12px; }
+.chart-legend { display: flex; gap: 12px; margin-bottom: 10px; flex-wrap: wrap; }
+.cl-item { display: flex; align-items: center; gap: 5px; font-size: 11px; color: var(--text3); font-family: var(--mono); }
+.cl-sq { width: 8px; height: 8px; border-radius: 2px; flex-shrink: 0; }
+
+/* SOCIAL ROW */
+.social-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-bottom: 4px; }
+.social-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 14px; }
+.social-platform { font-family: var(--mono); font-size: 10px; color: var(--text3); letter-spacing: 0.08em; margin-bottom: 8px; }
+.social-num { font-family: var(--serif); font-size: 28px; color: var(--text); }
+.social-label { font-size: 11px; color: var(--text3); margin-top: 3px; }
+
+/* SUMMARY */
+.summary-card { background: var(--card); border: 1px solid var(--border2); border-left: 2px solid var(--green); border-radius: 10px; padding: 18px 20px; margin-bottom: 4px; }
+.summary-text { font-size: 13px; color: var(--text2); line-height: 1.8; }
+
+/* NEXT */
+.next-card { background: var(--card); border: 1px solid var(--border); border-radius: 10px; overflow: hidden; margin-bottom: 20px; }
+.next-item { display: flex; gap: 12px; align-items: flex-start; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+.next-item:last-child { border-bottom: none; }
+.next-num { font-family: var(--mono); font-size: 10px; color: var(--green); min-width: 20px; margin-top: 2px; }
+.next-text { font-size: 13px; color: var(--text2); line-height: 1.5; }
+
+/* FOOTER */
+.dash-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 20px; border-top: 1px solid var(--border); font-family: var(--mono); font-size: 10px; color: var(--text3); letter-spacing: 0.06em; flex-wrap: wrap; gap: 8px; }
+
+@media (max-width: 700px) {
+  .score-row { grid-template-columns: 1fr 1fr; }
+  .score-card.main { grid-column: 1/-1; }
+  .kpi-row { grid-template-columns: repeat(2, 1fr); }
+  .gauge-row { grid-template-columns: repeat(2, 1fr); }
+  .two-col { grid-template-columns: 1fr; }
+  .social-row { grid-template-columns: 1fr; }
+}
+</style>
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>🏢 Jessie Eagen Real Estate</h1>
-            <p class="subtitle">Commercial Real Estate Marketing Dashboard</p>
-        </header>
+<div class="shell">
 
-        <div class="grid">
-            <div class="card">
-                <h2>📊 Key Metrics</h2>
-                <div class="metric">
-                    <span class="metric-label">Active Listings</span>
-                    <span class="metric-value">12</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-label">Website Visitors (Mo)</span>
-                    <span class="metric-value">1,247</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-label">Lead Conversions</span>
-                    <span class="metric-value">8.3%</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-label">Avg. Time on Site</span>
-                    <span class="metric-value">3:42</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <h2>🎯 Campaign Status</h2>
-                <div class="metric">
-                    <span class="metric-label">SEO Optimization</span>
-                    <span class="status status-active">Active</span>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 75%"></div>
-                </div>
-                <div class="metric" style="margin-top: 20px;">
-                    <span class="metric-label">Content Marketing</span>
-                    <span class="status status-active">Active</span>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 60%"></div>
-                </div>
-                <div class="metric" style="margin-top: 20px;">
-                    <span class="metric-label">Social Media Ads</span>
-                    <span class="status status-review">In Review</span>
-                </div>
-                <div class="progress-bar">
-                    <div class="progress-fill" style="width: 40%"></div>
-                </div>
-            </div>
-
-            <div class="card">
-                <h2>✅ Completed Tasks</h2>
-                <ul class="task-list">
-                    <li>Website redesign launched</li>
-                    <li>SEO audit completed</li>
-                    <li>Google Business Profile optimized</li>
-                    <li>5 blog posts published</li>
-                    <li>Email newsletter setup</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h2>⏳ Pending Tasks</h2>
-                <ul class="task-list">
-                    <li class="pending">Landing page A/B testing</li>
-                    <li class="pending">Video testimonial collection</li>
-                    <li class="pending">CRM integration setup</li>
-                    <li class="pending">LinkedIn ad campaign</li>
-                    <li class="pending">Monthly analytics report</li>
-                </ul>
-            </div>
-
-            <div class="card">
-                <h2>📈 Traffic Sources</h2>
-                <div class="metric">
-                    <span class="metric-label">Organic Search</span>
-                    <span class="metric-value">42%</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-label">Direct</span>
-                    <span class="metric-value">28%</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-label">Social Media</span>
-                    <span class="metric-value">18%</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-label">Referrals</span>
-                    <span class="metric-value">12%</span>
-                </div>
-            </div>
-
-            <div class="card">
-                <h2>🔍 Top Keywords</h2>
-                <div class="metric">
-                    <span class="metric-label">commercial real estate Missoula</span>
-                    <span class="metric-value">#3</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-label">Missoula office space</span>
-                    <span class="metric-value">#5</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-label">retail space Missoula</span>
-                    <span class="metric-value">#4</span>
-                </div>
-                <div class="metric">
-                    <span class="metric-label">industrial property MT</span>
-                    <span class="metric-value">#7</span>
-                </div>
-            </div>
-        </div>
-
-        <footer>
-            <p>Last Updated: March 13, 2026 | Jessie Eagen Real Estate</p>
-        </footer>
+  <div class="hdr">
+    <div class="hdr-left">
+      <div class="avatar">E</div>
+      <div>
+        <div class="client-name">Eagen Real Estate</div>
+        <div class="client-sub">GoJo Agency · Local Growth Package · jessieeagen.com</div>
+      </div>
     </div>
+    <div class="hdr-right">
+      <div class="hdr-date" id="hdrDate">BASELINE · MARCH 2026</div>
+      <div class="hdr-status"><div class="pulse"></div>Live tracking active</div>
+    </div>
+  </div>
+
+  <div class="tabs" id="tabsEl"></div>
+
+  <div class="edit-toggle">
+    <button onclick="toggleEdit()">+ Edit data for this month</button>
+  </div>
+
+  <div class="edit-panel" id="editPanel">
+    <div class="edit-title">→ ENTER REAL DATA · ALL FIELDS OPTIONAL · SAVES AUTOMATICALLY</div>
+    <div class="edit-grid" id="editGrid"></div>
+    <div class="btn-row">
+      <button class="primary" onclick="saveEdit()">Save data ↗</button>
+      <button onclick="toggleEdit()">Cancel</button>
+    </div>
+  </div>
+
+  <div class="score-row">
+    <div class="score-card main">
+      <div style="display:flex;align-items:baseline;gap:16px;flex-wrap:wrap;">
+        <div>
+          <div class="score-big" id="scoreNum" style="color:var(--green);">—</div>
+          <div class="score-label">GROWTH SCORE</div>
+        </div>
+        <div style="flex:1;min-width:140px;">
+          <div class="score-track"><div class="score-fill" id="scoreFill" style="width:0%;background:var(--green);"></div></div>
+          <div class="score-legend">
+            <div class="sleg"><div class="sleg-dot" style="background:var(--red);"></div>0–39 NEEDS WORK</div>
+            <div class="sleg"><div class="sleg-dot" style="background:var(--amber);"></div>40–69 BUILDING</div>
+            <div class="sleg"><div class="sleg-dot" style="background:var(--green);"></div>70+ STRONG</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="score-card">
+      <div class="delta-label">VS LAST MONTH</div>
+      <div class="delta-val" id="deltaMonth" style="color:var(--text3);">—</div>
+    </div>
+    <div class="score-card">
+      <div class="delta-label">VS BASELINE</div>
+      <div class="delta-val" id="deltaBase" style="color:var(--text3);">—</div>
+    </div>
+  </div>
+
+  <div class="sec-title">KEY METRICS</div>
+  <div class="kpi-row" id="kpiRow"></div>
+
+  <div class="sec-title">SERVICE HEALTH</div>
+  <div class="gauge-row" id="gaugeRow"></div>
+
+  <div class="sec-title">KEYWORD RANKING TRACKER</div>
+  <div class="kw-wrap"><table class="kw-table" id="kwTable"></table></div>
+
+  <div class="two-col" style="margin-top:20px;">
+    <div class="chart-card">
+      <div class="chart-title">WEBSITE TRAFFIC & LEADS</div>
+      <div class="chart-legend">
+        <div class="cl-item"><div class="cl-sq" style="background:#4a9fd4;"></div>SESSIONS</div>
+        <div class="cl-item"><div class="cl-sq" style="background:var(--green);"></div>INQUIRIES</div>
+      </div>
+      <div style="position:relative;width:100%;height:180px;"><canvas id="trafficChart"></canvas></div>
+    </div>
+    <div class="chart-card">
+      <div class="chart-title">GBP PERFORMANCE</div>
+      <div class="chart-legend">
+        <div class="cl-item"><div class="cl-sq" style="background:#9b7dd4;"></div>IMPRESSIONS</div>
+        <div class="cl-item"><div class="cl-sq" style="background:var(--amber);"></div>CALLS</div>
+      </div>
+      <div style="position:relative;width:100%;height:180px;"><canvas id="gbpChart"></canvas></div>
+    </div>
+  </div>
+
+  <div class="sec-title" style="margin-top:20px;">SOCIAL PRESENCE</div>
+  <div class="social-row">
+    <div class="social-card">
+      <div class="social-platform">FACEBOOK</div>
+      <div class="social-num">4,900</div>
+      <div class="social-label">Friends / reach</div>
+    </div>
+    <div class="social-card">
+      <div class="social-platform">INSTAGRAM</div>
+      <div class="social-num">1,618</div>
+      <div class="social-label">Followers · 597 posts</div>
+    </div>
+    <div class="social-card">
+      <div class="social-platform">LINKEDIN</div>
+      <div class="social-num">2,485</div>
+      <div class="social-label">Followers · 500+ connections</div>
+    </div>
+  </div>
+
+  <div class="sec-title" style="margin-top:20px;">MONTHLY SUMMARY</div>
+  <div class="summary-card">
+    <div class="summary-text" id="summaryText">Loading summary...</div>
+  </div>
+
+  <div class="sec-title">NEXT MONTH PRIORITIES</div>
+  <div class="next-card" id="nextCard"></div>
+
+  <div class="dash-footer">
+    <span>GOJO AGENCY · EAGEN REAL ESTATE · JESSIEEAGEN.COM</span>
+    <span id="footerDate">MARCH 2026</span>
+  </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.js"></script>
+<script>
+const MONTHS = ['Baseline','Month 1','Month 2','Month 3','Month 4','Month 5','Month 6'];
+const KEY = 'gojo_eagen_v2';
+
+const KEYWORDS = [
+  { label: 'business for sale missoula', key: 'kw1' },
+  { label: 'commercial real estate missoula', key: 'kw2' },
+  { label: 'bars for sale in montana', key: 'kw3' },
+  { label: 'casinos for sale in montana', key: 'kw4' },
+  { label: 'missoula commercial real estate for sale', key: 'kw5' },
+];
+
+const FIELDS = [
+  { key: 'calls', label: 'Inbound inquiries / calls' },
+  { key: 'sessions', label: 'Website sessions (GA4)' },
+  { key: 'impressions', label: 'GBP impressions' },
+  { key: 'gbpCalls', label: 'GBP call clicks' },
+  { key: 'directions', label: 'Direction requests' },
+  { key: 'reviews', label: 'Review count (total)' },
+  { key: 'rating', label: 'Avg star rating' },
+  { key: 'articles', label: 'Articles published (total)' },
+  { key: 'gscClicks', label: 'GSC total clicks' },
+  { key: 'gscImpressions', label: 'GSC impressions' },
+  { key: 'kw1', label: 'KW rank: business for sale missoula' },
+  { key: 'kw2', label: 'KW rank: commercial real estate missoula' },
+  { key: 'kw3', label: 'KW rank: bars for sale in montana' },
+  { key: 'kw4', label: 'KW rank: casinos for sale in montana' },
+  { key: 'kw5', label: 'KW rank: missoula commercial real estate for sale' },
+];
+
+// BASELINE — real data from March 13 2026
+const BASELINE = {
+  calls: 3, sessions: 0, impressions: 533, gbpCalls: 3,
+  directions: 146, reviews: 2, rating: 5.0, articles: 0,
+  gscClicks: 451, gscImpressions: 18400,
+  kw1: 6, kw2: 10, kw3: 10, kw4: 20, kw5: 14
+};
+
+let data = {};
+let cur = 0;
+let tChart = null, gChart = null;
+
+async function load() {
+  try {
+    const r = await window.storage.get(KEY);
+    if (r) data = JSON.parse(r.value);
+  } catch(e) { data = {}; }
+  // Always seed baseline
+  if (!data[0] || Object.keys(data[0]).length === 0) data[0] = BASELINE;
+}
+
+async function save() {
+  try { await window.storage.set(KEY, JSON.stringify(data)); } catch(e) {}
+}
+
+function get(m) { return m === 0 ? BASELINE : (data[m] || {}); }
+
+function scoreColor(s) {
+  if (s === null) return 'var(--text3)';
+  if (s >= 70) return 'var(--green)';
+  if (s >= 40) return 'var(--amber)';
+  return 'var(--red)';
+}
+
+function calcScore(d) {
+  if (!d || Object.keys(d).length === 0) return null;
+  let pts = 0, max = 0;
+  if (d.calls != null) { max+=20; pts+=Math.min(20,(d.calls/15)*20); }
+  if (d.sessions != null) { max+=15; pts+=Math.min(15,(d.sessions/300)*15); }
+  if (d.impressions != null) { max+=10; pts+=Math.min(10,(d.impressions/1000)*10); }
+  if (d.gscClicks != null) { max+=15; pts+=Math.min(15,(d.gscClicks/600)*15); }
+  const kws=[d.kw1,d.kw2,d.kw3,d.kw4,d.kw5].filter(v=>v!=null);
+  if (kws.length) { max+=30; const avg=kws.reduce((a,b)=>a+Number(b),0)/kws.length; pts+=Math.max(0,Math.min(30,(30-avg)*1.2)); }
+  if (d.reviews != null) { max+=10; pts+=Math.min(10,(d.reviews/15)*10); }
+  return max>0 ? Math.round((pts/max)*100) : null;
+}
+
+function rankPill(val) {
+  if (val == null || val === '' || Number(val) === 0) return '<span class="pill p-gray">—</span>';
+  const n = Number(val);
+  if (n <= 3) return `<span class="pill p-green">#${n}</span>`;
+  if (n <= 10) return `<span class="pill p-amber">#${n}</span>`;
+  return `<span class="pill p-red">#${n}</span>`;
+}
+
+function trend(curr, prev, lowerBetter) {
+  if (curr == null || prev == null) return '<span class="t-flat">— new</span>';
+  const c=Number(curr), p=Number(prev);
+  if (c===p) return '<span class="t-flat">→ no change</span>';
+  const pct=Math.abs(Math.round(((c-p)/p)*100));
+  const up = lowerBetter ? c<p : c>p;
+  return up ? `<span class="t-up">↑ ${pct}%</span>` : `<span class="t-dn">↓ ${pct}%</span>`;
+}
+
+function gaugeScore(d, svc) {
+  if (!d) return null;
+  const map = {
+    'LOCAL SEO': ()=>{ const ks=[d.kw1,d.kw2,d.kw3,d.kw4,d.kw5].filter(v=>v!=null); if(!ks.length) return null; const avg=ks.reduce((a,b)=>a+Number(b),0)/ks.length; return Math.round(Math.max(0,Math.min(100,(30-avg+10)*2.5))); },
+    'GBP': ()=>d.impressions!=null?Math.min(100,Math.round((Number(d.impressions)/1000)*100)):null,
+    'CONTENT': ()=>d.articles!=null?Math.min(100,Math.round((Number(d.articles)/8)*100)):null,
+    'SOCIAL': ()=>68,
+    'WEBSITE': ()=>d.sessions!=null?(Number(d.sessions)===0?0:Math.min(100,Math.round((Number(d.sessions)/300)*100))):null,
+  };
+  return map[svc] ? map[svc]() : null;
+}
+
+function gaugeSVG(pct, col) {
+  if (pct===null) pct=0;
+  const c=Math.PI*36, dash=(pct/100)*c;
+  return `<svg viewBox="0 0 80 48" width="72" height="44" style="display:block;margin:0 auto;">
+    <path d="M8,44 A36,36 0 0,1 72,44" fill="none" stroke="#1e2a16" stroke-width="7" stroke-linecap="round"/>
+    <path d="M8,44 A36,36 0 0,1 72,44" fill="none" stroke="${col}" stroke-width="7" stroke-linecap="round"
+      stroke-dasharray="${dash.toFixed(1)} ${c.toFixed(1)}"/>
+    <text x="40" y="40" text-anchor="middle" font-size="13" font-weight="500" fill="${col}" font-family="DM Mono">${pct}</text>
+  </svg>`;
+}
+
+function statusLabel(s) {
+  if (s===null) return {cls:'g-gray',txt:'● NO DATA'};
+  if (s>=70) return {cls:'g-green',txt:'● ON TRACK'};
+  if (s>=40) return {cls:'g-amber',txt:'● MONITOR'};
+  return {cls:'g-red',txt:'● NEEDS WORK'};
+}
+
+function summary(d, m, prev) {
+  if (!d || Object.keys(d).length===0) return 'No data entered for this period. Click "+ Edit data" above to enter real numbers.';
+  const ml = MONTHS[m];
+  if (m===0) return `Baseline established March 13, 2026. Google Search Console shows 18,400 impressions and 451 clicks across 540 search queries over the prior 3 months — a solid organic footprint for a single-broker CRE operation in Missoula. Top keyword "business for sale Missoula" ranks at position 6 with consistent click-through. "Commercial real estate Missoula" generates 245 impressions/month but only 3 clicks at position 10 — a CTR problem the new meta description directly addresses. Google Business Profile views were down 51.7% year over year before optimization. GBP fully optimized March 13 with new description, 6 targeted services, and 3 posts published. GA4 installed and tracking from today forward.`;
+  let parts=[];
+  if (d.calls) parts.push(`${d.calls} inbound inquiries`);
+  if (d.sessions) parts.push(`${d.sessions} website sessions`);
+  if (d.gscClicks) parts.push(`${d.gscClicks} organic clicks`);
+  if (d.impressions) parts.push(`${d.impressions} GBP impressions`);
+  const topKws=KEYWORDS.filter(k=>d[k.key]&&Number(d[k.key])<=10);
+  if (topKws.length) parts.push(`${topKws.length} keyword${topKws.length>1?'s':''} in top 10`);
+  if (!parts.length) return 'Data recorded for this period.';
+  const comp = prev&&prev.calls&&d.calls ? (Number(d.calls)>Number(prev.calls)?`Inquiries up from ${prev.calls} last month.`:`Inquiry volume at ${d.calls}.`) : '';
+  return `${ml} — ${parts.join(', ')}. ${comp} Review keyword positions above to track ranking movement since baseline.`;
+}
+
+function nextPriorities(d, m) {
+  if (m===0) return [
+    'Build 4 Phase 1 pages on WordPress — Businesses for Sale, Sell Commercial Property, Property Valuation, Montana Liquor License Sales',
+    'Publish first 2 SEO articles targeting "business for sale Missoula" and Montana liquor license keywords',
+    'Confirm GA4 firing correctly — verify realtime data in analytics dashboard, check developer installed tag on all pages',
+  ];
+  const items=[];
+  const weakKws=KEYWORDS.filter(k=>d[k.key]&&Number(d[k.key])>10);
+  if (weakKws.length) items.push(`Push "${weakKws[0].label}" from #${d[weakKws[0].key]} into top 10 with supporting content`);
+  if (!d.articles||Number(d.articles)<4) items.push('Publish 2 SEO articles — maintain monthly content velocity for ranking momentum');
+  if (!d.reviews||Number(d.reviews)<10) items.push('Activate review request to past clients — target 10+ Google reviews for GBP trust signals');
+  if (items.length<3) items.push('Build Phase 2 authority pages — Market Report, Casino Sales, Commercial Development Land');
+  return items.slice(0,3);
+}
+
+function render() {
+  const d = get(cur);
+  const prev = cur>0 ? get(cur-1) : null;
+  const base = get(0);
+  const score = calcScore(d);
+  const prevScore = calcScore(prev);
+  const baseScore = calcScore(base);
+
+  // Header date
+  document.getElementById('hdrDate').textContent = MONTHS[cur].toUpperCase() + ' · MARCH 2026';
+  document.getElementById('footerDate').textContent = MONTHS[cur].toUpperCase() + ' · MARCH 2026';
+
+  // Score
+  const sEl = document.getElementById('scoreNum');
+  const fEl = document.getElementById('scoreFill');
+  if (score!==null) {
+    const col=scoreColor(score);
+    sEl.textContent=score; sEl.style.color=col;
+    fEl.style.width=score+'%'; fEl.style.background=col;
+  } else { sEl.textContent='—'; sEl.style.color='var(--text3)'; fEl.style.width='0%'; }
+
+  const dmEl=document.getElementById('deltaMonth');
+  if (score!==null&&prevScore!==null) { const d2=score-prevScore; dmEl.textContent=(d2>=0?'+':'')+d2+' pts'; dmEl.style.color=d2>=0?'var(--green)':'var(--red)'; }
+  else { dmEl.textContent='—'; dmEl.style.color='var(--text3)'; }
+
+  const dbEl=document.getElementById('deltaBase');
+  if (score!==null&&baseScore!==null&&cur>0) { const d2=score-baseScore; dbEl.textContent=(d2>=0?'+':'')+d2+' pts'; dbEl.style.color=d2>=0?'var(--green)':'var(--red)'; }
+  else { dbEl.textContent='—'; dbEl.style.color='var(--text3)'; }
+
+  // KPIs
+  const kpis=[
+    {label:'INQUIRIES',key:'calls',lb:false},
+    {label:'GBP VIEWS',key:'impressions',lb:false},
+    {label:'GBP CALLS',key:'gbpCalls',lb:false},
+    {label:'DIRECTIONS',key:'directions',lb:false},
+    {label:'GSC CLICKS',key:'gscClicks',lb:false},
+  ];
+  document.getElementById('kpiRow').innerHTML=kpis.map(k=>`
+    <div class="kpi">
+      <div class="kpi-label">${k.label}</div>
+      <div class="kpi-val">${d[k.key]!=null?Number(d[k.key]).toLocaleString():'—'}</div>
+      <div class="kpi-trend">${trend(d[k.key],prev?.[k.key],k.lb)}</div>
+    </div>`).join('');
+
+  // Gauges
+  const svcs=['LOCAL SEO','GBP','CONTENT','SOCIAL','WEBSITE'];
+  document.getElementById('gaugeRow').innerHTML=svcs.map(s=>{
+    const sc=gaugeScore(d,s);
+    const col=scoreColor(sc);
+    const st=statusLabel(sc);
+    return `<div class="gauge-card">
+      <div class="gauge-name">${s}</div>
+      ${gaugeSVG(sc,col==='var(--text3)'?'#2e3824':col)}
+      <div class="gauge-status ${st.cls}">${st.txt}</div>
+    </div>`;
+  }).join('');
+
+  // Keyword table
+  let kwHtml='<thead><tr><th>KEYWORD</th>';
+  for(let i=0;i<=cur;i++) kwHtml+=`<th class="center">${i===0?'BASE':MONTHS[i].replace('Month ','MO ')}</th>`;
+  kwHtml+='</tr></thead><tbody>';
+  KEYWORDS.forEach(kw=>{
+    kwHtml+=`<tr><td class="kw-name">${kw.label}</td>`;
+    for(let i=0;i<=cur;i++) kwHtml+=`<td class="center">${rankPill(get(i)[kw.key])}</td>`;
+    kwHtml+='</tr>';
+  });
+  kwHtml+='</tbody>';
+  document.getElementById('kwTable').innerHTML=kwHtml;
+
+  // Charts
+  const labels=MONTHS.slice(0,cur+1);
+  const sessArr=labels.map((_,i)=>Number(get(i).sessions)||0);
+  const callArr=labels.map((_,i)=>Number(get(i).calls)||0);
+  const impArr=labels.map((_,i)=>Number(get(i).impressions)||0);
+  const gbpCallArr=labels.map((_,i)=>Number(get(i).gbpCalls)||0);
+
+  if(tChart) tChart.destroy();
+  tChart=new Chart(document.getElementById('trafficChart'),{
+    type:'bar',
+    data:{labels,datasets:[
+      {label:'Sessions',data:sessArr,backgroundColor:'#4a9fd4',borderRadius:3},
+      {label:'Inquiries',data:callArr,backgroundColor:'#8cc63f',borderRadius:3},
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+      scales:{x:{grid:{display:false},ticks:{color:'#4a5a3a',font:{size:10},autoSkip:false}},
+              y:{beginAtZero:true,grid:{color:'#1a2114'},ticks:{color:'#4a5a3a',font:{size:10}}}}}
+  });
+
+  if(gChart) gChart.destroy();
+  gChart=new Chart(document.getElementById('gbpChart'),{
+    type:'line',
+    data:{labels,datasets:[
+      {label:'Impressions',data:impArr,borderColor:'#9b7dd4',backgroundColor:'rgba(155,125,212,0.08)',tension:0.3,fill:true,pointRadius:4,pointBackgroundColor:'#9b7dd4'},
+      {label:'Calls',data:gbpCallArr,borderColor:'#d4922a',backgroundColor:'rgba(212,146,42,0.08)',tension:0.3,fill:false,pointRadius:4,pointBackgroundColor:'#d4922a'},
+    ]},
+    options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
+      scales:{x:{grid:{display:false},ticks:{color:'#4a5a3a',font:{size:10},autoSkip:false}},
+              y:{beginAtZero:true,grid:{color:'#1a2114'},ticks:{color:'#4a5a3a',font:{size:10}}}}}
+  });
+
+  // Summary
+  document.getElementById('summaryText').textContent=summary(d,cur,prev);
+
+  // Next priorities
+  const np=nextPriorities(d,cur);
+  document.getElementById('nextCard').innerHTML=np.map((t,i)=>`
+    <div class="next-item">
+      <div class="next-num">0${i+1}</div>
+      <div class="next-text">${t}</div>
+    </div>`).join('');
+}
+
+function buildTabs() {
+  document.getElementById('tabsEl').innerHTML=MONTHS.map((m,i)=>
+    `<div class="tab ${i===cur?'on':''}" onclick="switchMonth(${i})">${m}</div>`
+  ).join('');
+}
+
+function switchMonth(i) { cur=i; buildTabs(); render(); }
+
+function toggleEdit() {
+  const p=document.getElementById('editPanel');
+  const showing=p.style.display==='block';
+  if(!showing) {
+    const d=get(cur);
+    document.getElementById('editGrid').innerHTML=FIELDS.map(f=>`
+      <div class="ef">
+        <label>${f.label}</label>
+        <input type="number" id="ef_${f.key}" value="${d[f.key]??''}" placeholder="—" />
+      </div>`).join('');
+  }
+  p.style.display=showing?'none':'block';
+}
+
+async function saveEdit() {
+  const d={};
+  FIELDS.forEach(f=>{ const v=document.getElementById('ef_'+f.key).value; if(v!=='') d[f.key]=Number(v); });
+  if(cur===0) { Object.assign(data[0]={},BASELINE,d); }
+  else data[cur]=d;
+  await save();
+  document.getElementById('editPanel').style.display='none';
+  render();
+}
+
+(async()=>{ await load(); buildTabs(); render(); })();
+</script>
 </body>
 </html>
