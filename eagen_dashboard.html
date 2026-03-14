@@ -13,19 +13,19 @@
   --card2: #1a1f15;
   --border: #242b1c;
   --border2: #2e3824;
-  --green: #8cc63f;
-  --green-dim: #5a8a28;
-  --green-glow: rgba(140,198,63,0.1);
-  --green-glow2: rgba(140,198,63,0.06);
+  --green: #7FFF00;
+  --green-dim: #00CC44;
+  --green-glow: rgba(127,255,0,0.1);
+  --green-glow2: rgba(127,255,0,0.06);
   --amber: #d4922a;
   --amber-dim: rgba(212,146,42,0.12);
   --red: #c44a3a;
   --red-dim: rgba(196,74,58,0.1);
   --blue: #4a9fd4;
   --blue-dim: rgba(74,159,212,0.1);
-  --text: #e8f0dc;
-  --text2: #8fa07a;
-  --text3: #4a5a3a;
+  --text: #f0f8e8;
+  --text2: #c8e0a8;
+  --text3: #9ab87a;
   --serif: 'DM Serif Display', serif;
   --sans: 'DM Sans', sans-serif;
   --mono: 'DM Mono', monospace;
@@ -112,7 +112,7 @@ button.primary { border-color: var(--green); color: var(--green); background: va
 .kw-table tr:last-child td { border-bottom: none; }
 .kw-table tr:hover td { background: var(--card2); }
 .pill { display: inline-block; padding: 2px 9px; border-radius: 99px; font-size: 11px; font-weight: 500; font-family: var(--mono); }
-.p-green { background: rgba(140,198,63,0.12); color: var(--green); border: 1px solid rgba(140,198,63,0.3); }
+.p-green { background: rgba(127,255,0,0.12); color: var(--green); border: 1px solid rgba(127,255,0,0.3); }
 .p-amber { background: var(--amber-dim); color: var(--amber); border: 1px solid rgba(212,146,42,0.3); }
 .p-red { background: var(--red-dim); color: var(--red); border: 1px solid rgba(196,74,58,0.3); }
 .p-gray { background: var(--surface); color: var(--text3); border: 1px solid var(--border2); }
@@ -515,7 +515,7 @@ function render() {
     type:'bar',
     data:{labels,datasets:[
       {label:'Sessions',data:sessArr,backgroundColor:'#4a9fd4',borderRadius:3},
-      {label:'Inquiries',data:callArr,backgroundColor:'#8cc63f',borderRadius:3},
+      {label:'Inquiries',data:callArr,backgroundColor:'#7FFF00',borderRadius:3},
     ]},
     options:{responsive:true,maintainAspectRatio:false,plugins:{legend:{display:false}},
       scales:{x:{grid:{display:false},ticks:{color:'#4a5a3a',font:{size:10},autoSkip:false}},
