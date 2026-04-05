@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "builds": [
+    { "src": "api/notify.js", "use": "@vercel/node" },
+    { "src": "public/**", "use": "@vercel/static" }
+  ],
+  "routes": [
+    { "src": "/api/notify", "dest": "/api/notify.js", "methods": ["POST", "OPTIONS"] },
+    { "src": "/(.*)", "dest": "/public/contact.html" }
+  ]
+}

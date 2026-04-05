@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contact GoJo Agency</title>
+</head>
+<body style="margin:0;padding:0;background:#050505;font-family:Arial,sans-serif;">
+<div style="max-width:480px;margin:0 auto;padding:40px 20px;">
+ <div id="gjForm">
+ <h2 style="color:#7FFF00;font-size:24px;font-weight:700;margin:0 0 8px;">Get In Touch</h2>
+ <p style="color:#aaa;font-size:14px;margin:0 0 28px;">We'll be in touch within 1 business day.</p>
+ <div id="gjError" style="display:none;background:#3D0000;border:1px solid #ff4444;color:#ff9999;padding:12px 16px;border-radius:4px;font-size:14px;margin-bottom:16px;"></div>
+ <div style="display:flex;gap:12px;margin-bottom:14px;">
+ <input id="gjFirst" type="text" placeholder="First Name" required style="flex:1;padding:14px 16px;font-size:15px;border:2px solid #333;background:#111;color:#fff;border-radius:4px;font-family:Arial,sans-serif;outline:none;">
+ <input id="gjLast" type="text" placeholder="Last Name" style="flex:1;padding:14px 16px;font-size:15px;border:2px solid #333;background:#111;color:#fff;border-radius:4px;font-family:Arial,sans-serif;outline:none;">
+ </div>
+ <input id="gjEmail" type="email" placeholder="Email Address" required style="width:100%;box-sizing:border-box;padding:14px 16px;font-size:15px;border:2px solid #333;background:#111;color:#fff;border-radius:4px;font-family:Arial,sans-serif;outline:none;margin-bottom:14px;">
+ <input id="gjPhone" type="tel" placeholder="Phone Number" style="width:100%;box-sizing:border-box;padding:14px 16px;font-size:15px;border:2px solid #333;background:#111;color:#fff;border-radius:4px;font-family:Arial,sans-serif;outline:none;margin-bottom:20px;">
+ <button id="gjBtn" type="button" style="width:100%;padding:16px;background:#7FFF00;color:#050505;font-size:16px;font-weight:700;border:none;border-radius:4px;cursor:pointer;font-family:Arial,sans-serif;letter-spacing:1px;">SEND MESSAGE</button>
+ </div>
+ <div id="gjSuccess" style="display:none;text-align:center;padding:40px 20px;">
+ <div style="color:#7FFF00;font-size:48px;margin-bottom:16px;">✓</div>
+ <h3 style="color:#fff;font-size:22px;margin:0 0 8px;">Got it!</h3>
+ <p style="color:#aaa;font-size:15px;margin:0 0 24px;">We'll be in touch within 1 business day.</p>
+ <p style="color:#666;font-size:13px;">Questions? Call or text <a href="tel:4065408633" style="color:#7FFF00;text-decoration:none;">(406) 540-8633</a></p>
+ </div>
+</div>
+<script>
+document.getElementById('gjBtn').addEventListener('click', async function() {
+ var btn = document.getElementById('gjBtn');
+ var errBox = document.getElementById('gjError');
+ var firstName = document.getElementById('gjFirst').value.trim();
+ var lastName = document.getElementById('gjLast').value.trim();
+ var email = document.getElementById('gjEmail').value.trim();
+ var phone = document.getElementById('gjPhone').value.trim();
+ errBox.style.display = 'none';
+ if (!firstName) { errBox.textContent = 'Please enter your first name.'; errBox.style.display = 'block'; return; }
+ if (!email) { errBox.textContent = 'Please enter your email address.'; errBox.style.display = 'block'; return; }
+ btn.disabled = true;
+ btn.textContent = 'Sending...';
+ try {
+ var res = await fetch('https://gojo-contact-notify.vercel.app/api/notify', {
+ method: 'POST',
+ headers: { 'Content-Type': 'application/json' },
+ body: JSON.stringify({ firstName: firstName, lastName: lastName, email: email, phone: phone })
+ });
+ var data = await res.json();
+ if (data.success) {
+ document.getElementById('gjForm').style.display = 'none';
+ document.getElementById('gjSuccess').style.display = 'block';
+ } else {
+ throw new Error(data.error || 'Something went wrong.');
+ }
+ } catch(err) {
+ errBox.textContent = err.message || 'Something went wrong. Please call (406) 540-8633.';
+ errBox.style.display = 'block';
+ btn.disabled = false;
+ btn.textContent = 'SEND MESSAGE';
+ }
+});
+</script>
+</body>
+</html>
