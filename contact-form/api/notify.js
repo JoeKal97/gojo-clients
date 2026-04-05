@@ -79,6 +79,9 @@ module.exports = async (req, res) => {
         name,
         email,
         phone: phone || null,
+        business_name: req.body?.businessName || null,
+        website_url: req.body?.website || null,
+        sms_consent: req.body?.smsConsent || false,
         source: 'gojoagency.com/contact'
       }]).select('*').single();
       if (error) throw error;
@@ -157,8 +160,11 @@ module.exports = async (req, res) => {
       const text =
         `🔔 *New GoJo Lead*\n\n` +
         `*Name:* ${name}\n` +
+        `*Business:* ${req.body?.businessName || 'Not provided'}\n` +
+        `*Website:* ${req.body?.website || 'Not provided'}\n` +
         `*Email:* ${email}\n` +
         `*Phone:* ${phone || 'Not provided'}\n` +
+        `*SMS Consent:* ${req.body?.smsConsent ? 'Yes' : 'No'}\n` +
         `*Submitted:* ${new Date().toLocaleString('en-US', { timeZone: 'America/Denver' })} MT`;
       const tgRes = await fetch(`https://api.telegram.org/bot${TG_BOT_TOKEN}/sendMessage`, {
         method: 'POST',
