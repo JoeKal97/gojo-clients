@@ -112,6 +112,22 @@ module.exports = async (req, res) => {
         body: JSON.stringify(gcPayload)
       });
       console.log('GC contact create raw response:', JSON.stringify(gcContactResult.body));
+
+      const contactId = gcContactResult.body?.data?._id || gcContactResult.body?.data?.id;
+      if (contactId) {
+        const updatePayload = {
+          firstName: nameParts[0],
+          lastName: nameParts.slice(1).join(' ') || '',
+          name,
+          phone: phone || undefined
+        };
+        console.log('GC contact update payload:', JSON.stringify(updatePayload));
+        const gcUpdateResult = await gcRequest(`/contacts/${contactId}`, {
+          method: 'PUT',
+          body: JSON.stringify(updatePayload)
+        });
+        console.log('GC contact update raw response:', JSON.stringify(gcUpdateResult.body));
+      }
     } catch (e) {
       console.error('GC contact error:', e);
     }
