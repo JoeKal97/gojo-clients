@@ -94,6 +94,7 @@ module.exports = async (req, res) => {
       const gcPayload = {
         firstName: nameParts[0],
         lastName: nameParts.slice(1).join(' ') || '',
+        name,
         email,
         phone: phone || undefined,
         source: 'GoJo Contact Form'
@@ -101,6 +102,7 @@ module.exports = async (req, res) => {
       console.log('GC contact payload being sent:', JSON.stringify({
         firstName: nameParts[0],
         lastName: nameParts.slice(1).join(' ') || '',
+        name,
         email,
         phone: phone || undefined,
         source: 'GoJo Contact Form'
