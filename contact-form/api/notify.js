@@ -98,16 +98,18 @@ module.exports = async (req, res) => {
         phone: phone || undefined,
         source: 'GoJo Contact Form'
       };
-      console.log('GC contact payload:', JSON.stringify({
+      console.log('GC contact payload being sent:', JSON.stringify({
         firstName: nameParts[0],
         lastName: nameParts.slice(1).join(' ') || '',
         email,
-        phone: phone || undefined
+        phone: phone || undefined,
+        source: 'GoJo Contact Form'
       }));
       gcContactResult = await gcRequest('/contacts', {
         method: 'POST',
         body: JSON.stringify(gcPayload)
       });
+      console.log('GC contact create raw response:', JSON.stringify(gcContactResult.body));
     } catch (e) {
       console.error('GC contact error:', e);
     }
