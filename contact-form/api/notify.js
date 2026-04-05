@@ -67,6 +67,7 @@ module.exports = async (req, res) => {
   setCors(res);
 
   try {
+    console.log('req.body:', JSON.stringify(req.body));
     const { firstName, lastName, email, phone } = req.body || {};
     const name = [firstName, lastName].filter(Boolean).join(' ') || 'Unknown';
     if (!email) return res.status(400).json({ error: 'Email required' });
@@ -90,15 +91,22 @@ module.exports = async (req, res) => {
     let gcContactResult = null;
     try {
       const nameParts = name.trim().split(/\s+/);
+      const gcPayload = {
+        firstName: nameParts[0],
+        lastName: nameParts.slice(1).join(' ') || '',
+        email,
+        phone: phone || undefined,
+        source: 'GoJo Contact Form'
+      };
+      console.log('GC contact payload:', JSON.stringify({
+        firstName: nameParts[0],
+        lastName: nameParts.slice(1).join(' ') || '',
+        email,
+        phone: phone || undefined
+      }));
       gcContactResult = await gcRequest('/contacts', {
         method: 'POST',
-        body: JSON.stringify({
-          firstName: nameParts[0],
-          lastName: nameParts.slice(1).join(' ') || '',
-          email,
-          phone: phone || undefined,
-          source: 'GoJo Contact Form'
-        })
+        body: JSON.stringify(gcPayload)
       });
     } catch (e) {
       console.error('GC contact error:', e);
