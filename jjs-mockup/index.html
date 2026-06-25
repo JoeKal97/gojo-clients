@@ -1,0 +1,1058 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JJ's Quirky Collective | Custom Embroidery & Laser Design — Bitterroot Valley, MT</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Dancing+Script:wght@600&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --cream: #FAF6F0;
+  --linen: #EDE5D8;
+  --linen2: #E2D5C3;
+  --espresso: #2C1810;
+  --espresso-soft: #4A2E20;
+  --sage: #8B9E7A;
+  --sage-light: #B8C9A8;
+  --sage-dim: rgba(139,158,122,0.15);
+  --terra: #C4704F;
+  --terra-dark: #A85A3C;
+  --terra-dim: rgba(196,112,79,0.1);
+  --gray: #8A7E74;
+  --gray-light: #C4B8AD;
+  --white: #FFFFFF;
+  --playfair: 'Playfair Display', Georgia, serif;
+  --script: 'Dancing Script', cursive;
+  --lato: 'Lato', sans-serif;
+}
+html { scroll-behavior: smooth; }
+body { background: var(--cream); color: var(--espresso); font-family: var(--lato); font-size: 16px; line-height: 1.6; }
+
+/* NAV */
+nav {
+  background: var(--espresso);
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 70px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+.nav-brand {
+  font-family: var(--script);
+  font-size: 28px;
+  color: var(--cream);
+  letter-spacing: 0.02em;
+  text-decoration: none;
+}
+.nav-brand span { color: var(--terra); }
+.nav-links {
+  display: flex;
+  gap: 32px;
+  list-style: none;
+}
+.nav-links a {
+  font-family: var(--lato);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.nav-links a:hover { color: var(--cream); }
+.nav-cta {
+  background: var(--terra);
+  color: var(--white) !important;
+  padding: 10px 22px;
+  border-radius: 2px;
+  font-weight: 700 !important;
+  letter-spacing: 0.12em;
+  transition: background 0.2s !important;
+}
+.nav-cta:hover { background: var(--terra-dark) !important; color: var(--white) !important; }
+
+/* HERO */
+.hero {
+  min-height: 88vh;
+  background: var(--espresso);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  position: relative;
+}
+.hero-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 80px 60px 80px 80px;
+  position: relative;
+  z-index: 2;
+}
+.hero-eyebrow {
+  font-family: var(--lato);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--sage);
+  margin-bottom: 20px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.hero-eyebrow::before {
+  content: '';
+  display: block;
+  width: 32px;
+  height: 1px;
+  background: var(--sage);
+}
+.hero-headline {
+  font-family: var(--playfair);
+  font-size: clamp(42px, 5vw, 68px);
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1.1;
+  margin-bottom: 12px;
+  letter-spacing: -0.01em;
+}
+.hero-headline em {
+  font-style: italic;
+  color: var(--terra);
+}
+.hero-sub {
+  font-family: var(--playfair);
+  font-size: 20px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--linen2);
+  margin-bottom: 28px;
+  line-height: 1.5;
+}
+.hero-desc {
+  font-size: 15px;
+  font-weight: 300;
+  color: var(--gray-light);
+  line-height: 1.8;
+  max-width: 420px;
+  margin-bottom: 40px;
+}
+.hero-actions { display: flex; gap: 16px; align-items: center; flex-wrap: wrap; }
+.btn-primary {
+  background: var(--terra);
+  color: var(--white);
+  font-family: var(--lato);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  border-radius: 2px;
+  text-decoration: none;
+  transition: background 0.2s;
+  display: inline-block;
+}
+.btn-primary:hover { background: var(--terra-dark); }
+.btn-ghost {
+  color: var(--cream);
+  font-family: var(--lato);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-bottom: 1px solid var(--gray);
+  padding-bottom: 2px;
+  transition: border-color 0.2s, color 0.2s;
+}
+.btn-ghost:hover { color: var(--sage-light); border-color: var(--sage); }
+.hero-right {
+  position: relative;
+  overflow: hidden;
+}
+.hero-img-placeholder {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #3D2518 0%, #1E0E08 50%, #2C1810 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+.hero-img-placeholder svg { opacity: 0.12; }
+.hero-img-label {
+  font-family: var(--lato);
+  font-size: 11px;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.2);
+}
+/* Decorative texture overlay */
+.hero-right::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 2px,
+    rgba(255,255,255,0.015) 2px,
+    rgba(255,255,255,0.015) 4px
+  );
+  pointer-events: none;
+}
+.hero-stats {
+  display: flex;
+  gap: 32px;
+  margin-top: 48px;
+  padding-top: 32px;
+  border-top: 1px solid rgba(255,255,255,0.08);
+}
+.hero-stat {}
+.hero-stat-num {
+  font-family: var(--playfair);
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1;
+}
+.hero-stat-label {
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--gray);
+  letter-spacing: 0.08em;
+  margin-top: 4px;
+}
+
+/* TRUST STRIP */
+.trust-strip {
+  background: var(--linen);
+  border-top: 1px solid var(--linen2);
+  border-bottom: 1px solid var(--linen2);
+  padding: 18px 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 48px;
+  flex-wrap: wrap;
+}
+.trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--espresso-soft);
+}
+.trust-icon { font-size: 18px; }
+.trust-divider { width: 1px; height: 24px; background: var(--linen2); }
+
+/* SECTION SHARED */
+.section { padding: 88px 80px; }
+.section-eyebrow {
+  font-family: var(--lato);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--terra);
+  margin-bottom: 14px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.section-eyebrow::before {
+  content: '';
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--terra);
+}
+.section-headline {
+  font-family: var(--playfair);
+  font-size: clamp(32px, 4vw, 48px);
+  font-weight: 700;
+  color: var(--espresso);
+  line-height: 1.15;
+  margin-bottom: 14px;
+}
+.section-headline em { font-style: italic; color: var(--terra); }
+.section-sub {
+  font-size: 16px;
+  font-weight: 300;
+  color: var(--gray);
+  max-width: 560px;
+  line-height: 1.8;
+  margin-bottom: 56px;
+}
+
+/* SERVICES */
+.services-bg { background: var(--cream); }
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2px;
+  background: var(--linen2);
+  border: 2px solid var(--linen2);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.service-card {
+  background: var(--cream);
+  padding: 36px 32px;
+  position: relative;
+  transition: background 0.25s;
+}
+.service-card:hover { background: var(--linen); }
+.service-card-img {
+  width: 100%;
+  height: 160px;
+  background: var(--linen);
+  border-radius: 2px;
+  margin-bottom: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  position: relative;
+}
+.service-card-img-inner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--linen2) 0%, var(--linen) 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+.svc-img-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+}
+.service-num {
+  font-family: var(--playfair);
+  font-size: 11px;
+  font-weight: 400;
+  color: var(--gray-light);
+  letter-spacing: 0.12em;
+  margin-bottom: 10px;
+}
+.service-title {
+  font-family: var(--playfair);
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--espresso);
+  margin-bottom: 10px;
+  line-height: 1.2;
+}
+.service-desc {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--gray);
+  line-height: 1.75;
+  margin-bottom: 20px;
+}
+.service-link {
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--terra);
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: gap 0.2s;
+}
+.service-link:hover { gap: 12px; }
+.service-card.featured { background: var(--espresso); }
+.service-card.featured:hover { background: var(--espresso-soft); }
+.service-card.featured .service-num { color: rgba(255,255,255,0.25); }
+.service-card.featured .service-title { color: var(--cream); }
+.service-card.featured .service-desc { color: var(--gray-light); }
+.service-card.featured .service-card-img-inner { background: rgba(255,255,255,0.05); }
+.service-card.featured .svc-img-label { color: rgba(255,255,255,0.2); }
+
+/* EMBROIDERY HOOP DIVIDER — signature element */
+.hoop-divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 24px;
+  padding: 48px 80px;
+  background: var(--linen);
+}
+.hoop-line { flex: 1; height: 1px; background: var(--linen2); }
+.hoop-svg { flex-shrink: 0; opacity: 0.6; }
+
+/* WHY US */
+.why-bg { background: var(--espresso); }
+.why-bg .section-headline { color: var(--cream); }
+.why-bg .section-sub { color: var(--gray-light); }
+.why-bg .section-eyebrow { color: var(--sage); }
+.why-bg .section-eyebrow::before { background: var(--sage); }
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1px;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: 4px;
+  overflow: hidden;
+}
+.why-card {
+  background: rgba(255,255,255,0.03);
+  padding: 36px 32px;
+  transition: background 0.25s;
+}
+.why-card:hover { background: rgba(255,255,255,0.06); }
+.why-icon {
+  font-size: 28px;
+  margin-bottom: 16px;
+  display: block;
+}
+.why-title {
+  font-family: var(--playfair);
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--cream);
+  margin-bottom: 10px;
+  line-height: 1.3;
+}
+.why-text {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--gray-light);
+  line-height: 1.75;
+}
+
+/* PORTFOLIO */
+.portfolio-bg { background: var(--linen); }
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+.port-item {
+  aspect-ratio: 1;
+  background: var(--linen2);
+  border-radius: 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+}
+.port-item:first-child {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+.port-item-inner {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--linen2) 0%, #D8CCBE 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: transform 0.3s;
+}
+.port-item:hover .port-item-inner { transform: scale(1.04); }
+.port-label {
+  font-size: 10px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gray-light);
+  text-align: center;
+  padding: 0 12px;
+}
+.port-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(44,24,16,0.75);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.port-item:hover .port-overlay { opacity: 1; }
+.port-overlay-text {
+  font-family: var(--playfair);
+  font-size: 14px;
+  font-style: italic;
+  color: var(--cream);
+  text-align: center;
+  padding: 16px;
+}
+
+/* TESTIMONIAL */
+.testimonial-section {
+  background: var(--cream);
+  padding: 88px 80px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+.testimonial-left {}
+.testimonial-quote {
+  font-family: var(--playfair);
+  font-size: 28px;
+  font-style: italic;
+  font-weight: 400;
+  color: var(--espresso);
+  line-height: 1.55;
+  margin-bottom: 28px;
+  position: relative;
+  padding-left: 24px;
+}
+.testimonial-quote::before {
+  content: '"';
+  font-family: var(--playfair);
+  font-size: 80px;
+  line-height: 1;
+  color: var(--linen2);
+  position: absolute;
+  left: -12px;
+  top: -16px;
+  font-style: normal;
+}
+.testimonial-author {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.testimonial-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--linen2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--playfair);
+  font-size: 18px;
+  color: var(--gray);
+}
+.testimonial-name {
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--espresso);
+}
+.testimonial-detail {
+  font-size: 13px;
+  color: var(--gray);
+  font-weight: 300;
+}
+.testimonial-stars { color: var(--terra); font-size: 14px; margin-bottom: 4px; }
+.testimonial-right {}
+.review-summary {
+  background: var(--espresso);
+  border-radius: 4px;
+  padding: 40px;
+  text-align: center;
+  margin-bottom: 16px;
+}
+.review-big {
+  font-family: var(--playfair);
+  font-size: 72px;
+  font-weight: 700;
+  color: var(--cream);
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.review-stars { color: var(--terra); font-size: 24px; margin-bottom: 8px; }
+.review-sub {
+  font-size: 13px;
+  color: var(--gray-light);
+  letter-spacing: 0.06em;
+  font-weight: 300;
+}
+.review-note {
+  font-size: 12px;
+  color: var(--gray);
+  text-align: center;
+  font-style: italic;
+  line-height: 1.6;
+}
+
+/* CTA SECTION */
+.cta-section {
+  background: var(--terra);
+  padding: 88px 80px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 60px;
+  align-items: center;
+}
+.cta-headline {
+  font-family: var(--playfair);
+  font-size: clamp(32px, 3.5vw, 48px);
+  font-weight: 700;
+  color: var(--white);
+  line-height: 1.15;
+  margin-bottom: 12px;
+}
+.cta-headline em { font-style: italic; color: rgba(255,255,255,0.7); }
+.cta-sub {
+  font-size: 16px;
+  font-weight: 300;
+  color: rgba(255,255,255,0.8);
+  line-height: 1.75;
+  max-width: 520px;
+}
+.cta-right { display: flex; flex-direction: column; gap: 14px; align-items: flex-end; flex-shrink: 0; }
+.btn-white {
+  background: var(--white);
+  color: var(--terra-dark);
+  font-family: var(--lato);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 18px 40px;
+  border-radius: 2px;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: background 0.2s;
+}
+.btn-white:hover { background: var(--cream); }
+.cta-phone {
+  font-size: 13px;
+  color: rgba(255,255,255,0.7);
+  text-align: right;
+  line-height: 1.6;
+}
+.cta-phone a { color: var(--white); font-weight: 700; text-decoration: none; }
+
+/* FOOTER */
+footer {
+  background: var(--espresso);
+  padding: 60px 80px 32px;
+}
+.footer-top {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 48px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
+  margin-bottom: 32px;
+}
+.footer-brand {
+  font-family: var(--script);
+  font-size: 32px;
+  color: var(--cream);
+  margin-bottom: 14px;
+}
+.footer-brand span { color: var(--terra); }
+.footer-tagline {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--gray);
+  line-height: 1.75;
+  max-width: 280px;
+  margin-bottom: 20px;
+}
+.footer-contact-item {
+  font-size: 13px;
+  color: var(--gray-light);
+  margin-bottom: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.footer-col-title {
+  font-family: var(--lato);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cream);
+  margin-bottom: 20px;
+}
+.footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
+.footer-links a {
+  font-size: 14px;
+  font-weight: 300;
+  color: var(--gray);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+.footer-links a:hover { color: var(--cream); }
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+.footer-legal { font-size: 12px; color: rgba(255,255,255,0.2); }
+.footer-badge {
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.15);
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .hero { grid-template-columns: 1fr; min-height: auto; }
+  .hero-right { display: none; }
+  .hero-left { padding: 60px 32px; }
+  .section { padding: 60px 32px; }
+  .services-grid { grid-template-columns: 1fr; }
+  .why-grid { grid-template-columns: 1fr; }
+  .portfolio-grid { grid-template-columns: repeat(2,1fr); }
+  .port-item:first-child { grid-column: span 1; grid-row: span 1; }
+  .testimonial-section { grid-template-columns: 1fr; gap: 40px; padding: 60px 32px; }
+  .cta-section { grid-template-columns: 1fr; padding: 60px 32px; }
+  .cta-right { align-items: flex-start; }
+  .footer-top { grid-template-columns: 1fr 1fr; padding: 40px 32px 40px; }
+  footer { padding: 40px 32px 24px; }
+  nav { padding: 0 24px; }
+  .nav-links { display: none; }
+  .trust-strip { padding: 18px 32px; gap: 24px; }
+  .hoop-divider { padding: 40px 32px; }
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-brand">JJ's <span>Quirky</span> Collective</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#portfolio">Portfolio</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact" class="nav-cta">Get a Quote</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Bitterroot Valley's Custom Design Studio</div>
+    <h1 class="hero-headline">
+      Made by hand.<br>
+      <em>Built to last.</em>
+    </h1>
+    <p class="hero-sub">Custom embroidery, vinyl design & laser engraving — for businesses and individuals across Western Montana.</p>
+    <p class="hero-desc">From embroidered team jackets to laser-engraved tumblers to custom leather patches — if you can dream it, we can stitch, cut, or engrave it. Small family business. No job too big or too small.</p>
+    <div class="hero-actions">
+      <a href="#contact" class="btn-primary">Get a Free Quote</a>
+      <a href="#portfolio" class="btn-ghost">View Our Work →</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num">5.0★</div>
+        <div class="hero-stat-label">Google Rating</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">10+</div>
+        <div class="hero-stat-label">Services Offered</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">100%</div>
+        <div class="hero-stat-label">Custom Designs</div>
+      </div>
+    </div>
+  </div>
+  <div class="hero-right">
+    <video autoplay muted loop playsinline style="width:100%;height:100%;object-fit:cover;display:block;">
+      <source src="jjs_hero_video.mp4" type="video/mp4">
+      <img src="jjs_hero_bg.jpg" alt="JJ's Quirky Collective studio" style="width:100%;height:100%;object-fit:cover;">
+    </video>
+    <div style="position:absolute;inset:0;background:linear-gradient(to right, rgba(44,24,16,0.4) 0%, rgba(44,24,16,0) 40%);pointer-events:none;"></div>
+  </div>
+</section>
+
+<!-- TRUST STRIP -->
+<div class="trust-strip">
+  <div class="trust-item"><span class="trust-icon">🧵</span> Embroidery & DTF</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><span class="trust-icon">⚡</span> Laser Engraving</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><span class="trust-icon">🏔️</span> Serving Western Montana</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><span class="trust-icon">👨‍👩‍👧</span> Family Owned</div>
+  <div class="trust-divider"></div>
+  <div class="trust-item"><span class="trust-icon">✂️</span> No Job Too Small</div>
+</div>
+
+<!-- SERVICES -->
+<section class="section services-bg" id="services">
+  <div class="section-eyebrow">What We Do</div>
+  <h2 class="section-headline">Every stitch, cut & <em>engrave</em> — done right.</h2>
+  <p class="section-sub">We offer a full range of custom design services for businesses, sports teams, events, and individuals across the Bitterroot Valley and Missoula area.</p>
+  <div class="services-grid">
+    <div class="service-card featured">
+      <div class="service-card-img">
+        <img src="jjs_hoodies.png" alt="Custom embroidered hoodies" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <div class="service-num">01</div>
+      <h3 class="service-title" style="color:var(--cream);">Custom Embroidery</h3>
+      <p class="service-desc" style="color:var(--gray-light);">Logos, monograms, and designs stitched directly onto apparel, hats, bags, towels, and more. Perfect for business branding, team gear, and personalized gifts.</p>
+      <a href="#contact" class="service-link" style="color:var(--terra);">Get a Quote →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-card-img">
+        <img src="jjs_tumblers.png" alt="Laser engraved tumblers" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <div class="service-num">02</div>
+      <h3 class="service-title">Laser Engraving</h3>
+      <p class="service-desc">Custom tumblers, leather patches, 3D wood signs, ornaments, and charcuterie boards. One-of-a-kind gifts and branded merchandise that lasts forever.</p>
+      <a href="#contact" class="service-link">Get a Quote →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-card-img">
+        <img src="jjs_breathe_shirt.png" alt="DTF vinyl shirt design" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <div class="service-num">03</div>
+      <h3 class="service-title">Vinyl & DTF Transfers</h3>
+      <p class="service-desc">Vibrant, full-color designs on t-shirts, crewnecks, and apparel. Ideal for events, small runs, and custom orders where embroidery isn't the right fit.</p>
+      <a href="#contact" class="service-link">Get a Quote →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-card-img">
+        <img src="jjs_leather_patch.png" alt="Custom leather patch hat" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <div class="service-num">04</div>
+      <h3 class="service-title">Leather Patches</h3>
+      <p class="service-desc">Laser-engraved leather patches for hats, bags, and apparel. A premium finishing touch that elevates any custom product into something truly special.</p>
+      <a href="#contact" class="service-link">Get a Quote →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-card-img">
+        <img src="jjs_gifts.png" alt="Custom engraved gift box" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <div class="service-num">05</div>
+      <h3 class="service-title">Custom Gifts & Occasions</h3>
+      <p class="service-desc">Birthdays, anniversaries, weddings, retirements — we create personalized pieces for life's biggest moments. Unique gifts made right here in the valley.</p>
+      <a href="#contact" class="service-link">Get a Quote →</a>
+    </div>
+    <div class="service-card">
+      <div class="service-card-img">
+        <img src="jjs_moose_hat.png" alt="Custom embroidered moose hat" style="width:100%;height:100%;object-fit:cover;display:block;">
+      </div>
+      <div class="service-num">06</div>
+      <h3 class="service-title">Business Branding</h3>
+      <p class="service-desc">Uniforms, branded apparel, promo items, and team gear for Missoula-area businesses. We handle small runs to full team orders — no minimum too small.</p>
+      <a href="#contact" class="service-link">Get a Quote →</a>
+    </div>
+  </div>
+      <a href="#contact" class="service-link">Get a Quote →</a>
+    </div>
+  </div>
+</section>
+
+<!-- HOOP DIVIDER — signature element -->
+<div class="hoop-divider">
+  <div class="hoop-line"></div>
+  <svg class="hoop-svg" width="64" height="64" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <circle cx="32" cy="32" r="28" stroke="#2C1810" stroke-width="3"/>
+    <circle cx="32" cy="32" r="22" stroke="#2C1810" stroke-width="1.5" stroke-dasharray="3 3"/>
+    <path d="M20 32 Q32 20 44 32 Q32 44 20 32Z" stroke="#C4704F" stroke-width="2" fill="none"/>
+    <circle cx="32" cy="32" r="3" fill="#C4704F"/>
+    <rect x="28" y="2" width="8" height="6" rx="1" fill="#2C1810"/>
+    <rect x="28" y="56" width="8" height="6" rx="1" fill="#2C1810"/>
+  </svg>
+  <div class="hoop-line"></div>
+</div>
+
+<!-- WHY US -->
+<section class="section why-bg" id="about">
+  <div class="section-eyebrow" style="color:var(--sage);border-color:var(--sage);">Why JJ's</div>
+  <h2 class="section-headline" style="color:var(--cream);">A local business that treats <em>your</em> order like it matters.</h2>
+  <p class="section-sub" style="color:var(--gray-light);">We're not a print shop factory. We're Jana, our family, and our machines — right here in Stevensville. Every order gets our full attention.</p>
+  <div class="why-grid">
+    <div class="why-card">
+      <span class="why-icon">👨‍👩‍👧</span>
+      <div class="why-title">Small & Family-Owned</div>
+      <p class="why-text">When you order from JJ's, you're working directly with us — not a call center or a fulfillment warehouse. That means real communication and real accountability on every order.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">📐</span>
+      <div class="why-title">No Job Too Big or Too Small</div>
+      <p class="why-text">One custom tumbler for a birthday or 50 embroidered jackets for your team — we treat every order with the same care. You won't be turned away for a small quantity.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">💬</span>
+      <div class="why-title">Communication Is Our Priority</div>
+      <p class="why-text">We believe you should know exactly where your order stands, what it'll look like, and when it'll be done. No surprises. No ghosting. Just honest updates from start to finish.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">🎨</span>
+      <div class="why-title">Truly Personalized Designs</div>
+      <p class="why-text">We don't do cookie-cutter. Every design is built around your vision — your colors, your logo, your occasion. Bring us an idea and we'll help you make it real.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">💵</span>
+      <div class="why-title">Honest, Upfront Pricing</div>
+      <p class="why-text">You'll know the cost before we start. No hidden fees, no surprise charges at pickup. We give you a clear quote and we stick to it.</p>
+    </div>
+    <div class="why-card">
+      <span class="why-icon">🏔️</span>
+      <div class="why-title">Local to the Bitterroot Valley</div>
+      <p class="why-text">We live and work in the same valley you do. Supporting JJ's keeps dollars local and means you can actually come see us in Stevensville if you have questions.</p>
+    </div>
+  </div>
+</section>
+
+<!-- PORTFOLIO -->
+<section class="section portfolio-bg" id="portfolio">
+  <div class="section-eyebrow">Our Work</div>
+  <h2 class="section-headline">Recent <em>Projects</em></h2>
+  <p class="section-sub" style="margin-bottom:40px;">Every piece below was made right here in Stevensville. Click any image to learn more about the project.</p>
+  <div class="portfolio-grid">
+    <div class="port-item">
+      <div class="port-item-inner" style="background:none;">
+        <img src="jjs_moose_hat.png" alt="Custom embroidered moose hat" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="port-overlay">
+        <div class="port-overlay-text">Custom embroidered moose hat — Montana pride</div>
+      </div>
+    </div>
+    <div class="port-item">
+      <div class="port-item-inner" style="background:none;">
+        <img src="jjs_tumblers.png" alt="Laser engraved Dexter tumblers" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="port-overlay">
+        <div class="port-overlay-text">Personalized laser-engraved tumblers</div>
+      </div>
+    </div>
+    <div class="port-item">
+      <div class="port-item-inner" style="background:none;">
+        <img src="jjs_leather_patch.png" alt="Leather patch hat" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="port-overlay">
+        <div class="port-overlay-text">Custom leather patch — "Even Cowboys Need Jesus"</div>
+      </div>
+    </div>
+    <div class="port-item">
+      <div class="port-item-inner" style="background:none;">
+        <img src="jjs_gifts.png" alt="Custom engraved gift set" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="port-overlay">
+        <div class="port-overlay-text">Wyatt — custom engraved gift set</div>
+      </div>
+    </div>
+    <div class="port-item">
+      <div class="port-item-inner" style="background:none;">
+        <img src="jjs_breathe_shirt.png" alt="Just breathe embroidered shirt" style="width:100%;height:100%;object-fit:cover;">
+      </div>
+      <div class="port-overlay">
+        <div class="port-overlay-text">"Just Breathe" — custom embroidered tee</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- REVIEWS -->
+<section class="testimonial-section" id="reviews">
+  <div class="testimonial-left">
+    <div class="section-eyebrow">What People Say</div>
+    <div class="testimonial-stars">★★★★★</div>
+    <blockquote class="testimonial-quote">
+      These guys are the best — very knowledgeable. I bought a product that had a problem months later and they exchanged it cheerfully and quickly. In today's world where customer service has become rare, they absolutely rock.
+    </blockquote>
+    <div class="testimonial-author">
+      <div class="testimonial-avatar">R</div>
+      <div>
+        <div class="testimonial-name">Rick Wilson</div>
+        <div class="testimonial-detail">Local Guide · Google Review</div>
+      </div>
+    </div>
+  </div>
+  <div class="testimonial-right">
+    <div class="review-summary">
+      <div class="review-big">5.0</div>
+      <div class="review-stars">★★★★★</div>
+      <div class="review-sub">10 Google Reviews · Perfect Rating</div>
+    </div>
+    <p class="review-note">Every single customer who has left a review gave JJ's 5 stars.<br>That's not luck — that's how we work.</p>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div>
+    <h2 class="cta-headline">Ready to bring your <em>idea to life?</em></h2>
+    <p class="cta-sub">Tell us what you're thinking — a design, a quantity, an occasion — and we'll get back to you with a clear quote. No pressure, no commitment. Just a conversation.</p>
+  </div>
+  <div class="cta-right">
+    <a href="mailto:quirkyjj@yahoo.com" class="btn-white">Send Us a Message</a>
+    <div class="cta-phone">
+      Or call us directly:<br>
+      <a href="tel:4065447935">(406) 544-7935</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-top">
+    <div>
+      <div class="footer-brand">JJ's <span>Quirky</span> Collective</div>
+      <p class="footer-tagline">Custom embroidery, vinyl design & laser engraving for businesses and individuals across Western Montana. Family owned, Stevensville based.</p>
+      <div class="footer-contact-item">📍 833 Pineview Dr, Stevensville, MT 59870</div>
+      <div class="footer-contact-item">📞 <a href="tel:4065447935" style="color:var(--gray-light);text-decoration:none;">(406) 544-7935</a></div>
+      <div class="footer-contact-item">✉️ quirkyjj@yahoo.com</div>
+    </div>
+    <div>
+      <div class="footer-col-title">Services</div>
+      <ul class="footer-links">
+        <li><a href="#">Custom Embroidery</a></li>
+        <li><a href="#">Laser Engraving</a></li>
+        <li><a href="#">Vinyl & DTF Transfers</a></li>
+        <li><a href="#">Leather Patches</a></li>
+        <li><a href="#">Custom Gifts</a></li>
+        <li><a href="#">Business Branding</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">Company</div>
+      <ul class="footer-links">
+        <li><a href="#">About Us</a></li>
+        <li><a href="#">Portfolio</a></li>
+        <li><a href="#">Blog</a></li>
+        <li><a href="#">Reviews</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <div class="footer-col-title">We Serve</div>
+      <ul class="footer-links">
+        <li><a href="#">Stevensville, MT</a></li>
+        <li><a href="#">Missoula, MT</a></li>
+        <li><a href="#">Hamilton, MT</a></li>
+        <li><a href="#">Bitterroot Valley</a></li>
+        <li><a href="#">Western Montana</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-legal">© 2026 JJ's Quirky Collective · Stevensville, Montana</div>
+    <div class="footer-badge">Site by GoJo Agency · Missoula, MT</div>
+  </div>
+</footer>
+
+</body>
+</html>
