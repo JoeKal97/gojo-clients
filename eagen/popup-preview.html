@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eagen Slide-In Panel — Video Version Preview</title>
+<style>
+  /* PREVIEW WRAPPER ONLY — remove in production */
+  body {
+    margin: 0;
+    font-family: 'Nunito Sans', sans-serif;
+    background: #111;
+    min-height: 100vh;
+  }
+  .preview-note {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255,255,255,0.08);
+    color: #666;
+    font-size: 11px;
+    padding: 7px 11px;
+    border-radius: 4px;
+    font-family: monospace;
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+
+<div class="preview-note">PREVIEW — slides from top-right at 5s or exit intent</div>
+
+<!-- ============================================================
+     PASTE EVERYTHING BELOW INTO WPCODE → HTML SNIPPET
+     Location: Site Wide Footer
+     Also: Disable the old Elementor popup (post 904) in
+     Elementor → Templates → Popups → toggle off "Free eBook"
+============================================================ -->
+
+<style>
+/* ---- Eagen Pattern-Interrupt Panel ------------------------- */
+#eagen-slidein {
+  position: fixed;
+  top: 76px;
+  right: 28px;
+  width: 300px;
+  z-index: 99999;
+  transform: translateY(calc(-100% - 140px));
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.5s ease;
+  opacity: 0;
+  font-family: 'Nunito Sans', sans-serif;
+  /* overflow visible so video bleeds below card */
+  overflow: visible;
+}
+
+#eagen-slidein.eagen-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+#eagen-slidein.eagen-dismissed {
+  transform: translateY(calc(-100% - 140px));
+  opacity: 0;
+  pointer-events: none;
+}
+
+/* The card itself */
+#eagen-slidein-card {
+  background: #0d0d0d;
+  border: 1px solid #252525;
+  border-top: 3px solid #E8601C;
+  border-radius: 8px;
+  box-shadow: 0 12px 48px rgba(0,0,0,0.7);
+  position: relative;
+  overflow: visible;
+}
+
+/* Inner padding */
+#eagen-slidein-inner {
+  padding: 22px 22px 18px 22px;
+  position: relative;
+}
+
+/* Close button */
+#eagen-slidein-close {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #444;
+  padding: 4px;
+  line-height: 1;
+  transition: color 0.2s;
+  z-index: 2;
+}
+#eagen-slidein-close:hover { color: #E8601C; }
+
+/* Eyebrow */
+.esl-eyebrow {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #E8601C;
+  margin-bottom: 8px;
+}
+
+/* Headline */
+.esl-headline {
+  font-size: 15px;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+  margin-bottom: 7px;
+}
+
+/* Body */
+.esl-body {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.6;
+  margin-bottom: 16px;
+}
+
+/* Email input */
+.esl-input {
+  width: 100%;
+  box-sizing: border-box;
+  background: #1a1a1a;
+  border: 1px solid #2e2e2e;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 13px;
+  font-family: 'Nunito Sans', sans-serif;
+  padding: 10px 13px;
+  outline: none;
+  transition: border-color 0.2s;
+  margin-bottom: 9px;
+}
+.esl-input:focus { border-color: #E8601C; }
+.esl-input::placeholder { color: #444; }
+
+/* Submit button */
+.esl-btn {
+  width: 100%;
+  background: #E8601C;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  padding: 11px;
+  cursor: pointer;
+  font-family: 'Nunito Sans', sans-serif;
+  transition: background 0.2s;
+}
+.esl-btn:hover { background: #c9511a; }
+
+/* Privacy */
+.esl-privacy {
+  font-size: 10px;
+  color: #383838;
+  margin-top: 9px;
+  text-align: center;
+}
+
+/* ---- VIDEO AREA -------------------------------------------- */
+#eagen-video-wrap {
+  /* sits below the card, bleeds out */
+  position: relative;
+  height: 180px;
+  margin-top: -1px;
+  border-radius: 0 0 8px 8px;
+  overflow: hidden;
+  background: #0a0a0a;
+  border: 1px solid #252525;
+  border-top: none;
+}
+
+#eagen-video-wrap video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  display: block;
+}
+
+/* Gradient fade — card into video */
+#eagen-video-fade {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 40px;
+  background: linear-gradient(to bottom, #0d0d0d, transparent);
+  pointer-events: none;
+}
+
+/* "From Jessie" name tag */
+#eagen-name-tag {
+  position: absolute;
+  bottom: 10px;
+  left: 14px;
+  font-size: 11px;
+  font-weight: 700;
+  color: rgba(255,255,255,0.55);
+  letter-spacing: 0.05em;
+}
+
+/* ---- SUCCESS STATE ----------------------------------------- */
+#eagen-slidein-success {
+  display: none;
+  text-align: center;
+  padding: 28px 22px 24px;
+}
+.esl-success-check {
+  width: 42px;
+  height: 42px;
+  background: #E8601C;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 14px;
+}
+.esl-success-check svg { display: block; }
+.esl-success-msg {
+  font-size: 15px;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 6px;
+}
+.esl-success-sub {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  #eagen-slidein {
+    right: 12px;
+    left: 12px;
+    top: 66px;
+    width: auto;
+  }
+}
+</style>
+
+<!-- The Panel -->
+<div id="eagen-slidein" role="dialog" aria-label="Market Report Signup" aria-modal="true">
+  <div id="eagen-slidein-card">
+
+    <div id="eagen-slidein-inner">
+      <button id="eagen-slidein-close" aria-label="Close">
+        <svg width="13" height="13" viewBox="0 0 13 13" fill="none">
+          <path d="M1 1L12 12M12 1L1 12" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <!-- Form state -->
+      <div id="eagen-slidein-form-wrap">
+        <div class="esl-eyebrow">Missoula Commercial Market</div>
+        <div class="esl-headline">Find Out What's Happening in Your Local Commercial Market</div>
+        <div class="esl-body">Get quarterly insights on property prices, trends, and investment opportunities.</div>
+        <input type="email" class="esl-input" id="eagen-slidein-email" placeholder="Enter your email" autocomplete="email" required />
+        <button class="esl-btn" id="eagen-slidein-submit">Sign Up</button>
+        <div class="esl-privacy">We respect your privacy.</div>
+      </div>
+
+      <!-- Success state -->
+      <div id="eagen-slidein-success">
+        <div class="esl-success-check">
+          <svg width="18" height="18" viewBox="0 0 18 18" fill="none">
+            <path d="M3 9L7.5 13.5L15 5" stroke="white" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="esl-success-msg">You're on the list.</div>
+        <div class="esl-success-sub">Watch for your first quarterly report.</div>
+      </div>
+    </div>
+
+    <!-- Video bleeds below card -->
+    <div id="eagen-video-wrap">
+      <!--
+        PRODUCTION NOTE:
+        Upload Eagen_Pop_Up_Wave.mp4 to WordPress Media Library,
+        copy the URL, and replace the src below.
+        Example: src="https://jessieeagen.com/wp-content/uploads/2026/07/Eagen_Pop_Up_Wave.mp4"
+      -->
+      <video
+        src="Eagen_Pop_Up_Wave.mp4"
+        autoplay
+        muted
+        loop
+        playsinline
+        preload="auto"
+        aria-hidden="true"
+      ></video>
+      <div id="eagen-video-fade"></div>
+      <div id="eagen-name-tag">Jessie Eagen · Missoula CRE</div>
+    </div>
+
+  </div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  var STORAGE_KEY = 'eagen_slidein_v2';
+  var DELAY_MS    = 5000;
+
+  try { if (sessionStorage.getItem(STORAGE_KEY)) return; } catch(e) {}
+
+  var panel      = document.getElementById('eagen-slidein');
+  var closeBtn   = document.getElementById('eagen-slidein-close');
+  var submitBtn  = document.getElementById('eagen-slidein-submit');
+  var emailInput = document.getElementById('eagen-slidein-email');
+  var formWrap   = document.getElementById('eagen-slidein-form-wrap');
+  var successEl  = document.getElementById('eagen-slidein-success');
+  var video      = panel.querySelector('video');
+
+  var shown = false;
+
+  function showPanel() {
+    if (shown) return;
+    shown = true;
+    panel.classList.add('eagen-visible');
+    // Start video on show
+    if (video) { video.currentTime = 0; video.play().catch(function(){}); }
+  }
+
+  function dismissPanel() {
+    panel.classList.add('eagen-dismissed');
+    panel.classList.remove('eagen-visible');
+    if (video) video.pause();
+    try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch(e) {}
+  }
+
+  // Trigger 1: 5-second delay
+  var timer = setTimeout(showPanel, DELAY_MS);
+
+  // Trigger 2: Exit intent — mouse leaves top of viewport
+  document.addEventListener('mouseleave', function(e) {
+    if (e.clientY <= 0) { clearTimeout(timer); showPanel(); }
+  });
+
+  // Close button
+  closeBtn.addEventListener('click', dismissPanel);
+
+  // Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && shown) dismissPanel();
+  });
+
+  // Submit
+  submitBtn.addEventListener('click', function() {
+    var email = emailInput.value.trim();
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      emailInput.style.borderColor = '#c0392b';
+      emailInput.focus();
+      return;
+    }
+    emailInput.style.borderColor = '#2e2e2e';
+    submitBtn.textContent = '...';
+    submitBtn.disabled = true;
+
+    var formData = new FormData();
+    formData.append('action', 'elementor_pro_forms_send_form');
+    formData.append('post_id', '104');
+    formData.append('form_id', 'ad6d1bc');
+    formData.append('form_fields[email]', email);
+
+    fetch(window.location.origin + '/wp-admin/admin-ajax.php', {
+      method: 'POST',
+      body: formData,
+      credentials: 'same-origin'
+    })
+    .then(function() { showSuccess(); })
+    .catch(function() { showSuccess(); });
+  });
+
+  function showSuccess() {
+    formWrap.style.display = 'none';
+    successEl.style.display = 'block';
+    try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch(e) {}
+    setTimeout(dismissPanel, 3500);
+  }
+
+  emailInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') submitBtn.click();
+  });
+
+})();
+</script>
+
+<!-- ============================================================
+     END OF WPCODE SNIPPET
+============================================================ -->
+
+<!-- PREVIEW AUTO-SHOW (remove in production) -->
+<script>
+  setTimeout(function() {
+    document.getElementById('eagen-slidein').classList.add('eagen-visible');
+    var v = document.querySelector('#eagen-slidein video');
+    if (v) v.play().catch(function(){});
+  }, 600);
+</script>
+
+</body>
+</html>
