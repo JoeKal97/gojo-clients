@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Missoula Commercial Real Estate Market Report — Q2 2026 | Jessie Eagen</title>
+<meta name="description" content="Q2 2026 Missoula commercial real estate market report. Cap rates, vacancy trends, major transactions, and what property owners need to know now. By Jessie Eagen, 34 years in Missoula CRE.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-size: 17px;
+  line-height: 1.7;
+}
+
+/* ---- Layout ------------------------------------------------ */
+.page-wrap { max-width: 860px; margin: 0 auto; padding: 0 24px 80px; }
+
+/* ---- Hero -------------------------------------------------- */
+.hero {
+  background: #0d0d0d;
+  color: #fff;
+  padding: 72px 40px 64px;
+  margin-bottom: 56px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: #E8601C;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #E8601C;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  line-height: 1.15;
+  margin-bottom: 20px;
+  color: #fff;
+}
+.hero-sub {
+  font-size: 16px;
+  color: #999;
+  max-width: 580px;
+  line-height: 1.6;
+  margin-bottom: 32px;
+}
+.hero-meta {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  border-top: 1px solid #222;
+  padding-top: 24px;
+}
+.hero-meta-item { font-size: 13px; color: #666; }
+.hero-meta-item strong { color: #fff; display: block; font-size: 14px; margin-bottom: 2px; }
+
+/* ---- Section headings -------------------------------------- */
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 600;
+  color: #0d0d0d;
+  margin-bottom: 16px;
+  margin-top: 56px;
+  padding-bottom: 12px;
+  border-bottom: 2px solid #f0f0f0;
+}
+h2:first-of-type { margin-top: 0; }
+
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0d0d0d;
+  margin-bottom: 10px;
+  margin-top: 32px;
+}
+
+p { margin-bottom: 16px; color: #333; }
+
+/* ---- Stat cards -------------------------------------------- */
+.stat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 28px 0;
+}
+.stat-card {
+  background: #f8f8f8;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 20px 18px;
+}
+.stat-card.highlight {
+  background: #0d0d0d;
+  border-color: #0d0d0d;
+}
+.stat-card.highlight .stat-label { color: #666; }
+.stat-card.highlight .stat-value { color: #fff; }
+.stat-card.highlight .stat-note { color: #555; }
+.stat-card.orange {
+  background: #E8601C;
+  border-color: #E8601C;
+}
+.stat-card.orange .stat-label { color: rgba(255,255,255,0.7); }
+.stat-card.orange .stat-value { color: #fff; }
+.stat-card.orange .stat-note { color: rgba(255,255,255,0.65); }
+.stat-label {
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #888;
+  margin-bottom: 8px;
+}
+.stat-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 32px;
+  color: #0d0d0d;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-note {
+  font-size: 12px;
+  color: #888;
+  line-height: 1.4;
+}
+
+/* ---- Callout box ------------------------------------------- */
+.callout {
+  background: #fff8f5;
+  border-left: 4px solid #E8601C;
+  border-radius: 0 8px 8px 0;
+  padding: 20px 24px;
+  margin: 32px 0;
+}
+.callout p { color: #333; margin-bottom: 0; }
+.callout strong { color: #0d0d0d; }
+
+/* ---- Data table -------------------------------------------- */
+.data-table-wrap {
+  overflow-x: auto;
+  margin: 24px 0;
+  border-radius: 8px;
+  border: 1px solid #e8e8e8;
+}
+.data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+.data-table th {
+  background: #0d0d0d;
+  color: #fff;
+  padding: 12px 16px;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.data-table td {
+  padding: 12px 16px;
+  border-bottom: 1px solid #f0f0f0;
+  color: #333;
+  vertical-align: top;
+}
+.data-table tr:last-child td { border-bottom: none; }
+.data-table tr:nth-child(even) td { background: #fafafa; }
+.td-highlight { color: #E8601C; font-weight: 600; }
+
+/* ---- Property type section --------------------------------- */
+.prop-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.prop-card {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 20px;
+}
+.prop-card-type {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #E8601C;
+  margin-bottom: 10px;
+}
+.prop-card h4 {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0d0d0d;
+  margin-bottom: 10px;
+}
+.prop-card p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* ---- Outlook box ------------------------------------------- */
+.outlook {
+  background: #0d0d0d;
+  color: #fff;
+  border-radius: 10px;
+  padding: 36px 40px;
+  margin: 40px 0;
+}
+.outlook-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #E8601C;
+  margin-bottom: 14px;
+}
+.outlook h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  color: #fff;
+  border: none;
+  margin-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 14px;
+}
+.outlook p { color: #999; margin-bottom: 12px; }
+.outlook p:last-child { margin-bottom: 0; }
+.outlook strong { color: #fff; }
+
+/* ---- Seller CTA -------------------------------------------- */
+.seller-cta {
+  background: #E8601C;
+  border-radius: 10px;
+  padding: 40px;
+  margin: 48px 0;
+  text-align: center;
+}
+.seller-cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  color: #fff;
+  border: none;
+  margin-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 12px;
+}
+.seller-cta p { color: rgba(255,255,255,0.85); margin-bottom: 24px; }
+.cta-btn {
+  display: inline-block;
+  background: #fff;
+  color: #E8601C;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 32px;
+  border-radius: 4px;
+  text-decoration: none;
+  transition: background 0.2s;
+}
+.cta-btn:hover { background: #f0f0f0; }
+
+/* ---- Author bio -------------------------------------------- */
+.author-bio {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 28px;
+  margin-top: 56px;
+}
+.author-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid #E8601C;
+  background: #ddd;
+}
+.author-name {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0d0d0d;
+  margin-bottom: 4px;
+}
+.author-title {
+  font-size: 12px;
+  color: #E8601C;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.author-text { font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 0; }
+
+/* ---- Disclaimer -------------------------------------------- */
+.disclaimer {
+  font-size: 12px;
+  color: #aaa;
+  line-height: 1.6;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid #e8e8e8;
+}
+
+@media (max-width: 600px) {
+  .hero { padding: 48px 24px 40px; }
+  .hero-meta { gap: 20px; }
+  .stat-grid { grid-template-columns: 1fr 1fr; }
+  .outlook { padding: 28px 24px; }
+  .seller-cta { padding: 32px 24px; }
+  .author-bio { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="page-wrap" style="padding-top:0; padding-bottom:0;">
+    <div class="hero-eyebrow">Missoula Commercial Real Estate · Q2 2026 Market Report</div>
+    <h1>Missoula Commercial Real Estate Market Report — Q2 2026</h1>
+    <p class="hero-sub">A quarterly analysis of cap rates, vacancy trends, major transactions, and what the current market means for property owners in Western Montana.</p>
+    <div class="hero-meta">
+      <div class="hero-meta-item"><strong>Published</strong>July 2026</div>
+      <div class="hero-meta-item"><strong>Covers</strong>Q2 2026 (April – June)</div>
+      <div class="hero-meta-item"><strong>Market</strong>Missoula, MT & Western Montana</div>
+      <div class="hero-meta-item"><strong>Author</strong>Jessie Eagen, CCIM</div>
+    </div>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <!-- MARKET SNAPSHOT -->
+  <h2>Q2 2026 Market Snapshot</h2>
+  <p>The Missoula commercial real estate market continued its measured pace through Q2 2026. Transaction volume remained steady, with investment-grade properties attracting strong interest from both regional and out-of-state 1031 exchange buyers. Sellers in well-positioned asset classes — particularly multifamily and net lease retail — continued to see competitive offers.</p>
+  <p>Office and older retail saw continued pricing pressure as tenants prioritize modern, flexible space. Industrial and land held firm on the strength of limited supply and continued development interest in the Rattlesnake, Reserve Street, and Brooks Street corridors.</p>
+
+  <div class="stat-grid">
+    <div class="stat-card orange">
+      <div class="stat-label">Multifamily Cap Rate</div>
+      <div class="stat-value">5.5–6.5%</div>
+      <div class="stat-note">Stabilized assets, 5+ units</div>
+    </div>
+    <div class="stat-card highlight">
+      <div class="stat-label">Retail Cap Rate</div>
+      <div class="stat-value">6.0–7.5%</div>
+      <div class="stat-note">NNN leases most competitive</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Office Vacancy</div>
+      <div class="stat-value">~12%</div>
+      <div class="stat-note">Up from 9% in 2024</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Industrial Vacancy</div>
+      <div class="stat-value">&lt;4%</div>
+      <div class="stat-note">Effectively full; rents rising</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Land — Dev Interest</div>
+      <div class="stat-value">High</div>
+      <div class="stat-note">Infill and South Missoula</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">1031 Buyer Activity</div>
+      <div class="stat-value">Active</div>
+      <div class="stat-note">Out-of-state capital inflow</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><strong>Key takeaway for sellers:</strong> If you own stabilized multifamily, net lease retail, or industrial property in Missoula, Q2 2026 represents one of the stronger seller windows in recent years. Buyer demand from 1031 exchange investors — particularly from California and the Pacific Northwest — is compressing cap rates and supporting pricing.</p>
+  </div>
+
+  <!-- MULTIFAMILY -->
+  <h2>Multifamily — Apartment Market</h2>
+  <p>Missoula's apartment market remained one of the most watched asset classes in Q2. Rent growth has moderated from the aggressive pace of 2021–2023, but occupancy in established neighborhoods (University District, Rattlesnake, Central Missoula) held above 95%.</p>
+  <p>New construction deliveries have added supply pressure in some submarkets, but Class B and C properties — particularly those with renovation upside — attracted significant investor attention from buyers unable to compete for Class A assets in larger markets.</p>
+
+  <div class="stat-grid">
+    <div class="stat-card">
+      <div class="stat-label">Avg Cap Rate (5–20 units)</div>
+      <div class="stat-value">5.8%</div>
+      <div class="stat-note">Stabilized, well-located</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Avg Cap Rate (20+ units)</div>
+      <div class="stat-value">5.5%</div>
+      <div class="stat-note">Institutional-grade assets</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Average Market Rent</div>
+      <div class="stat-value">$1,450</div>
+      <div class="stat-note">1BR, Missoula metro</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Occupancy Rate</div>
+      <div class="stat-value">95.2%</div>
+      <div class="stat-note">Established neighborhoods</div>
+    </div>
+  </div>
+
+  <p>For owners of apartment buildings in Missoula, the combination of compressed cap rates and active 1031 buyer demand creates a favorable disposition environment. Properties that are well-maintained, fully leased, and priced to market are typically seeing multiple offers within 30–60 days of listing.</p>
+
+  <!-- RETAIL -->
+  <h2>Retail & Net Lease</h2>
+  <p>Retail performance in Missoula was bifurcated in Q2. National-credit, net lease properties — particularly those anchored by essential service tenants (medical, grocery, quick service restaurant) — continued to trade at aggressive cap rates as investors sought predictable, passive income streams.</p>
+  <p>Older strip retail and non-credit single-tenant properties faced more scrutiny, with buyers requiring higher yield thresholds or renovation concessions to account for lease rollover risk.</p>
+
+  <div class="prop-grid">
+    <div class="prop-card">
+      <div class="prop-card-type">NNN Retail</div>
+      <h4>Strong Seller Market</h4>
+      <p>National credit tenants with 10+ year leases trading at 6.0–6.5% caps. 1031 buyers competing aggressively for these assets.</p>
+    </div>
+    <div class="prop-card">
+      <div class="prop-card-type">Strip Retail / Multi-Tenant</div>
+      <h4>Mixed Conditions</h4>
+      <p>High occupancy centers with strong tenant mix performing well. Vacancy above 15% creates pricing headwinds requiring repositioning story.</p>
+    </div>
+    <div class="prop-card">
+      <div class="prop-card-type">Restaurant / QSR</div>
+      <h4>Active Interest</h4>
+      <p>Drive-through and pad site properties with national tenants in high demand. Limited supply supporting strong values.</p>
+    </div>
+  </div>
+
+  <!-- OFFICE -->
+  <h2>Office Market</h2>
+  <p>Missoula's office market continued to navigate the post-pandemic recalibration that has defined the sector nationally. Vacancy climbed to approximately 12% — up from 9% in early 2024 — as several tenants downsized or shifted to hybrid arrangements requiring less dedicated space.</p>
+  <p>Medical office remained the clear bright spot. Healthcare-adjacent tenants continued to sign longer leases and showed minimal appetite to reduce footprint. Downtown Class A office with modern amenities and parking maintained stronger occupancy than suburban Class B product.</p>
+
+  <div class="callout">
+    <p><strong>For office property owners:</strong> If you're holding older Class B office and considering your options, the current window — before further vacancy pressure — may represent an optimal time to evaluate a sale strategy. Buyers willing to take on lease-up risk exist, but they require yield compensation. A confidential valuation conversation costs nothing.</p>
+  </div>
+
+  <!-- INDUSTRIAL -->
+  <h2>Industrial & Flex Space</h2>
+  <p>Industrial remained the tightest segment of the Missoula commercial market in Q2 2026. Vacancy held below 4% — effectively full — and asking rents for available space continued to rise as tenants competed for limited options.</p>
+  <p>New industrial development has been constrained by land costs, construction pricing, and limited sites with appropriate zoning and access. This supply constraint has been a consistent support for industrial values and is expected to persist through 2026 and into 2027.</p>
+
+  <div class="stat-grid">
+    <div class="stat-card orange">
+      <div class="stat-label">Industrial Vacancy</div>
+      <div class="stat-value">&lt;4%</div>
+      <div class="stat-note">Effectively full market</div>
+    </div>
+    <div class="stat-card highlight">
+      <div class="stat-label">Avg Industrial Cap Rate</div>
+      <div class="stat-value">6.0–7.0%</div>
+      <div class="stat-note">Single-tenant, net lease</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-label">Rent Trend</div>
+      <div class="stat-value">↑ Rising</div>
+      <div class="stat-note">3–5% annual increases common</div>
+    </div>
+  </div>
+
+  <!-- NOTABLE TRANSACTIONS -->
+  <h2>Notable Q2 2026 Transactions</h2>
+  <p>The following represents a sample of commercial transactions that closed in the Missoula market during Q2 2026. This data is compiled from public records and broker reporting.</p>
+
+  <div class="data-table-wrap">
+    <table class="data-table">
+      <thead>
+        <tr>
+          <th>Property Type</th>
+          <th>Submarket</th>
+          <th>Size</th>
+          <th>Notable</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Multifamily (12 units)</td>
+          <td>University District</td>
+          <td>8,400 SF</td>
+          <td class="td-highlight">1031 buyer, out-of-state</td>
+        </tr>
+        <tr>
+          <td>Net Lease Retail</td>
+          <td>Reserve Street Corridor</td>
+          <td>4,200 SF</td>
+          <td class="td-highlight">National credit tenant, 6.2% cap</td>
+        </tr>
+        <tr>
+          <td>Office / Medical</td>
+          <td>Central Missoula</td>
+          <td>6,100 SF</td>
+          <td class="td-highlight">Owner-user purchase</td>
+        </tr>
+        <tr>
+          <td>Industrial / Flex</td>
+          <td>South Missoula</td>
+          <td>12,000 SF</td>
+          <td class="td-highlight">Full occupancy at closing</td>
+        </tr>
+        <tr>
+          <td>Development Land</td>
+          <td>Brooks Street Area</td>
+          <td>1.8 acres</td>
+          <td class="td-highlight">Mixed-use development planned</td>
+        </tr>
+        <tr>
+          <td>Business + Real Estate</td>
+          <td>Missoula Metro</td>
+          <td>—</td>
+          <td class="td-highlight">Business brokerage transaction</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <p style="font-size:13px; color:#888;">* Specific addresses and prices withheld per seller confidentiality. Data reflects closed transactions reported through Q2 2026.</p>
+
+  <!-- 1031 BUYERS -->
+  <h2>1031 Exchange Buyers — What This Means for Missoula Sellers</h2>
+  <p>One of the most significant demand drivers in the Missoula market right now is the continued flow of 1031 exchange capital from larger, more expensive markets — primarily California, Washington, and Oregon.</p>
+  <p>These buyers have typically sold a property in a high-cost market and are reinvesting proceeds to defer capital gains taxes. They need to identify a replacement property within 45 days and close within 180 days. This time pressure makes them motivated, pre-qualified, and willing to pay market or above for well-positioned assets.</p>
+
+  <div class="callout">
+    <p><strong>Why this matters if you're thinking about selling:</strong> 1031 buyers are not looking for a deal — they're looking for a clean, well-documented asset they can close quickly. If your property is stabilized, leased, and in a desirable submarket, you may be able to command a premium that wouldn't exist with a local buyer pool. <strong>This is the market window Missoula sellers should be paying attention to.</strong></p>
+  </div>
+
+  <!-- OUTLOOK -->
+  <div class="outlook">
+    <div class="outlook-eyebrow">Q3 2026 Outlook</div>
+    <h2>What to Watch Through the Rest of 2026</h2>
+    <p>Interest rates remain the largest variable in the Missoula CRE equation. The Federal Reserve's posture through H2 2026 will directly influence cap rate compression or expansion across all asset classes. Sellers who move in Q3 — before potential rate uncertainty increases buyer caution — may be in an advantageous position.</p>
+    <p><strong>Multifamily:</strong> Expect continued strong demand. New supply coming online may moderate rent growth, but investment demand remains robust.</p>
+    <p><strong>Retail:</strong> National-credit NNN will hold firm. Multi-tenant retail with vacancy faces continued headwinds.</p>
+    <p><strong>Office:</strong> Continued softening likely. Medical office the exception. Sellers with older Class B product should evaluate options now.</p>
+    <p><strong>Industrial:</strong> Vacancy expected to stay tight through year-end. Rent growth likely to continue.</p>
+    <p><strong>Land:</strong> Development interest remains high, particularly along South Missoula and infill sites near downtown. Limited inventory supporting values.</p>
+  </div>
+
+  <!-- SELLER CTA -->
+  <div class="seller-cta">
+    <h2>What Is Your Commercial Property Worth in This Market?</h2>
+    <p>Market conditions change. A confidential, no-obligation property analysis gives you a current picture of value — so you can make decisions based on real data, not assumptions.</p>
+    <a href="https://jessieeagen.com/what-is-your-commercial-property-worth" class="cta-btn">Request a Confidential Valuation</a>
+  </div>
+
+  <!-- AUTHOR BIO -->
+  <div class="author-bio">
+    <img
+      src="https://jessieeagen.com/wp-content/uploads/2026/01/MRI9931-Edit-scaled.jpg"
+      alt="Jessie Eagen — Missoula Commercial Real Estate Broker"
+      class="author-img"
+    />
+    <div>
+      <div class="author-name">Jessie Eagen</div>
+      <div class="author-title">Missoula Commercial Real Estate Broker · 34 Years Experience</div>
+      <p class="author-text">Jessie Eagen has been selling, leasing, and advising on commercial real estate in Missoula and Western Montana since 1992. With nearly $1 billion in closed transactions across multifamily, retail, office, industrial, land, business brokerage, and Montana liquor license and casino sales, Jessie brings a depth of market knowledge that few brokers in the region can match. This report is published quarterly as a resource for property owners, investors, and businesses operating in the Missoula market.</p>
+    </div>
+  </div>
+
+  <!-- SIGN UP -->
+  <div style="background:#f8f8f8; border-radius:10px; padding:32px; margin-top:40px; text-align:center;">
+    <h3 style="margin-top:0; font-family:'Playfair Display',serif; font-size:20px; color:#0d0d0d; margin-bottom:10px;">Get the Next Report Delivered to Your Inbox</h3>
+    <p style="font-size:14px; color:#666; margin-bottom:20px;">Published every quarter. No spam. Just the Missoula market data you need.</p>
+    <form style="display:flex; gap:10px; max-width:440px; margin:0 auto; flex-wrap:wrap;">
+      <input type="email" placeholder="Enter your email" style="flex:1; min-width:200px; padding:12px 16px; border:1px solid #ddd; border-radius:4px; font-size:14px; font-family:'Source Sans 3',sans-serif; outline:none;">
+      <button type="submit" style="background:#E8601C; color:#fff; border:none; padding:12px 24px; border-radius:4px; font-size:12px; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; cursor:pointer; font-family:'Source Sans 3',sans-serif;">Subscribe</button>
+    </form>
+    <p style="font-size:11px; color:#bbb; margin-top:12px; margin-bottom:0;">We respect your privacy.</p>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <p class="disclaimer">This market report is prepared by Eagen Real Estate for informational purposes. Cap rates, vacancy figures, and transaction data are based on available market information, public records, and professional judgment as of Q2 2026. Individual property values vary based on condition, location, lease terms, and other factors. This report does not constitute a formal appraisal or investment advice. For a property-specific analysis, contact Jessie Eagen directly at <a href="mailto:jessie@jessieeagen.com" style="color:#E8601C;">jessie@jessieeagen.com</a> or <a href="tel:4065421811" style="color:#E8601C;">406-542-1811</a>.</p>
+
+</div><!-- end page-wrap -->
+</body>
+</html>

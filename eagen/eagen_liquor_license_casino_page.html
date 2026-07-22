@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Montana Liquor License & Casino Sales | Jessie Eagen</title>
+<meta name="description" content="Montana liquor license transfers and casino sales broker. Jessie Eagen has handled more Montana liquor license and casino transactions than any broker in Western Montana. Confidential, experienced representation.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-size: 17px;
+  line-height: 1.7;
+}
+.page-wrap { max-width: 860px; margin: 0 auto; padding: 0 24px 80px; }
+
+/* Hero */
+.hero {
+  background: #0d0d0d;
+  padding: 80px 40px 72px;
+  margin-bottom: 64px;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: #E8601C;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #E8601C;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 4.5vw, 48px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 20px;
+  max-width: 700px;
+}
+.hero-sub {
+  font-size: 17px;
+  color: #888;
+  max-width: 600px;
+  line-height: 1.65;
+  margin-bottom: 36px;
+}
+.hero-trust {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding-top: 28px;
+  border-top: 1px solid #1e1e1e;
+}
+.hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #666;
+}
+
+/* Headings */
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #0d0d0d;
+  margin-bottom: 16px;
+  margin-top: 56px;
+}
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0d0d0d;
+  margin-bottom: 10px;
+  margin-top: 28px;
+}
+p { margin-bottom: 16px; color: #333; }
+
+/* Callout */
+.callout {
+  background: #fff8f5;
+  border-left: 4px solid #E8601C;
+  border-radius: 0 8px 8px 0;
+  padding: 20px 24px;
+  margin: 32px 0;
+}
+.callout p { margin-bottom: 0; }
+
+/* Dark callout */
+.callout-dark {
+  background: #0d0d0d;
+  border-radius: 10px;
+  padding: 32px 36px;
+  margin: 32px 0;
+}
+.callout-dark p { color: #999; margin-bottom: 10px; }
+.callout-dark p:last-child { margin-bottom: 0; }
+.callout-dark strong { color: #fff; }
+
+/* Two column */
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 28px 0;
+}
+.col-card {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 24px;
+}
+.col-card-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #E8601C;
+  margin-bottom: 12px;
+}
+.col-card h3 {
+  margin-top: 0;
+  font-size: 17px;
+  margin-bottom: 12px;
+}
+.col-card p {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.65;
+  margin-bottom: 0;
+}
+
+/* Process steps */
+.process {
+  counter-reset: steps;
+  margin: 28px 0;
+}
+.process-step {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+  align-items: flex-start;
+}
+.process-num {
+  width: 40px;
+  height: 40px;
+  background: #E8601C;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.process-content h3 {
+  margin-top: 0;
+  margin-bottom: 6px;
+  font-size: 16px;
+}
+.process-content p {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 0;
+  line-height: 1.6;
+}
+
+/* FAQ */
+.faq { margin: 28px 0; }
+.faq-item {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 20px 0;
+}
+.faq-item:first-child { border-top: 1px solid #f0f0f0; }
+.faq-q {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0d0d0d;
+  margin-bottom: 10px;
+}
+.faq-a {
+  font-size: 14px;
+  color: #555;
+  line-height: 1.65;
+}
+
+/* Lead form */
+.lead-form-wrap {
+  background: #0d0d0d;
+  border-radius: 12px;
+  padding: 44px 48px;
+  margin: 48px 0;
+  position: relative;
+}
+.lead-form-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: #E8601C;
+  border-radius: 12px 12px 0 0;
+}
+.form-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.form-sub {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 28px;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group.full { grid-column: 1 / -1; }
+.form-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555;
+}
+.form-input, .form-select, .form-textarea {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Source Sans 3', sans-serif;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: #E8601C; }
+.form-input::placeholder, .form-textarea::placeholder { color: #444; }
+.form-select { appearance: none; cursor: pointer; }
+.form-select option { background: #1a1a1a; }
+.form-textarea { resize: vertical; min-height: 90px; }
+.form-submit {
+  width: 100%;
+  background: #E8601C;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  padding: 16px;
+  cursor: pointer;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+  margin-top: 6px;
+}
+.form-submit:hover { background: #c9511a; }
+.form-privacy {
+  font-size: 12px;
+  color: #444;
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* Author */
+.author-bio {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 28px;
+  margin-top: 56px;
+}
+.author-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid #E8601C;
+}
+.author-name { font-size: 16px; font-weight: 700; color: #0d0d0d; margin-bottom: 4px; }
+.author-title {
+  font-size: 12px;
+  color: #E8601C;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+.author-text { font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 0; }
+
+.disclaimer {
+  font-size: 12px;
+  color: #aaa;
+  line-height: 1.6;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid #e8e8e8;
+}
+
+@media (max-width: 640px) {
+  .hero { padding: 52px 24px 44px; }
+  .two-col { grid-template-columns: 1fr; }
+  .lead-form-wrap { padding: 32px 24px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .author-bio { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="page-wrap" style="padding-top:0; padding-bottom:0;">
+    <div class="hero-eyebrow">Montana Liquor License & Casino Sales · Specialist Broker</div>
+    <h1>Montana Liquor License & Casino Sales</h1>
+    <p class="hero-sub">Montana liquor license transfers and casino sales are among the most complex — and most valuable — commercial transactions in the state. Jessie Eagen has handled more of these transactions in Western Montana than any other broker.</p>
+    <div class="hero-trust">
+      <div class="hero-trust-item">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#E8601C" stroke-width="1.5"/><path d="M5 8L7 10L11 6" stroke="#E8601C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        34 years in Montana CRE
+      </div>
+      <div class="hero-trust-item">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#E8601C" stroke-width="1.5"/><path d="M5 8L7 10L11 6" stroke="#E8601C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Liquor license & casino specialist
+      </div>
+      <div class="hero-trust-item">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#E8601C" stroke-width="1.5"/><path d="M5 8L7 10L11 6" stroke="#E8601C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        100% confidential
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <!-- INTRO -->
+  <h2>Why Montana Liquor License & Casino Transactions Are Different</h2>
+  <p>A Montana liquor license is not just a permit — it's a valuable, transferable asset that can be worth hundreds of thousands of dollars depending on type, location, and market conditions. Casino licenses in Montana are similarly complex, combining gaming regulations, real property, business operations, and liquor licensing into a single transaction that requires a broker with specific experience.</p>
+  <p>Most commercial real estate brokers in Montana have never handled a liquor license transfer or casino sale. The regulatory requirements, Montana Department of Revenue involvement, transfer timelines, and valuation methodology are entirely different from a standard property transaction. Getting it wrong costs sellers money and can kill deals.</p>
+
+  <div class="callout">
+    <p><strong>Jessie Eagen has handled liquor license transfers and casino sales across Western Montana for over three decades.</strong> If you are considering selling a bar, restaurant, casino, or any business that includes a Montana liquor license — this is a conversation worth having before you talk to anyone else.</p>
+  </div>
+
+  <!-- LIQUOR LICENSE SECTION -->
+  <h2>Montana Liquor License Sales & Transfers</h2>
+  <p>Montana issues a limited number of liquor licenses, which means existing licenses carry significant market value. Unlike most states, Montana restricts new license issuance — so buyers who want to operate a licensed establishment must acquire an existing license through a transfer process regulated by the Montana Department of Revenue.</p>
+
+  <div class="two-col">
+    <div class="col-card">
+      <div class="col-card-label">All-Beverages License</div>
+      <h3>Full Liquor License</h3>
+      <p>The most valuable and sought-after license type in Montana. Allows sale of beer, wine, and spirits. Quota-controlled by county population, creating significant scarcity value in growing markets like Missoula.</p>
+    </div>
+    <div class="col-card">
+      <div class="col-card-label">Beer & Wine License</div>
+      <h3>Beer & Wine Only</h3>
+      <p>Less restrictive quota than all-beverages licenses but still subject to transfer regulations. Common in restaurants, taprooms, and wine bars. Lower value than all-beverages but still a significant asset.</p>
+    </div>
+    <div class="col-card">
+      <div class="col-card-label">Resort License</div>
+      <h3>Resort & Recreational</h3>
+      <p>Available to qualified resort facilities in Montana. Different transfer rules and valuation methodology. Requires specific operational criteria to maintain eligibility.</p>
+    </div>
+    <div class="col-card">
+      <div class="col-card-label">Catering Endorsement</div>
+      <h3>Catering & Special Events</h3>
+      <p>Endorsements attached to existing licenses that add value and operational flexibility. Important to buyers evaluating the full scope of what they're acquiring.</p>
+    </div>
+  </div>
+
+  <h3>What Determines a Montana Liquor License's Value?</h3>
+  <p>Several factors drive liquor license valuation in Montana:</p>
+  <p><strong>License type</strong> — All-beverages licenses command the highest prices due to quota restrictions. <strong>County quota status</strong> — In counties near or at their population-based quota, license values are highest because new licenses cannot be issued. Missoula County's growth has maintained strong license values. <strong>Current business operations</strong> — A license attached to an operating, profitable business is worth more than a dormant or recently-transferred license. <strong>Physical location</strong> — Licenses tied to established, high-traffic locations carry location premium. <strong>Market timing</strong> — Buyer demand from out-of-state operators entering the Montana market has supported license values in recent years.</p>
+
+  <div class="callout-dark">
+    <strong style="color:#E8601C; font-size:13px; letter-spacing:0.1em; text-transform:uppercase;">Important:</strong>
+    <p>Montana liquor license transfers must be approved by the Montana Department of Revenue Liquor Control Division. The process involves application review, background checks, and a mandatory waiting period. An experienced broker manages this process to avoid delays and ensure compliance — mistakes in the transfer process can void a transaction or result in license suspension.</p>
+  </div>
+
+  <!-- CASINO SECTION -->
+  <h2>Montana Casino Sales</h2>
+  <p>Montana is one of a small number of states that permits video gambling machines (VGMs) in licensed establishments. A Montana casino — whether a standalone gaming room, a bar with machines, or a full-service gaming operation — represents a unique combination of real property value, business enterprise value, gaming machine revenue, and liquor license value.</p>
+  <p>Selling a Montana casino requires a broker who understands all four components and can present the asset in a way that attracts qualified buyers, satisfies Montana Department of Justice gaming requirements, and structures the transaction correctly.</p>
+
+  <div class="two-col">
+    <div class="col-card">
+      <div class="col-card-label">What Buyers Are Looking For</div>
+      <h3>Casino Buyer Profile</h3>
+      <p>Experienced Montana casino buyers evaluate machine count, location traffic, revenue per machine, lease terms or real property ownership, liquor license type, and staff retention. Having this data organized and presented professionally accelerates the sale and supports pricing.</p>
+    </div>
+    <div class="col-card">
+      <div class="col-card-label">Common Seller Mistakes</div>
+      <h3>What to Avoid</h3>
+      <p>Selling without gaming revenue documentation. Listing publicly before confidential buyer outreach. Undervaluing the liquor license as a separate asset. Not accounting for machine lease obligations in the transaction structure. These mistakes cost sellers money.</p>
+    </div>
+  </div>
+
+  <!-- PROCESS -->
+  <h2>How the Process Works</h2>
+  <div class="process">
+    <div class="process-step">
+      <div class="process-num">1</div>
+      <div class="process-content">
+        <h3>Confidential Consultation</h3>
+        <p>We start with a private conversation about the business, the license, and what you're trying to accomplish. No obligation, no public exposure. Everything shared is strictly confidential.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">2</div>
+      <div class="process-content">
+        <h3>Valuation & Pricing Strategy</h3>
+        <p>We establish a realistic market value for the license, the business, and any real property involved. Pricing is based on current market data, comparable transactions, and buyer demand — not guesswork.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">3</div>
+      <div class="process-content">
+        <h3>Confidential Buyer Outreach</h3>
+        <p>We reach the qualified buyer pool — including out-of-state operators actively looking for Montana opportunities — without public listing exposure that can disrupt your business operations or tip off competitors.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">4</div>
+      <div class="process-content">
+        <h3>Transaction Management</h3>
+        <p>From offer to closing, we manage the process — including Montana DOR liquor license transfer application, gaming compliance documentation, and coordination with buyers, attorneys, and lenders.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">5</div>
+      <div class="process-content">
+        <h3>Closing</h3>
+        <p>A properly structured Montana liquor license or casino transaction closes with all regulatory approvals in place, license transfer completed, and both parties protected by a well-drafted purchase agreement.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- FAQ -->
+  <h2>Frequently Asked Questions</h2>
+  <div class="faq">
+    <div class="faq-item">
+      <div class="faq-q">How long does a Montana liquor license transfer take?</div>
+      <div class="faq-a">The Montana Department of Revenue Liquor Control Division typically takes 60–120 days to process a license transfer application, depending on application completeness, background check timelines, and current workload. Planning for 90 days from executed purchase agreement to license transfer completion is prudent. An experienced broker ensures the application is complete and correctly filed to avoid unnecessary delays.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Can a Montana liquor license be sold separately from the business?</div>
+      <div class="faq-a">Yes — in most cases a Montana liquor license can be transferred independently of the underlying business or real property. However, the license must be transferred to a qualified buyer who meets DOR requirements, and the license cannot simply be held dormant indefinitely. The specifics depend on license type and circumstances. This is one of the reasons working with an experienced broker matters.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">What is a Montana all-beverages license worth?</div>
+      <div class="faq-a">Values vary significantly based on county, location, and market conditions. In Missoula and Western Montana, all-beverages licenses have historically traded in a wide range depending on quota status and operational factors. A current market analysis specific to your license type and location is the only reliable answer — which is exactly what a confidential consultation with Jessie Eagen provides.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Do I need a real estate broker or a business broker to sell my casino?</div>
+      <div class="faq-a">You need both — or a broker experienced in both disciplines. A Montana casino sale involves real property (or a commercial lease), a business enterprise, gaming machine assets, and a liquor license. Jessie Eagen brings commercial real estate brokerage and business brokerage experience to these transactions, ensuring all components are properly valued and structured.</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">Will selling my casino or bar be public knowledge?</div>
+      <div class="faq-a">Not if you don't want it to be. Confidential marketing — reaching qualified buyers without public listing exposure — is standard practice for liquor license and casino sales. Protecting your employees, customers, and business operations during the sale process is a priority.</div>
+    </div>
+  </div>
+
+  <!-- LEAD FORM -->
+  <div class="lead-form-wrap">
+    <div class="form-headline">Start a Confidential Conversation</div>
+    <p class="form-sub">Tell me about your situation and I'll reach out within one business day. Everything is strictly confidential.</p>
+    <div class="form-grid">
+      <div class="form-group">
+        <label class="form-label">Your Name</label>
+        <input type="text" class="form-input" placeholder="First and last name" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone Number</label>
+        <input type="tel" class="form-input" placeholder="Best number to reach you" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" placeholder="Your email" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">What Are You Looking to Do?</label>
+        <select class="form-select">
+          <option value="" disabled selected>Select one</option>
+          <option>Sell a Montana liquor license</option>
+          <option>Sell a casino or gaming operation</option>
+          <option>Sell a bar or restaurant with liquor license</option>
+          <option>Buy a Montana liquor license</option>
+          <option>Buy a casino or gaming operation</option>
+          <option>Get a valuation on my license or business</option>
+          <option>Other / Not sure yet</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label class="form-label">Tell me a little about your situation (optional)</label>
+        <textarea class="form-textarea" placeholder="License type, location, business type, timeline — whatever is relevant. Everything is confidential."></textarea>
+      </div>
+    </div>
+    <button class="form-submit">Start a Confidential Conversation</button>
+    <p class="form-privacy">🔒 All information is kept strictly confidential. No public exposure without your explicit approval.</p>
+  </div>
+
+  <!-- AUTHOR BIO -->
+  <div class="author-bio">
+    <img src="https://jessieeagen.com/wp-content/uploads/2026/01/MRI9931-Edit-scaled.jpg" alt="Jessie Eagen — Montana Liquor License & Casino Broker" class="author-img" />
+    <div>
+      <div class="author-name">Jessie Eagen</div>
+      <div class="author-title">Montana Commercial Real Estate & Business Broker · 34 Years</div>
+      <p class="author-text">Jessie Eagen has been brokering commercial real estate and business sales in Montana since 1992, including liquor license transfers and casino sales across Western Montana. With nearly $1 billion in closed transactions and deep relationships in the Montana buyer and seller community, Jessie brings a depth of experience to these specialized transactions that few brokers in the region can match. If you are considering selling a liquor license, casino, or licensed establishment in Montana, Jessie Eagen is the first call worth making.</p>
+    </div>
+  </div>
+
+  <p class="disclaimer">Eagen Real Estate is a licensed Montana real estate and business brokerage. Liquor license transfer advice is based on practical transaction experience and does not constitute legal advice. Buyers and sellers should consult with qualified Montana legal counsel for regulatory compliance questions. Contact Jessie Eagen at <a href="mailto:jessie@jessieeagen.com" style="color:#E8601C;">jessie@jessieeagen.com</a> or <a href="tel:4065421811" style="color:#E8601C;">406-542-1811</a>.</p>
+
+</div>
+</body>
+</html>

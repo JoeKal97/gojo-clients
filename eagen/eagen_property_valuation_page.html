@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>What Is My Commercial Property Worth in Missoula? | Jessie Eagen</title>
+<meta name="description" content="Find out what your commercial property is worth in Missoula, MT. Free, confidential market analysis from Jessie Eagen — 34 years in Missoula commercial real estate, nearly $1B in closed transactions.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-size: 17px;
+  line-height: 1.7;
+}
+.page-wrap { max-width: 860px; margin: 0 auto; padding: 0 24px 80px; }
+
+/* ---- Hero -------------------------------------------------- */
+.hero {
+  background: #0d0d0d;
+  padding: 80px 40px 72px;
+  margin-bottom: 64px;
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: #E8601C;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #E8601C;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 4.5vw, 48px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 20px;
+  max-width: 700px;
+}
+.hero-sub {
+  font-size: 17px;
+  color: #888;
+  max-width: 580px;
+  line-height: 1.65;
+  margin-bottom: 36px;
+}
+.hero-trust {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding-top: 28px;
+  border-top: 1px solid #1e1e1e;
+}
+.hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #666;
+}
+.hero-trust-item svg { flex-shrink: 0; }
+
+/* ---- Section headings -------------------------------------- */
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #0d0d0d;
+  margin-bottom: 16px;
+  margin-top: 56px;
+}
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0d0d0d;
+  margin-bottom: 10px;
+  margin-top: 32px;
+}
+p { margin-bottom: 16px; color: #333; }
+
+/* ---- Lead form --------------------------------------------- */
+.lead-form-wrap {
+  background: #0d0d0d;
+  border-radius: 12px;
+  padding: 44px 48px;
+  margin: 0 0 56px;
+  position: relative;
+  overflow: hidden;
+}
+.lead-form-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: #E8601C;
+}
+.form-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.form-sub {
+  font-size: 14px;
+  color: #666;
+  margin-bottom: 28px;
+  line-height: 1.6;
+}
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group.full { grid-column: 1 / -1; }
+.form-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555;
+}
+.form-input, .form-select, .form-textarea {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Source Sans 3', sans-serif;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus {
+  border-color: #E8601C;
+}
+.form-input::placeholder, .form-textarea::placeholder { color: #444; }
+.form-select { appearance: none; cursor: pointer; }
+.form-select option { background: #1a1a1a; }
+.form-textarea { resize: vertical; min-height: 90px; }
+.form-submit {
+  width: 100%;
+  background: #E8601C;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  padding: 16px;
+  cursor: pointer;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+  margin-top: 6px;
+}
+.form-submit:hover { background: #c9511a; }
+.form-privacy {
+  font-size: 12px;
+  color: #444;
+  text-align: center;
+  margin-top: 12px;
+}
+
+/* ---- How it works ------------------------------------------ */
+.steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 20px;
+  margin: 28px 0;
+}
+.step-card {
+  padding: 24px;
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  position: relative;
+}
+.step-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 40px;
+  color: #f0f0f0;
+  line-height: 1;
+  margin-bottom: 12px;
+}
+.step-title {
+  font-size: 15px;
+  font-weight: 600;
+  color: #0d0d0d;
+  margin-bottom: 8px;
+}
+.step-text { font-size: 13px; color: #666; line-height: 1.6; }
+
+/* ---- Valuation factors ------------------------------------- */
+.factors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin: 24px 0;
+}
+.factor-card {
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 18px;
+}
+.factor-icon {
+  width: 36px;
+  height: 36px;
+  background: rgba(232,96,28,0.1);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 12px;
+}
+.factor-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #0d0d0d;
+  margin-bottom: 6px;
+}
+.factor-text { font-size: 12px; color: #666; line-height: 1.5; }
+
+/* ---- Cap rate explainer ------------------------------------ */
+.callout {
+  background: #fff8f5;
+  border-left: 4px solid #E8601C;
+  border-radius: 0 8px 8px 0;
+  padding: 20px 24px;
+  margin: 32px 0;
+}
+.callout p { color: #333; margin-bottom: 0; }
+
+/* ---- Property types --------------------------------------- */
+.prop-type-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+.prop-type-card {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 22px;
+  transition: border-color 0.2s;
+}
+.prop-type-card:hover { border-color: #E8601C; }
+.prop-type-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #E8601C;
+  margin-bottom: 10px;
+}
+.prop-type-card h4 {
+  font-size: 16px;
+  font-weight: 600;
+  color: #0d0d0d;
+  margin-bottom: 8px;
+}
+.prop-type-card p {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* ---- Why Jessie ------------------------------------------- */
+.credentials {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 28px 0;
+}
+.cred-card {
+  text-align: center;
+  padding: 24px 16px;
+  background: #f8f8f8;
+  border-radius: 8px;
+}
+.cred-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #E8601C;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.cred-label {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.4;
+}
+
+/* ---- Testimonial ------------------------------------------ */
+.testimonial {
+  background: #0d0d0d;
+  border-radius: 10px;
+  padding: 36px 40px;
+  margin: 40px 0;
+  position: relative;
+}
+.testimonial::before {
+  content: '\201C';
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
+  color: #E8601C;
+  position: absolute;
+  top: 16px;
+  left: 32px;
+  line-height: 1;
+  opacity: 0.6;
+}
+.testimonial-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: #ddd;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  padding-top: 24px;
+}
+.testimonial-attr {
+  font-size: 13px;
+  color: #666;
+}
+.testimonial-attr strong { color: #E8601C; }
+
+/* ---- Second CTA ------------------------------------------- */
+.bottom-cta {
+  background: #E8601C;
+  border-radius: 10px;
+  padding: 44px 40px;
+  text-align: center;
+  margin: 48px 0;
+}
+.bottom-cta h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  color: #fff;
+  margin-top: 0;
+  margin-bottom: 12px;
+}
+.bottom-cta p { color: rgba(255,255,255,0.85); margin-bottom: 0; font-size: 16px; }
+.cta-btn-white {
+  display: inline-block;
+  background: #fff;
+  color: #E8601C;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 15px 36px;
+  border-radius: 4px;
+  text-decoration: none;
+  margin-top: 24px;
+  transition: background 0.2s;
+}
+.cta-btn-white:hover { background: #f5f5f5; }
+
+.disclaimer {
+  font-size: 12px;
+  color: #bbb;
+  line-height: 1.6;
+  margin-top: 40px;
+  padding-top: 24px;
+  border-top: 1px solid #e8e8e8;
+}
+
+@media (max-width: 640px) {
+  .hero { padding: 52px 24px 44px; }
+  .lead-form-wrap { padding: 32px 24px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .testimonial { padding: 28px 24px; }
+  .bottom-cta { padding: 32px 24px; }
+}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="page-wrap" style="padding-top:0; padding-bottom:0;">
+    <div class="hero-eyebrow">Commercial Property Valuation · Missoula, Montana</div>
+    <h1>What Is My Commercial Property Worth in Missoula?</h1>
+    <p class="hero-sub">Before you make any decision about your property — whether you're considering selling, refinancing, or simply want to know where you stand — you need an accurate, current picture of value. Not an online estimate. A real analysis from someone who knows this market.</p>
+    <div class="hero-trust">
+      <div class="hero-trust-item">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#E8601C" stroke-width="1.5"/><path d="M5 8L7 10L11 6" stroke="#E8601C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        34 years in Missoula CRE
+      </div>
+      <div class="hero-trust-item">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#E8601C" stroke-width="1.5"/><path d="M5 8L7 10L11 6" stroke="#E8601C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Nearly $1 billion in closed transactions
+      </div>
+      <div class="hero-trust-item">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#E8601C" stroke-width="1.5"/><path d="M5 8L7 10L11 6" stroke="#E8601C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        100% confidential
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <!-- LEAD FORM -->
+  <div class="lead-form-wrap">
+    <div class="form-headline">Request Your Confidential Property Analysis</div>
+    <p class="form-sub">Tell me a little about your property and I'll reach out within one business day. No obligation. No sales pitch. Just a straight answer about what your property is worth in today's market.</p>
+    <div class="form-grid">
+      <div class="form-group">
+        <label class="form-label">Your Name</label>
+        <input type="text" class="form-input" placeholder="First and last name" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone Number</label>
+        <input type="tel" class="form-input" placeholder="Best number to reach you" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" placeholder="Your email" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Property Type</label>
+        <select class="form-select">
+          <option value="" disabled selected>Select property type</option>
+          <option>Apartment Building / Multifamily</option>
+          <option>Retail / Strip Center</option>
+          <option>Office Building</option>
+          <option>Industrial / Warehouse / Flex</option>
+          <option>Net Lease (NNN) Property</option>
+          <option>Development Land</option>
+          <option>Business + Real Estate</option>
+          <option>Liquor License / Casino</option>
+          <option>Mixed Use</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label class="form-label">Property Address or General Location</label>
+        <input type="text" class="form-input" placeholder="Address or neighborhood (e.g. Reserve Street, University District)" />
+      </div>
+      <div class="form-group full">
+        <label class="form-label">Anything else I should know? (optional)</label>
+        <textarea class="form-textarea" placeholder="Current occupancy, lease terms, reason for inquiry — whatever is relevant. Everything shared is confidential."></textarea>
+      </div>
+    </div>
+    <button class="form-submit">Request My Confidential Valuation</button>
+    <p class="form-privacy">🔒 All information is kept strictly confidential and used only to prepare your property analysis.</p>
+  </div>
+
+  <!-- HOW COMMERCIAL PROPERTY IS VALUED -->
+  <h2>How Commercial Property Is Valued in Missoula</h2>
+  <p>Commercial property valuation is fundamentally different from residential. Your neighbor's house sale has almost no bearing on what your commercial building is worth. Commercial values are driven by income, market cap rates, replacement cost, and comparable sales — and the weighting of each depends on the property type.</p>
+  <p>Here's how the three primary valuation approaches work:</p>
+
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <div class="step-title">Income Approach</div>
+      <p class="step-text">The most common method for income-producing properties. Value is derived by dividing the property's Net Operating Income (NOI) by the prevailing market cap rate. A property generating $60,000 NOI at a 6% cap rate is worth approximately $1,000,000.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <div class="step-title">Sales Comparison</div>
+      <p class="step-text">Value is benchmarked against recent sales of comparable properties in the same market. This approach works best when there are sufficient comparable transactions — which requires genuine market knowledge, not just MLS access.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <div class="step-title">Cost Approach</div>
+      <p class="step-text">Estimates what it would cost to replace the property at today's construction costs, minus depreciation, plus land value. Most applicable for special-use properties or new construction where income data is limited.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><strong>What online estimates get wrong:</strong> Automated valuation tools (Zillow, LoopNet estimates, AI tools) apply broad algorithms that don't account for Missoula's specific submarket dynamics, lease terms, tenant quality, local cap rate compression, or the 1031 buyer demand currently active in this market. A number from an algorithm is not a valuation — it's a starting point for a conversation.</p>
+  </div>
+
+  <!-- FACTORS THAT AFFECT VALUE -->
+  <h2>Factors That Affect Your Property's Value</h2>
+  <p>No two commercial properties are identical. Here are the variables that most significantly influence what a buyer will pay for your asset in the current Missoula market:</p>
+
+  <div class="factors-grid">
+    <div class="factor-card">
+      <div class="factor-icon">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2L11.5 7H16.5L12.5 10.5L14 15.5L9 12.5L4 15.5L5.5 10.5L1.5 7H6.5L9 2Z" stroke="#E8601C" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="factor-title">Lease Terms & Tenant Quality</div>
+      <p class="factor-text">Long-term leases with creditworthy tenants command premium pricing. Month-to-month or near-expiry leases introduce risk that buyers price in.</p>
+    </div>
+    <div class="factor-card">
+      <div class="factor-icon">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><rect x="2" y="2" width="14" height="14" rx="2" stroke="#E8601C" stroke-width="1.4"/><path d="M6 9H12M9 6V12" stroke="#E8601C" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+      <div class="factor-title">Current Occupancy</div>
+      <p class="factor-text">Stabilized, fully-leased properties trade at tighter cap rates than vacant or partially-occupied buildings. Vacancy is the single biggest value detractor.</p>
+    </div>
+    <div class="factor-card">
+      <div class="factor-icon">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M9 2v14M2 9h14" stroke="#E8601C" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+      <div class="factor-title">Location & Submarket</div>
+      <p class="factor-text">Reserve Street, University District, and downtown Missoula command different pricing than rural or secondary locations. Submarket matters enormously.</p>
+    </div>
+    <div class="factor-card">
+      <div class="factor-icon">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M3 15L9 3L15 15H3Z" stroke="#E8601C" stroke-width="1.4" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="factor-title">Property Condition</div>
+      <p class="factor-text">Deferred maintenance, aging mechanical systems, and roof condition all reduce buyer appetite or require price concessions to compensate.</p>
+    </div>
+    <div class="factor-card">
+      <div class="factor-icon">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><circle cx="9" cy="9" r="7" stroke="#E8601C" stroke-width="1.4"/><path d="M9 6v3l2 2" stroke="#E8601C" stroke-width="1.4" stroke-linecap="round"/></svg>
+      </div>
+      <div class="factor-title">Market Cap Rates</div>
+      <p class="factor-text">Cap rates in Missoula shift with interest rates and investor demand. In Q2 2026, cap rate compression from 1031 buyer activity is supporting values.</p>
+    </div>
+    <div class="factor-card">
+      <div class="factor-icon">
+        <svg width="18" height="18" viewBox="0 0 18 18" fill="none"><path d="M2 14l4-4 3 3 4-5 3 3" stroke="#E8601C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="factor-title">Recent Comparable Sales</div>
+      <p class="factor-text">What similar properties have sold for in the past 6–12 months in Missoula is the most direct market signal. This data requires access, not a Google search.</p>
+    </div>
+  </div>
+
+  <!-- CURRENT CAP RATES -->
+  <h2>Current Cap Rates in Missoula — Q2 2026</h2>
+  <p>Cap rates are the primary pricing mechanism for income-producing commercial property. Here's where Missoula market cap rates sat as of Q2 2026:</p>
+
+  <div class="prop-type-grid">
+    <div class="prop-type-card">
+      <div class="prop-type-label">Multifamily</div>
+      <h4>5.5% – 6.5%</h4>
+      <p>Stabilized apartment buildings, 5+ units. Tighter cap rates for larger, well-located assets with long-term tenants.</p>
+    </div>
+    <div class="prop-type-card">
+      <div class="prop-type-label">Net Lease Retail (NNN)</div>
+      <h4>6.0% – 7.0%</h4>
+      <p>National credit tenants trading at lower cap rates. Local / regional tenants at higher yields reflecting perceived risk.</p>
+    </div>
+    <div class="prop-type-card">
+      <div class="prop-type-label">Office</div>
+      <h4>7.0% – 8.5%</h4>
+      <p>Wider range reflecting uncertainty. Medical office tighter. Older Class B office seeing upward cap rate pressure.</p>
+    </div>
+    <div class="prop-type-card">
+      <div class="prop-type-label">Industrial / Flex</div>
+      <h4>6.0% – 7.0%</h4>
+      <p>Tight vacancy supporting values. Single-tenant net lease industrial at lower end of range.</p>
+    </div>
+    <div class="prop-type-card">
+      <div class="prop-type-label">Mixed Use</div>
+      <h4>6.5% – 8.0%</h4>
+      <p>Depends heavily on income mix, occupancy, and location. Blended rate between retail and residential components.</p>
+    </div>
+    <div class="prop-type-card">
+      <div class="prop-type-label">Development Land</div>
+      <h4>Priced per SF / Acre</h4>
+      <p>Land value driven by entitlements, zoning, location, and development potential rather than income capitalization.</p>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><strong>What this means in dollars:</strong> If you own a stabilized apartment building generating $80,000 in annual NOI, at a 6% cap rate that property is worth approximately $1,333,000. At a 5.5% cap rate — which active 1031 buyer demand has supported in Q2 — that same income stream is worth $1,454,000. A half-point in cap rate on that asset is a $121,000 difference in value. This is why current market timing matters.</p>
+  </div>
+
+  <!-- WHY JESSIE -->
+  <h2>Why Property Owners in Missoula Work With Jessie Eagen</h2>
+  <p>Most commercial property owners in Missoula only sell once or twice in their lifetime. The broker you choose — and the timing of that decision — has a direct, measurable impact on the outcome.</p>
+
+  <div class="credentials">
+    <div class="cred-card">
+      <div class="cred-value">34</div>
+      <div class="cred-label">Years in Missoula Commercial Real Estate</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-value">1,200+</div>
+      <div class="cred-label">Successful Transactions Completed</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-value">$1B</div>
+      <div class="cred-label">In Commercial Real Estate Sold</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-value">Local</div>
+      <div class="cred-label">Missoula-Based, Market-Specific Expertise</div>
+    </div>
+  </div>
+
+  <p>Jessie Eagen has been a commercial broker in Missoula since 1992 — before most of the current market participants arrived. That tenure means a deep transaction database, direct relationships with the active buyer pool (including 1031 investors who don't appear on LoopNet), and a reputation that creates off-market opportunities for sellers who want a quiet, controlled process.</p>
+
+  <!-- TESTIMONIAL -->
+  <div class="testimonial">
+    <p class="testimonial-text">Jessie knew the buyers before we listed. We closed in 47 days at full ask — no contingencies. I'd been sitting on the fence about selling for two years. I wish I'd made the call sooner.</p>
+    <div class="testimonial-attr">— <strong>Commercial Property Owner</strong>, Missoula, MT</div>
+  </div>
+
+  <!-- WHAT HAPPENS NEXT -->
+  <h2>What Happens After You Submit the Form</h2>
+  <div class="steps">
+    <div class="step-card">
+      <div class="step-num">01</div>
+      <div class="step-title">I review your submission</div>
+      <p class="step-text">Within one business day. I pull comparable sales data, current cap rate benchmarks, and any relevant market activity for your property type and location.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">02</div>
+      <div class="step-title">We have a brief conversation</div>
+      <p class="step-text">A 15–20 minute call to discuss the property in more detail — occupancy, lease terms, condition, and what you're trying to accomplish. No obligation to do anything.</p>
+    </div>
+    <div class="step-card">
+      <div class="step-num">03</div>
+      <div class="step-title">You get a straight answer</div>
+      <p class="step-text">A realistic range of value based on current market conditions. Not inflated to win a listing. Not deflated to manage expectations. Just an honest market analysis.</p>
+    </div>
+  </div>
+
+  <!-- BOTTOM CTA -->
+  <div class="bottom-cta">
+    <h2>Ready to Find Out What Your Property Is Worth?</h2>
+    <p>It starts with a conversation. Confidential, no-obligation, and based on 34 years of knowing this market.</p>
+    <a href="#" class="cta-btn-white" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">Request Your Free Valuation</a>
+  </div>
+
+  <!-- DISCLAIMER -->
+  <p class="disclaimer">Property valuation analyses provided by Eagen Real Estate are based on available market data, comparable transactions, and professional judgment. They do not constitute a formal appraisal as defined by USPAP. For financing or legal purposes, a licensed appraisal may be required. All information provided is kept strictly confidential. Contact Jessie Eagen at <a href="mailto:jessie@jessieeagen.com" style="color:#E8601C;">jessie@jessieeagen.com</a> or <a href="tel:4065421811" style="color:#E8601C;">406-542-1811</a>.</p>
+
+</div>
+</body>
+</html>
