@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eagen Slide-In Panel — No Video Version</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+  body {
+    margin: 0;
+    background: #111;
+    min-height: 100vh;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+  .preview-note {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    background: rgba(255,255,255,0.08);
+    color: #555;
+    font-size: 11px;
+    padding: 7px 11px;
+    border-radius: 4px;
+    font-family: monospace;
+    z-index: 1;
+  }
+</style>
+</head>
+<body>
+
+<div class="preview-note">PREVIEW — slides from top-right at 5s or exit intent</div>
+
+<!-- ============================================================
+     PASTE EVERYTHING BELOW INTO WPCODE → HTML SNIPPET
+     Location: Site Wide Footer
+     Also: Disable old Elementor popup (post 904) in
+     Elementor → Templates → Popups → toggle off "Free eBook"
+============================================================ -->
+
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap');
+
+#eagen-slidein {
+  position: fixed;
+  top: 76px;
+  right: 28px;
+  width: 320px;
+  z-index: 99999;
+  transform: translateY(calc(-100% - 140px));
+  transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+              opacity 0.5s ease;
+  opacity: 0;
+  font-family: 'Source Sans 3', sans-serif;
+}
+
+#eagen-slidein.eagen-visible {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+#eagen-slidein.eagen-dismissed {
+  transform: translateY(calc(-100% - 140px));
+  opacity: 0;
+  pointer-events: none;
+}
+
+#eagen-slidein-card {
+  background: #0d0d0d;
+  border: 1px solid #222;
+  border-top: 4px solid #E8601C;
+  border-radius: 10px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.75), 0 4px 20px rgba(0,0,0,0.4);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle texture overlay */
+#eagen-slidein-card::after {
+  content: '';
+  position: absolute;
+  top: 0; right: 0;
+  width: 180px;
+  height: 180px;
+  background: radial-gradient(circle at top right, rgba(232,96,28,0.06), transparent 70%);
+  pointer-events: none;
+}
+
+#eagen-slidein-inner {
+  padding: 32px 30px 28px;
+  position: relative;
+  z-index: 1;
+}
+
+/* Close button */
+#eagen-slidein-close {
+  position: absolute;
+  top: 14px;
+  right: 16px;
+  background: rgba(255,255,255,0.05);
+  border: 1px solid #2a2a2a;
+  border-radius: 50%;
+  cursor: pointer;
+  color: #555;
+  padding: 0;
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+  z-index: 2;
+}
+#eagen-slidein-close:hover {
+  background: rgba(232,96,28,0.15);
+  border-color: #E8601C;
+  color: #E8601C;
+}
+
+/* Brand mark */
+.esl-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 24px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #1e1e1e;
+}
+.esl-brand-logo {
+  width: 36px;
+  height: 36px;
+  background: rgba(232,96,28,0.12);
+  border: 1px solid rgba(232,96,28,0.3);
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: #E8601C;
+  font-weight: 700;
+  flex-shrink: 0;
+}
+.esl-brand-text {
+  font-size: 12px;
+  color: #555;
+  line-height: 1.3;
+}
+.esl-brand-text strong {
+  display: block;
+  color: #aaa;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+/* Eyebrow */
+.esl-eyebrow {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #E8601C;
+  margin-bottom: 10px;
+}
+
+/* Headline */
+.esl-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  font-weight: 600;
+  color: #ffffff;
+  line-height: 1.3;
+  margin-bottom: 12px;
+}
+
+/* Body */
+.esl-body {
+  font-size: 13px;
+  color: #777;
+  line-height: 1.65;
+  margin-bottom: 24px;
+}
+
+/* Value props */
+.esl-props {
+  list-style: none;
+  margin: 0 0 24px;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.esl-prop {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12px;
+  color: #888;
+}
+.esl-prop-dot {
+  width: 18px;
+  height: 18px;
+  background: rgba(232,96,28,0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+/* Divider */
+.esl-divider {
+  height: 1px;
+  background: #1e1e1e;
+  margin: 0 0 24px;
+}
+
+/* Email input */
+.esl-input-wrap {
+  position: relative;
+  margin-bottom: 10px;
+}
+.esl-input {
+  width: 100%;
+  box-sizing: border-box;
+  background: #161616;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Source Sans 3', sans-serif;
+  padding: 13px 16px;
+  outline: none;
+  transition: border-color 0.2s, background 0.2s;
+}
+.esl-input:focus {
+  border-color: #E8601C;
+  background: #1a1a1a;
+}
+.esl-input::placeholder { color: #3a3a3a; }
+
+/* Submit button */
+.esl-btn {
+  width: 100%;
+  background: #E8601C;
+  color: #fff;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 6px;
+  padding: 14px;
+  cursor: pointer;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s, transform 0.1s;
+  margin-bottom: 12px;
+}
+.esl-btn:hover { background: #c9511a; }
+.esl-btn:active { transform: scale(0.99); }
+
+/* Privacy */
+.esl-privacy {
+  font-size: 11px;
+  color: #333;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Success state */
+#eagen-slidein-success {
+  display: none;
+  text-align: center;
+  padding: 40px 30px;
+}
+.esl-success-ring {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  border: 2px solid #E8601C;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto 16px;
+}
+.esl-success-msg {
+  font-family: 'Playfair Display', serif;
+  font-size: 20px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.esl-success-sub {
+  font-size: 13px;
+  color: #555;
+  line-height: 1.5;
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+  #eagen-slidein {
+    right: 12px;
+    left: 12px;
+    top: 66px;
+    width: auto;
+  }
+}
+</style>
+
+<!-- The Panel -->
+<div id="eagen-slidein" role="dialog" aria-label="Market Report Signup" aria-modal="true">
+  <div id="eagen-slidein-card">
+    <div id="eagen-slidein-inner">
+
+      <button id="eagen-slidein-close" aria-label="Close">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none">
+          <path d="M1 1L9 9M9 1L1 9" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <!-- Form state -->
+      <div id="eagen-slidein-form-wrap">
+
+        <div class="esl-brand" style="align-items:center;">
+          <img src="https://jessieeagen.com/wp-content/uploads/2025/12/Black-Transparent-eagen.webp" alt="Eagen Real Estate" style="height:32px; width:auto; display:block; filter:brightness(0) invert(1);" />
+
+        </div>
+
+        <div class="esl-eyebrow">Quarterly Market Intelligence</div>
+        <div class="esl-headline">Find Out What's Happening in Your Local Commercial Market</div>
+        <div class="esl-body">Get quarterly insights on property prices, trends, and investment opportunities — straight from Missoula's most experienced commercial broker.</div>
+
+        <ul class="esl-props">
+          <li class="esl-prop">
+            <span class="esl-prop-dot">
+              <svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="#E8601C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Cap rates & market conditions
+          </li>
+          <li class="esl-prop">
+            <span class="esl-prop-dot">
+              <svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="#E8601C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Notable transactions & sales data
+          </li>
+          <li class="esl-prop">
+            <span class="esl-prop-dot">
+              <svg width="9" height="9" viewBox="0 0 9 9" fill="none"><path d="M1.5 4.5L3.5 6.5L7.5 2.5" stroke="#E8601C" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </span>
+            Investment opportunities in Western Montana
+          </li>
+        </ul>
+
+        <div class="esl-divider"></div>
+
+        <input
+          type="email"
+          class="esl-input"
+          id="eagen-slidein-email"
+          placeholder="Enter your email address"
+          autocomplete="email"
+          required
+        />
+        <button class="esl-btn" id="eagen-slidein-submit">Get the Quarterly Report</button>
+        <div class="esl-privacy">
+          <svg width="10" height="11" viewBox="0 0 10 11" fill="none"><rect x="1" y="4.5" width="8" height="6" rx="1" stroke="#333" stroke-width="1.2"/><path d="M3 4.5V3a2 2 0 014 0v1.5" stroke="#333" stroke-width="1.2" stroke-linecap="round"/></svg>
+          We respect your privacy.
+        </div>
+
+      </div>
+
+      <!-- Success state -->
+      <div id="eagen-slidein-success">
+        <div class="esl-success-ring">
+          <svg width="22" height="22" viewBox="0 0 22 22" fill="none">
+            <path d="M4 11L9 16L18 6" stroke="#E8601C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+        </div>
+        <div class="esl-success-msg">You're on the list.</div>
+        <div class="esl-success-sub">Watch for your first Missoula market report in your inbox.</div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<script>
+(function() {
+  'use strict';
+
+  var STORAGE_KEY = 'eagen_slidein_v3';
+  var DELAY_MS    = 5000;
+
+  try { if (sessionStorage.getItem(STORAGE_KEY)) return; } catch(e) {}
+
+  var panel      = document.getElementById('eagen-slidein');
+  var closeBtn   = document.getElementById('eagen-slidein-close');
+  var submitBtn  = document.getElementById('eagen-slidein-submit');
+  var emailInput = document.getElementById('eagen-slidein-email');
+  var formWrap   = document.getElementById('eagen-slidein-form-wrap');
+  var successEl  = document.getElementById('eagen-slidein-success');
+
+  var shown = false;
+
+  function showPanel() {
+    if (shown) return;
+    shown = true;
+    panel.classList.add('eagen-visible');
+  }
+
+  function dismissPanel() {
+    panel.classList.add('eagen-dismissed');
+    panel.classList.remove('eagen-visible');
+    try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch(e) {}
+  }
+
+  // Trigger 1: 5-second delay
+  var timer = setTimeout(showPanel, DELAY_MS);
+
+  // Trigger 2: Exit intent
+  document.addEventListener('mouseleave', function(e) {
+    if (e.clientY <= 0) { clearTimeout(timer); showPanel(); }
+  });
+
+  // Close button
+  closeBtn.addEventListener('click', dismissPanel);
+
+  // Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && shown) dismissPanel();
+  });
+
+  // Submit
+  submitBtn.addEventListener('click', function() {
+    var email = emailInput.value.trim();
+    if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      emailInput.style.borderColor = '#c0392b';
+      emailInput.focus();
+      return;
+    }
+    emailInput.style.borderColor = '#2a2a2a';
+    submitBtn.textContent = '...';
+    submitBtn.disabled = true;
+
+    var formData = new FormData();
+    formData.append('action', 'elementor_pro_forms_send_form');
+    formData.append('post_id', '104');
+    formData.append('form_id', 'ad6d1bc');
+    formData.append('form_fields[email]', email);
+
+    fetch(window.location.origin + '/wp-admin/admin-ajax.php', {
+      method: 'POST',
+      body: formData,
+      credentials: 'same-origin'
+    })
+    .then(function() { showSuccess(); })
+    .catch(function() { showSuccess(); });
+  });
+
+  function showSuccess() {
+    formWrap.style.display = 'none';
+    successEl.style.display = 'block';
+    try { sessionStorage.setItem(STORAGE_KEY, '1'); } catch(e) {}
+    setTimeout(dismissPanel, 4000);
+  }
+
+  emailInput.addEventListener('keydown', function(e) {
+    if (e.key === 'Enter') submitBtn.click();
+  });
+
+})();
+</script>
+
+<!-- ============================================================
+     END OF WPCODE SNIPPET
+============================================================ -->
+
+<!-- PREVIEW AUTO-SHOW -->
+<script>
+  setTimeout(function() {
+    document.getElementById('eagen-slidein').classList.add('eagen-visible');
+  }, 600);
+</script>
+
+</body>
+</html>
