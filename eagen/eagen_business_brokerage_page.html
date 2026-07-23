@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Montana Business Brokerage | Buy or Sell a Business in Missoula | Jessie Eagen</title>
+<meta name="description" content="Montana business brokerage services from Jessie Eagen — 34 years helping business owners in Missoula and Western Montana buy and sell businesses confidentially. Restaurants, retail, service businesses, and more.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-size: 17px;
+  line-height: 1.7;
+}
+.page-wrap { max-width: 860px; margin: 0 auto; padding: 0 24px 80px; }
+
+.hero {
+  background: #0d0d0d;
+  padding: 80px 40px 72px;
+  margin-bottom: 64px;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: #E8601C;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #E8601C;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 4.5vw, 48px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 20px;
+  max-width: 700px;
+}
+.hero-sub {
+  font-size: 17px;
+  color: #888;
+  max-width: 600px;
+  line-height: 1.65;
+  margin-bottom: 36px;
+}
+.hero-trust {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding-top: 28px;
+  border-top: 1px solid #1e1e1e;
+}
+.hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #666;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #0d0d0d;
+  margin-bottom: 16px;
+  margin-top: 56px;
+}
+h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #0d0d0d;
+  margin-bottom: 10px;
+  margin-top: 28px;
+}
+p { margin-bottom: 16px; color: #333; }
+
+.callout {
+  background: #fff8f5;
+  border-left: 4px solid #E8601C;
+  border-radius: 0 8px 8px 0;
+  padding: 20px 24px;
+  margin: 32px 0;
+}
+.callout p { margin-bottom: 0; }
+
+.callout-dark {
+  background: #0d0d0d;
+  border-radius: 10px;
+  padding: 32px 36px;
+  margin: 32px 0;
+}
+.callout-dark p { color: #999; margin-bottom: 10px; }
+.callout-dark p:last-child { margin-bottom: 0; }
+.callout-dark strong { color: #fff; }
+
+.two-col {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin: 28px 0;
+}
+.col-card {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 24px;
+}
+.col-card-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #E8601C;
+  margin-bottom: 12px;
+}
+.col-card h3 { margin-top: 0; font-size: 17px; margin-bottom: 10px; }
+.col-card p { font-size: 13px; color: #555; line-height: 1.65; margin-bottom: 0; }
+
+.business-types {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 24px 0;
+}
+.business-type {
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 16px 18px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  color: #333;
+}
+.business-type-dot {
+  width: 8px;
+  height: 8px;
+  background: #E8601C;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.process {
+  counter-reset: steps;
+  margin: 28px 0;
+}
+.process-step {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 24px;
+  align-items: flex-start;
+}
+.process-num {
+  width: 40px;
+  height: 40px;
+  background: #E8601C;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.process-content h3 { margin-top: 0; margin-bottom: 6px; font-size: 16px; }
+.process-content p { font-size: 14px; color: #555; margin-bottom: 0; line-height: 1.6; }
+
+.valuation-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin: 24px 0;
+}
+.valuation-card {
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 20px;
+}
+.valuation-card-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #E8601C;
+  margin-bottom: 8px;
+}
+.valuation-card h4 { font-size: 15px; font-weight: 600; color: #0d0d0d; margin-bottom: 8px; }
+.valuation-card p { font-size: 12px; color: #666; line-height: 1.55; margin-bottom: 0; }
+
+.lead-form-wrap {
+  background: #0d0d0d;
+  border-radius: 12px;
+  padding: 44px 48px;
+  margin: 48px 0;
+  position: relative;
+}
+.lead-form-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: #E8601C;
+  border-radius: 12px 12px 0 0;
+}
+.form-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.form-sub { font-size: 14px; color: #666; margin-bottom: 28px; }
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group.full { grid-column: 1 / -1; }
+.form-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555;
+}
+.form-input, .form-select, .form-textarea {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Source Sans 3', sans-serif;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: #E8601C; }
+.form-input::placeholder, .form-textarea::placeholder { color: #444; }
+.form-select { appearance: none; cursor: pointer; }
+.form-select option { background: #1a1a1a; }
+.form-textarea { resize: vertical; min-height: 90px; }
+.form-submit {
+  width: 100%;
+  background: #E8601C;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  padding: 16px;
+  cursor: pointer;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+  margin-top: 6px;
+}
+.form-submit:hover { background: #c9511a; }
+.form-privacy { font-size: 12px; color: #444; text-align: center; margin-top: 12px; }
+
+.author-bio {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 28px;
+  margin-top: 56px;
+}
+.author-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid #E8601C;
+}
+.author-name { font-size: 16px; font-weight: 700; color: #0d0d0d; margin-bottom: 4px; }
+.author-title { font-size: 12px; color: #E8601C; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+.author-text { font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 0; }
+
+.disclaimer { font-size: 12px; color: #aaa; line-height: 1.6; margin-top: 40px; padding-top: 24px; border-top: 1px solid #e8e8e8; }
+
+@media (max-width: 640px) {
+  .hero { padding: 52px 24px 44px; }
+  .two-col { grid-template-columns: 1fr; }
+  .lead-form-wrap { padding: 32px 24px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .author-bio { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="page-wrap" style="padding-top:0; padding-bottom:0;">
+    <div class="hero-eyebrow">Montana Business Brokerage · Missoula & Western Montana</div>
+    <h1>Buy or Sell a Business in Montana</h1>
+    <p class="hero-sub">Selling a business is one of the most significant financial decisions you'll make. It requires a broker who understands business valuation, confidential marketing, and how to get a transaction across the finish line. Jessie Eagen has been brokering business sales in Montana for over three decades.</p>
+    <div class="hero-trust">
+      <div class="hero-trust-item">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#E8601C" stroke-width="1.5"/><path d="M5 8L7 10L11 6" stroke="#E8601C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        34 years in Montana business brokerage
+      </div>
+      <div class="hero-trust-item">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#E8601C" stroke-width="1.5"/><path d="M5 8L7 10L11 6" stroke="#E8601C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Confidential process from day one
+      </div>
+      <div class="hero-trust-item">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#E8601C" stroke-width="1.5"/><path d="M5 8L7 10L11 6" stroke="#E8601C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Real estate + business combined expertise
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <h2>Selling Your Montana Business</h2>
+  <p>Most business owners only sell once. The process is more complex than selling real estate — it involves valuing goodwill, normalizing financials, maintaining confidentiality from employees and competitors, and finding a buyer who can actually close. Getting any one of these wrong can kill a deal or cost you significantly on the outcome.</p>
+  <p>Jessie Eagen brings a combined real estate and business brokerage background to every transaction — which matters when the business includes real property, a lease negotiation, or a liquor license as part of the deal.</p>
+
+  <div class="callout">
+    <p><strong>The #1 driver of Eagen Real Estate's business brokerage referrals:</strong> discretion. In a market the size of Missoula, word travels fast. A confidential process — where employees, suppliers, and competitors don't know the business is for sale until closing — protects the business's value and your relationships.</p>
+  </div>
+
+  <h2>Types of Businesses We Broker</h2>
+  <div class="business-types">
+    <div class="business-type"><span class="business-type-dot"></span>Restaurants & Bars</div>
+    <div class="business-type"><span class="business-type-dot"></span>Retail Businesses</div>
+    <div class="business-type"><span class="business-type-dot"></span>Service Companies</div>
+    <div class="business-type"><span class="business-type-dot"></span>Medical & Dental Practices</div>
+    <div class="business-type"><span class="business-type-dot"></span>Auto & Trades</div>
+    <div class="business-type"><span class="business-type-dot"></span>Hospitality & Lodging</div>
+    <div class="business-type"><span class="business-type-dot"></span>Manufacturing</div>
+    <div class="business-type"><span class="business-type-dot"></span>Professional Services</div>
+    <div class="business-type"><span class="business-type-dot"></span>Casinos & Gaming</div>
+    <div class="business-type"><span class="business-type-dot"></span>Liquor License Businesses</div>
+    <div class="business-type"><span class="business-type-dot"></span>Franchises</div>
+    <div class="business-type"><span class="business-type-dot"></span>E-commerce & Online</div>
+  </div>
+
+  <h2>How Business Value Is Determined in Montana</h2>
+  <p>Business valuation is both art and science. Unlike commercial real estate where cap rates provide a clear framework, business value involves multiple methods — and the right one depends on your industry, profitability, growth trajectory, and what buyers in your category are paying.</p>
+
+  <div class="valuation-grid">
+    <div class="valuation-card">
+      <div class="valuation-card-label">Most Common Method</div>
+      <h4>Seller's Discretionary Earnings (SDE)</h4>
+      <p>Used for owner-operated businesses. Takes net profit and adds back owner salary, depreciation, and one-time expenses to show true cash flow. Buyers pay a multiple of SDE — typically 2x–4x depending on industry and risk.</p>
+    </div>
+    <div class="valuation-card">
+      <div class="valuation-card-label">Larger Businesses</div>
+      <h4>EBITDA Multiple</h4>
+      <p>Earnings before interest, taxes, depreciation, and amortization. Used for businesses with $1M+ in revenue and management teams that don't depend solely on the owner. Multiples vary by industry and growth.</p>
+    </div>
+    <div class="valuation-card">
+      <div class="valuation-card-label">Asset-Heavy Businesses</div>
+      <h4>Asset Valuation</h4>
+      <p>When the business's primary value is in its physical assets — equipment, inventory, real property — rather than its earnings. Common in manufacturing, construction, and asset-intensive service businesses.</p>
+    </div>
+    <div class="valuation-card">
+      <div class="valuation-card-label">Market Approach</div>
+      <h4>Comparable Sales</h4>
+      <p>What similar businesses have actually sold for in Montana and comparable markets. This market data is essential context for any valuation method and helps set realistic expectations for both buyers and sellers.</p>
+    </div>
+  </div>
+
+  <div class="callout-dark">
+    <strong style="color:#E8601C; font-size:13px; letter-spacing:0.1em; text-transform:uppercase;">What buyers are actually paying in Montana right now:</strong>
+    <p>Main Street businesses (restaurants, retail, service) typically trade at 2x–3x SDE. Businesses with strong recurring revenue, transferable systems, and reduced owner dependency command higher multiples. Businesses that are heavily owner-dependent — where the owner IS the business — trade at lower multiples or struggle to sell at all. This is one of the most important things to understand before deciding when to sell.</p>
+  </div>
+
+  <h2>The Business Sale Process</h2>
+  <div class="process">
+    <div class="process-step">
+      <div class="process-num">1</div>
+      <div class="process-content">
+        <h3>Confidential Consultation</h3>
+        <p>We start privately — no public exposure, no employees finding out. We discuss your business, your goals, your timeline, and what a successful outcome looks like for you.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">2</div>
+      <div class="process-content">
+        <h3>Business Valuation & Financial Normalization</h3>
+        <p>We work through your financials to establish a defensible asking price. This includes normalizing owner compensation, identifying add-backs, and presenting the business's true earnings picture to buyers.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">3</div>
+      <div class="process-content">
+        <h3>Confidential Marketing Package</h3>
+        <p>We prepare a professional Confidential Business Review (CBR) — a document that gives qualified buyers everything they need to evaluate the opportunity without revealing the business's identity upfront.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">4</div>
+      <div class="process-content">
+        <h3>Qualified Buyer Outreach</h3>
+        <p>We reach the right buyers — local entrepreneurs, out-of-state investors, strategic acquirers, and SBA-qualified buyers — under NDA before any identifying information is shared.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">5</div>
+      <div class="process-content">
+        <h3>Offer Negotiation & Due Diligence</h3>
+        <p>We negotiate terms, manage the due diligence process, and keep the transaction moving. Most deals that fall apart do so in due diligence — experienced representation here is critical.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">6</div>
+      <div class="process-content">
+        <h3>Closing & Transition</h3>
+        <p>A successful business sale closes with a well-structured purchase agreement, a clear transition plan, and both parties protected. We coordinate with attorneys, accountants, and lenders to get you to the finish line.</p>
+      </div>
+    </div>
+  </div>
+
+  <h2>Buying a Business in Montana</h2>
+  <p>If you're looking to buy a business in Missoula or Western Montana — whether you're a first-time buyer, an investor adding to a portfolio, or an operator relocating from another market — Eagen Real Estate maintains relationships with business owners who are considering a sale but haven't listed publicly.</p>
+
+  <div class="two-col">
+    <div class="col-card">
+      <div class="col-card-label">For First-Time Buyers</div>
+      <h3>What to Know Before You Buy</h3>
+      <p>We help buyers evaluate opportunities honestly — including the ones that look great on paper but have hidden issues. Understanding what you're actually buying, what the real earnings are, and what it will take to run the business successfully after the seller leaves is essential due diligence we help you navigate.</p>
+    </div>
+    <div class="col-card">
+      <div class="col-card-label">SBA Financing</div>
+      <h3>Most Business Acquisitions Use SBA Loans</h3>
+      <p>SBA 7(a) loans are the primary financing vehicle for business acquisitions in Montana. We work with SBA-preferred lenders and can help connect qualified buyers with financing partners who understand Montana's market. Typical down payment is 10–30% of the purchase price.</p>
+    </div>
+  </div>
+
+  <!-- LEAD FORM -->
+  <div class="lead-form-wrap">
+    <div class="form-headline">Start a Confidential Conversation</div>
+    <p class="form-sub">Whether you're buying or selling, tell me about your situation and I'll reach out within one business day. Everything is strictly confidential.</p>
+    <div class="form-grid">
+      <div class="form-group">
+        <label class="form-label">Your Name</label>
+        <input type="text" class="form-input" placeholder="First and last name" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone Number</label>
+        <input type="tel" class="form-input" placeholder="Best number to reach you" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" placeholder="Your email" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">I Am Looking To</label>
+        <select class="form-select">
+          <option value="" disabled selected>Select one</option>
+          <option>Sell my business</option>
+          <option>Buy a business in Montana</option>
+          <option>Get a valuation on my business</option>
+          <option>Learn about the process</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Business Type / Industry</label>
+        <input type="text" class="form-input" placeholder="e.g. Restaurant, retail, service company" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Approximate Annual Revenue</label>
+        <select class="form-select">
+          <option value="" disabled selected>Select range</option>
+          <option>Under $500K</option>
+          <option>$500K – $1M</option>
+          <option>$1M – $2.5M</option>
+          <option>$2.5M – $5M</option>
+          <option>Over $5M</option>
+          <option>Prefer not to say</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label class="form-label">Anything else I should know? (optional)</label>
+        <textarea class="form-textarea" placeholder="Tell me about your situation — timeline, goals, what you're looking for. Everything is confidential."></textarea>
+      </div>
+    </div>
+    <button class="form-submit">Start a Confidential Conversation</button>
+    <p class="form-privacy">🔒 All information is kept strictly confidential. We do not share your information with any third parties.</p>
+  </div>
+
+  <!-- AUTHOR BIO -->
+  <div class="author-bio">
+    <img src="https://jessieeagen.com/wp-content/uploads/2026/01/MRI9931-Edit-scaled.jpg" alt="Jessie Eagen — Montana Business Broker" class="author-img" />
+    <div>
+      <div class="author-name">Jessie Eagen</div>
+      <div class="author-title">Montana Business Broker & Commercial Real Estate Broker · 34 Years</div>
+      <p class="author-text">Jessie Eagen has been brokering business sales and commercial real estate transactions in Missoula and Western Montana since 1992. With nearly $1 billion in closed transactions spanning businesses, commercial properties, liquor licenses, and casino sales, Jessie brings a depth of experience to business brokerage that few brokers in the region can match. If you are considering buying or selling a business in Montana, contact Jessie directly at <a href="mailto:jessie@jessieeagen.com" style="color:#E8601C;">jessie@jessieeagen.com</a> or <a href="tel:4065421811" style="color:#E8601C;">406-542-1811</a>.</p>
+    </div>
+  </div>
+
+  <p class="disclaimer">Eagen Real Estate is a licensed Montana real estate and business brokerage. Business valuations are based on available financial information and market data and do not constitute a formal appraisal. Buyers and sellers should consult with qualified legal and accounting professionals before completing any business transaction. All information shared with Eagen Real Estate is kept strictly confidential.</p>
+
+</div>
+</body>
+</html>
