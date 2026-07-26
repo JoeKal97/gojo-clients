@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sell Your Commercial Property in Missoula | Jessie Eagen</title>
+<meta name="description" content="Ready to sell your commercial property in Missoula, MT? Jessie Eagen — 34 years, nearly $1B in closed transactions — provides confidential, experienced representation for commercial property sellers in Western Montana.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-size: 17px;
+  line-height: 1.7;
+}
+.page-wrap { max-width: 860px; margin: 0 auto; padding: 0 24px 80px; }
+
+.hero {
+  background: #0d0d0d;
+  padding: 80px 40px 72px;
+  margin-bottom: 64px;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: #E8601C;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #E8601C;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 4.5vw, 48px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 20px;
+  max-width: 700px;
+}
+.hero-sub {
+  font-size: 17px;
+  color: #888;
+  max-width: 580px;
+  line-height: 1.65;
+  margin-bottom: 36px;
+}
+.hero-trust {
+  display: flex;
+  gap: 32px;
+  flex-wrap: wrap;
+  padding-top: 28px;
+  border-top: 1px solid #1e1e1e;
+}
+.hero-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 13px;
+  color: #666;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #0d0d0d;
+  margin-bottom: 16px;
+  margin-top: 56px;
+}
+h3 { font-size: 18px; font-weight: 600; color: #0d0d0d; margin-bottom: 10px; margin-top: 28px; }
+p { margin-bottom: 16px; color: #333; }
+
+.callout {
+  background: #fff8f5;
+  border-left: 4px solid #E8601C;
+  border-radius: 0 8px 8px 0;
+  padding: 20px 24px;
+  margin: 32px 0;
+}
+.callout p { margin-bottom: 0; }
+
+.callout-dark {
+  background: #0d0d0d;
+  border-radius: 10px;
+  padding: 32px 36px;
+  margin: 32px 0;
+}
+.callout-dark p { color: #999; margin-bottom: 10px; }
+.callout-dark p:last-child { margin-bottom: 0; }
+.callout-dark strong { color: #fff; }
+
+/* Why sell now */
+.market-window {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 12px;
+  margin: 28px 0;
+}
+.window-card {
+  background: #f8f8f8;
+  border-radius: 8px;
+  padding: 20px;
+  border-top: 3px solid #E8601C;
+}
+.window-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #E8601C;
+  margin-bottom: 8px;
+}
+.window-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #0d0d0d;
+  margin-bottom: 6px;
+}
+.window-desc { font-size: 12px; color: #888; line-height: 1.5; }
+
+/* Asset types */
+.asset-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 28px 0;
+}
+.asset-card {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 22px;
+  transition: border-color 0.2s;
+}
+.asset-card:hover { border-color: #E8601C; }
+.asset-label {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #E8601C;
+  margin-bottom: 10px;
+}
+.asset-title { font-size: 16px; font-weight: 600; color: #0d0d0d; margin-bottom: 8px; }
+.asset-desc { font-size: 13px; color: #666; line-height: 1.6; }
+
+/* Process */
+.process { margin: 28px 0; }
+.process-step {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 20px;
+  align-items: flex-start;
+}
+.process-num {
+  width: 40px;
+  height: 40px;
+  background: #E8601C;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+  margin-top: 3px;
+}
+.process-content h3 { margin-top: 0; margin-bottom: 6px; font-size: 16px; }
+.process-content p { font-size: 14px; color: #555; margin-bottom: 0; line-height: 1.6; }
+
+/* Credentials */
+.cred-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 12px;
+  margin: 28px 0;
+}
+.cred-card {
+  text-align: center;
+  padding: 24px 16px;
+  background: #f8f8f8;
+  border-radius: 8px;
+}
+.cred-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #E8601C;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.cred-label { font-size: 13px; color: #555; line-height: 1.4; }
+
+/* Testimonial */
+.testimonial {
+  background: #0d0d0d;
+  border-radius: 10px;
+  padding: 36px 40px;
+  margin: 40px 0;
+  position: relative;
+}
+.testimonial::before {
+  content: '\201C';
+  font-family: 'Playfair Display', serif;
+  font-size: 80px;
+  color: #E8601C;
+  position: absolute;
+  top: 16px;
+  left: 32px;
+  line-height: 1;
+  opacity: 0.6;
+}
+.testimonial-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 18px;
+  color: #ddd;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  padding-top: 24px;
+}
+.testimonial-attr { font-size: 13px; color: #666; }
+.testimonial-attr strong { color: #E8601C; }
+
+/* Lead form */
+.lead-form-wrap {
+  background: #0d0d0d;
+  border-radius: 12px;
+  padding: 44px 48px;
+  margin: 48px 0;
+  position: relative;
+}
+.lead-form-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: #E8601C;
+  border-radius: 12px 12px 0 0;
+}
+.form-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.form-sub { font-size: 14px; color: #666; margin-bottom: 28px; line-height: 1.6; }
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group.full { grid-column: 1 / -1; }
+.form-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555;
+}
+.form-input, .form-select, .form-textarea {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Source Sans 3', sans-serif;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: #E8601C; }
+.form-input::placeholder, .form-textarea::placeholder { color: #444; }
+.form-select { appearance: none; cursor: pointer; }
+.form-select option { background: #1a1a1a; }
+.form-textarea { resize: vertical; min-height: 90px; }
+.form-submit {
+  width: 100%;
+  background: #E8601C;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  padding: 16px;
+  cursor: pointer;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+  margin-top: 6px;
+}
+.form-submit:hover { background: #c9511a; }
+.form-privacy { font-size: 12px; color: #444; text-align: center; margin-top: 12px; }
+
+.author-bio {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 28px;
+  margin-top: 56px;
+}
+.author-img {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 3px solid #E8601C;
+}
+.author-name { font-size: 16px; font-weight: 700; color: #0d0d0d; margin-bottom: 4px; }
+.author-title { font-size: 12px; color: #E8601C; font-weight: 600; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+.author-text { font-size: 13px; color: #555; line-height: 1.6; margin-bottom: 0; }
+
+.disclaimer { font-size: 12px; color: #aaa; line-height: 1.6; margin-top: 40px; padding-top: 24px; border-top: 1px solid #e8e8e8; }
+
+@media (max-width: 640px) {
+  .hero { padding: 52px 24px 44px; }
+  .asset-grid { grid-template-columns: 1fr; }
+  .lead-form-wrap { padding: 32px 24px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .author-bio { flex-direction: column; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="page-wrap" style="padding-top:0; padding-bottom:0;">
+    <div class="hero-eyebrow">Sell Your Commercial Property · Missoula, Montana</div>
+    <h1>Sell Your Commercial Property in Missoula</h1>
+    <p class="hero-sub">Whether you've been thinking about selling for months or just started exploring your options — the first step is a confidential conversation with a broker who knows this market. Not a listing presentation. Just a straight conversation about your property and what it's worth.</p>
+    <div class="hero-trust">
+      <div class="hero-trust-item">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#E8601C" stroke-width="1.5"/><path d="M5 8L7 10L11 6" stroke="#E8601C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        34 years in Missoula CRE
+      </div>
+      <div class="hero-trust-item">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#E8601C" stroke-width="1.5"/><path d="M5 8L7 10L11 6" stroke="#E8601C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Nearly $1B in closed transactions
+      </div>
+      <div class="hero-trust-item">
+        <svg width="16" height="16" viewBox="0 0 16 16" fill="none"><circle cx="8" cy="8" r="7" stroke="#E8601C" stroke-width="1.5"/><path d="M5 8L7 10L11 6" stroke="#E8601C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Confidential process from day one
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <!-- WHY NOW -->
+  <h2>Why the Current Market Favors Sellers</h2>
+  <p>The Missoula commercial real estate market in 2026 presents a specific window for sellers — particularly in multifamily, net lease retail, and industrial. Three factors are converging that don't always align at the same time.</p>
+
+  <div class="market-window">
+    <div class="window-card">
+      <div class="window-label">Cap Rates</div>
+      <div class="window-value">Compressed</div>
+      <div class="window-desc">Active 1031 buyer demand is keeping cap rates tight, supporting pricing across most asset classes.</div>
+    </div>
+    <div class="window-card">
+      <div class="window-label">Buyer Activity</div>
+      <div class="window-value">High</div>
+      <div class="window-desc">Out-of-state 1031 exchange capital from California and the Pacific Northwest is actively targeting Montana assets.</div>
+    </div>
+    <div class="window-card">
+      <div class="window-label">Local Competition</div>
+      <div class="window-value">Limited</div>
+      <div class="window-desc">Few serious commercial brokers in Missoula with deep buyer relationships. Less competition for qualified buyers means better outcomes for sellers.</div>
+    </div>
+    <div class="window-card">
+      <div class="window-label">Market Timing</div>
+      <div class="window-value">Q2–Q3 2026</div>
+      <div class="window-desc">Interest rate uncertainty in H2 2026 may increase buyer caution. Sellers moving now have an advantage.</div>
+    </div>
+  </div>
+
+  <div class="callout">
+    <p><strong>The window matters.</strong> Commercial real estate markets shift. The combination of compressed cap rates, active 1031 buyer demand, and limited competing supply that defines Missoula right now is not permanent. Sellers who wait for a "perfect" moment often find the market has moved past them. A confidential valuation conversation now costs nothing and gives you the information to make a smart decision.</p>
+  </div>
+
+  <!-- ASSET TYPES -->
+  <h2>Property Types We Sell</h2>
+  <p>Eagen Real Estate handles the full spectrum of commercial property types in Missoula and Western Montana. Each asset class has its own valuation methodology, buyer pool, and marketing strategy — and we know all of them.</p>
+
+  <div class="asset-grid">
+    <div class="asset-card">
+      <div class="asset-label">Multifamily</div>
+      <div class="asset-title">Apartment Buildings</div>
+      <div class="asset-desc">5+ unit apartment buildings to large multifamily complexes. One of the strongest seller markets in Missoula right now — 1031 buyers competing aggressively for stabilized assets.</div>
+    </div>
+    <div class="asset-card">
+      <div class="asset-label">Retail</div>
+      <div class="asset-title">Retail & Net Lease</div>
+      <div class="asset-desc">Strip centers, single-tenant net lease, and retail pads. National-credit NNN properties trading at aggressive cap rates. Multi-tenant retail with strong occupancy also performing well.</div>
+    </div>
+    <div class="asset-card">
+      <div class="asset-label">Office</div>
+      <div class="asset-title">Office Buildings</div>
+      <div class="asset-desc">From downtown Class A to suburban Class B. Medical office remains the strongest subtype. Owners of older Class B office should evaluate options now before further vacancy pressure.</div>
+    </div>
+    <div class="asset-card">
+      <div class="asset-label">Industrial</div>
+      <div class="asset-title">Industrial & Flex</div>
+      <div class="asset-desc">Missoula industrial vacancy below 4% — effectively full. Tight supply supporting values. Single-tenant net lease industrial attracting strong investor demand.</div>
+    </div>
+    <div class="asset-card">
+      <div class="asset-label">Land</div>
+      <div class="asset-title">Development Land</div>
+      <div class="asset-desc">Infill sites, mixed-use parcels, and development land across Missoula and Western Montana. Active developer interest in South Missoula and Brooks Street corridors.</div>
+    </div>
+    <div class="asset-card">
+      <div class="asset-label">Specialty</div>
+      <div class="asset-title">Liquor License & Casino</div>
+      <div class="asset-desc">Montana's most specialized transaction type. Jessie Eagen has handled more liquor license transfers and casino sales in Western Montana than any other broker.</div>
+    </div>
+  </div>
+
+  <!-- WHY JESSIE -->
+  <h2>Why Property Owners in Missoula Choose Jessie Eagen</h2>
+  <p>Choosing a commercial broker is one of the most consequential decisions in the selling process. The broker you hire determines who sees your property, how it's priced, how the deal is structured, and ultimately what you walk away with.</p>
+
+  <div class="cred-grid">
+    <div class="cred-card">
+      <div class="cred-value">34</div>
+      <div class="cred-label">Years in Missoula Commercial Real Estate</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-value">1,200+</div>
+      <div class="cred-label">Successful Transactions Completed</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-value">$1B</div>
+      <div class="cred-label">In Commercial Real Estate Sold</div>
+    </div>
+    <div class="cred-card">
+      <div class="cred-value">Local</div>
+      <div class="cred-label">Missoula-Based Market Authority Since 1992</div>
+    </div>
+  </div>
+
+  <p>The Missoula commercial market is small enough that personal relationships drive outcomes. The buyer for your property may not be searching LoopNet — they may be an investor Jessie has worked with for 20 years who mentioned what they're looking for in a conversation last month. That kind of market intelligence is built over decades, not downloaded from a database.</p>
+
+  <!-- TESTIMONIAL -->
+  <div class="testimonial">
+    <p class="testimonial-text">We'd been sitting on the building for two years trying to figure out the right time to sell. Jessie told us what it was worth, found a buyer before we ever listed publicly, and we closed in 45 days. The process was exactly as he described — no surprises.</p>
+    <div class="testimonial-attr">— <strong>Commercial Property Owner</strong>, Missoula, MT</div>
+  </div>
+
+  <!-- PROCESS -->
+  <h2>How We Sell Your Property</h2>
+  <div class="process">
+    <div class="process-step">
+      <div class="process-num">1</div>
+      <div class="process-content">
+        <h3>Confidential Consultation</h3>
+        <p>We start with a private conversation about your property, your goals, and your timeline. No public exposure. Nothing leaves the room until you're ready to move forward.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">2</div>
+      <div class="process-content">
+        <h3>Market Analysis & Pricing</h3>
+        <p>We pull current comparable sales, apply market cap rates, and establish a realistic asking price — one that attracts serious buyers without leaving money on the table or sitting unsold.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">3</div>
+      <div class="process-content">
+        <h3>Professional Marketing Package</h3>
+        <p>Property memorandum, financial summary, photos, and market context — everything a qualified buyer needs to evaluate the opportunity and make an offer.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">4</div>
+      <div class="process-content">
+        <h3>Targeted Buyer Outreach</h3>
+        <p>We reach the right buyers — local investors, 1031 exchange buyers from out of state, and strategic acquirers — directly and confidentially before broad public exposure.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">5</div>
+      <div class="process-content">
+        <h3>Offer Negotiation</h3>
+        <p>We evaluate every offer on price AND terms — due diligence period, earnest money, closing timeline, contingencies. The best deal isn't always the highest number.</p>
+      </div>
+    </div>
+    <div class="process-step">
+      <div class="process-num">6</div>
+      <div class="process-content">
+        <h3>Due Diligence & Close</h3>
+        <p>We manage the due diligence process, coordinate with attorneys and lenders, and keep the transaction moving toward a clean close. Most deals that fall apart do so here — experienced management matters.</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- LEAD FORM -->
+  <div class="lead-form-wrap">
+    <div class="form-headline">Start a Confidential Conversation</div>
+    <p class="form-sub">Tell me about your property and what you're thinking about. I'll reach out within one business day. No obligation — just a straight conversation about your options.</p>
+    <div class="form-grid">
+      <div class="form-group">
+        <label class="form-label">Your Name</label>
+        <input type="text" class="form-input" placeholder="First and last name" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone Number</label>
+        <input type="tel" class="form-input" placeholder="Best number to reach you" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" placeholder="Your email" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Property Type</label>
+        <select class="form-select">
+          <option value="" disabled selected>Select property type</option>
+          <option>Apartment Building / Multifamily</option>
+          <option>Retail / Strip Center</option>
+          <option>Net Lease (NNN) Property</option>
+          <option>Office Building</option>
+          <option>Industrial / Warehouse / Flex</option>
+          <option>Development Land</option>
+          <option>Business + Real Estate</option>
+          <option>Liquor License / Casino</option>
+          <option>Mixed Use</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">General Location</label>
+        <input type="text" class="form-input" placeholder="Address or neighborhood" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Your Timeline</label>
+        <select class="form-select">
+          <option value="" disabled selected>When are you thinking?</option>
+          <option>As soon as possible</option>
+          <option>3–6 months</option>
+          <option>6–12 months</option>
+          <option>1–2 years</option>
+          <option>Just exploring options</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label class="form-label">Anything else I should know? (optional)</label>
+        <textarea class="form-textarea" placeholder="Current occupancy, lease terms, reason for selling, what a successful outcome looks like for you — whatever is relevant. Everything shared is confidential."></textarea>
+      </div>
+    </div>
+    <button class="form-submit">Start a Confidential Conversation</button>
+    <p class="form-privacy">🔒 All information is kept strictly confidential. No public exposure without your explicit approval.</p>
+  </div>
+
+  <!-- AUTHOR BIO -->
+  <div class="author-bio">
+    <img src="https://jessieeagen.com/wp-content/uploads/2026/01/MRI9931-Edit-scaled.jpg" alt="Jessie Eagen — Missoula Commercial Real Estate Broker" class="author-img" />
+    <div>
+      <div class="author-name">Jessie Eagen</div>
+      <div class="author-title">Missoula Commercial Real Estate Broker · 34 Years Experience</div>
+      <p class="author-text">Jessie Eagen has been selling commercial real estate in Missoula and Western Montana since 1992 — with nearly $1 billion in closed transactions across multifamily, retail, office, industrial, land, business brokerage, and Montana liquor license and casino sales. If you're thinking about selling your commercial property, the conversation starts here. <a href="mailto:jessie@jessieeagen.com" style="color:#E8601C;">jessie@jessieeagen.com</a> · <a href="tel:4065421811" style="color:#E8601C;">406-542-1811</a></p>
+    </div>
+  </div>
+
+  <p class="disclaimer">Eagen Real Estate is a licensed Montana commercial real estate brokerage. Market analysis and property valuations are based on available market data and professional judgment. They do not constitute a formal appraisal. All information shared is kept strictly confidential.</p>
+
+</div>
+</body>
+</html>

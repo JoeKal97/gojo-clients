@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Careers | Eagen Real Estate | Missoula, Montana</title>
+<meta name="description" content="Join Eagen Real Estate — Missoula's most experienced commercial real estate brokerage. We're looking for driven, client-first professionals who want to build a career in Montana commercial real estate.">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Source+Sans+3:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+body {
+  font-family: 'Source Sans 3', sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-size: 17px;
+  line-height: 1.7;
+}
+.page-wrap { max-width: 860px; margin: 0 auto; padding: 0 24px 80px; }
+
+.hero {
+  background: #0d0d0d;
+  padding: 80px 40px 72px;
+  margin-bottom: 64px;
+  position: relative;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: #E8601C;
+}
+.hero-eyebrow {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #E8601C;
+  margin-bottom: 20px;
+}
+.hero h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(30px, 4.5vw, 48px);
+  font-weight: 700;
+  line-height: 1.1;
+  color: #fff;
+  margin-bottom: 20px;
+  max-width: 680px;
+}
+.hero-sub {
+  font-size: 17px;
+  color: #888;
+  max-width: 580px;
+  line-height: 1.65;
+}
+
+h2 {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #0d0d0d;
+  margin-bottom: 16px;
+  margin-top: 56px;
+}
+h3 { font-size: 18px; font-weight: 600; color: #0d0d0d; margin-bottom: 10px; margin-top: 28px; }
+p { margin-bottom: 16px; color: #333; }
+
+/* Why Eagen */
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 16px;
+  margin: 28px 0;
+}
+.why-card {
+  border: 1px solid #e8e8e8;
+  border-radius: 8px;
+  padding: 24px;
+  transition: border-color 0.2s;
+}
+.why-card:hover { border-color: #E8601C; }
+.why-icon {
+  width: 40px;
+  height: 40px;
+  background: rgba(232,96,28,0.1);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 14px;
+}
+.why-title { font-size: 15px; font-weight: 700; color: #0d0d0d; margin-bottom: 8px; }
+.why-text { font-size: 13px; color: #666; line-height: 1.6; }
+
+/* Jessie quote */
+.founder-quote {
+  background: #0d0d0d;
+  border-radius: 10px;
+  padding: 40px 44px;
+  margin: 40px 0;
+  position: relative;
+}
+.founder-quote::before {
+  content: '\201C';
+  font-family: 'Playfair Display', serif;
+  font-size: 100px;
+  color: #E8601C;
+  position: absolute;
+  top: 10px;
+  left: 32px;
+  line-height: 1;
+  opacity: 0.5;
+}
+.quote-text {
+  font-family: 'Playfair Display', serif;
+  font-size: 19px;
+  color: #ddd;
+  line-height: 1.6;
+  font-style: italic;
+  padding-top: 28px;
+  margin-bottom: 20px;
+}
+.quote-attr {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+.quote-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 2px solid #E8601C;
+}
+.quote-name { font-size: 14px; font-weight: 700; color: #fff; }
+.quote-title { font-size: 12px; color: #666; }
+
+/* What we look for */
+.traits {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin: 24px 0;
+}
+.trait {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px;
+  background: #f8f8f8;
+  border-radius: 8px;
+}
+.trait-check {
+  width: 22px;
+  height: 22px;
+  background: #E8601C;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+.trait-text { font-size: 14px; color: #333; line-height: 1.5; }
+.trait-text strong { color: #0d0d0d; display: block; margin-bottom: 2px; font-size: 14px; }
+
+/* Market stats */
+.market-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+  gap: 12px;
+  margin: 28px 0;
+}
+.market-stat {
+  background: #0d0d0d;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+}
+.market-stat-value {
+  font-family: 'Playfair Display', serif;
+  font-size: 34px;
+  color: #E8601C;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.market-stat-label { font-size: 12px; color: #666; line-height: 1.4; }
+
+/* Open positions */
+.position-card {
+  border: 1px solid #e8e8e8;
+  border-radius: 10px;
+  padding: 28px 32px;
+  margin: 20px 0;
+  position: relative;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+.position-card:hover {
+  border-color: #E8601C;
+  box-shadow: 0 4px 20px rgba(232,96,28,0.08);
+}
+.position-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #E8601C;
+  margin-bottom: 10px;
+}
+.position-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #0d0d0d;
+  margin-bottom: 12px;
+}
+.position-desc { font-size: 14px; color: #555; line-height: 1.65; margin-bottom: 20px; }
+.position-details {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+.position-detail {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+  color: #888;
+}
+.position-reqs {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.position-reqs li {
+  font-size: 13px;
+  color: #555;
+  padding: 6px 0;
+  border-bottom: 1px solid #f5f5f5;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  line-height: 1.5;
+}
+.position-reqs li:last-child { border-bottom: none; }
+.req-dot { width: 6px; height: 6px; background: #E8601C; border-radius: 50%; flex-shrink: 0; margin-top: 6px; }
+
+/* Application form */
+.apply-form-wrap {
+  background: #0d0d0d;
+  border-radius: 12px;
+  padding: 44px 48px;
+  margin: 48px 0;
+  position: relative;
+}
+.apply-form-wrap::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: #E8601C;
+  border-radius: 12px 12px 0 0;
+}
+.form-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 24px;
+  color: #fff;
+  margin-bottom: 8px;
+}
+.form-sub { font-size: 14px; color: #666; margin-bottom: 28px; line-height: 1.6; }
+.form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin-bottom: 14px;
+}
+.form-group { display: flex; flex-direction: column; gap: 6px; }
+.form-group.full { grid-column: 1 / -1; }
+.form-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #555;
+}
+.form-input, .form-select, .form-textarea {
+  background: #1a1a1a;
+  border: 1px solid #2a2a2a;
+  border-radius: 4px;
+  color: #fff;
+  font-size: 14px;
+  font-family: 'Source Sans 3', sans-serif;
+  padding: 12px 14px;
+  outline: none;
+  transition: border-color 0.2s;
+  width: 100%;
+}
+.form-input:focus, .form-select:focus, .form-textarea:focus { border-color: #E8601C; }
+.form-input::placeholder, .form-textarea::placeholder { color: #444; }
+.form-select { appearance: none; cursor: pointer; }
+.form-select option { background: #1a1a1a; }
+.form-textarea { resize: vertical; min-height: 100px; }
+.form-submit {
+  width: 100%;
+  background: #E8601C;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 4px;
+  padding: 16px;
+  cursor: pointer;
+  font-family: 'Source Sans 3', sans-serif;
+  transition: background 0.2s;
+  margin-top: 6px;
+}
+.form-submit:hover { background: #c9511a; }
+.form-privacy { font-size: 12px; color: #444; text-align: center; margin-top: 12px; }
+
+/* No pressure CTA */
+.no-pressure {
+  background: #f8f8f8;
+  border-radius: 10px;
+  padding: 32px;
+  text-align: center;
+  margin: 40px 0;
+}
+.no-pressure h3 { margin-top: 0; font-family: 'Playfair Display', serif; font-size: 20px; margin-bottom: 10px; }
+.no-pressure p { font-size: 14px; color: #666; margin-bottom: 0; }
+
+@media (max-width: 640px) {
+  .hero { padding: 52px 24px 44px; }
+  .traits { grid-template-columns: 1fr; }
+  .apply-form-wrap { padding: 32px 24px; }
+  .form-grid { grid-template-columns: 1fr; }
+  .founder-quote { padding: 28px 24px; }
+}
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="page-wrap" style="padding-top:0; padding-bottom:0;">
+    <div class="hero-eyebrow">Careers · Eagen Real Estate · Missoula, Montana</div>
+    <h1>Build Your Career in Montana Commercial Real Estate</h1>
+    <p class="hero-sub">We're not looking for everyone. We're looking for the right person — driven, client-first, and serious about building a real career in one of Montana's most dynamic markets.</p>
+  </div>
+</div>
+
+<div class="page-wrap">
+
+  <!-- WHY EAGEN -->
+  <h2>Why Eagen Real Estate</h2>
+  <p>Most brokerages offer a desk and a split. Eagen Real Estate offers something different — direct mentorship from one of the most experienced commercial brokers in Montana, a market with real transaction volume, and the kind of local reputation that opens doors before you even make a call.</p>
+
+  <div class="why-grid">
+    <div class="why-card">
+      <div class="why-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2L12.5 7.5H18L13.5 11L15.5 17L10 13.5L4.5 17L6.5 11L2 7.5H7.5L10 2Z" stroke="#E8601C" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="why-title">34 Years of Market Knowledge</div>
+      <div class="why-text">Work alongside Jessie Eagen — a broker with nearly $1 billion in closed transactions and relationships built over three decades in this market. That network becomes your network.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><rect x="2" y="5" width="16" height="12" rx="2" stroke="#E8601C" stroke-width="1.5"/><path d="M6 5V4a4 4 0 018 0v1" stroke="#E8601C" stroke-width="1.5" stroke-linecap="round"/></svg>
+      </div>
+      <div class="why-title">Real Transaction Experience</div>
+      <div class="why-text">Missoula's commercial market spans multifamily, retail, industrial, office, land, business brokerage, and Montana liquor license sales. You'll work across asset classes from day one — not just residential crossovers.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 3a2 2 0 110 4 2 2 0 010-4zm0 10.5c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08s5.97 1.09 6 3.08c-1.29 1.94-3.5 3.22-6 3.22z" fill="#E8601C" opacity=".15"/><path d="M10 2C5.58 2 2 5.58 2 10s3.58 8 8 8 8-3.58 8-8-3.58-8-8-8zm0 3a2 2 0 110 4 2 2 0 010-4zm0 10.5c-2.5 0-4.71-1.28-6-3.22.03-1.99 4-3.08 6-3.08s5.97 1.09 6 3.08c-1.29 1.94-3.5 3.22-6 3.22z" stroke="#E8601C" stroke-width="1.2"/></svg>
+      </div>
+      <div class="why-title">Missoula Is Growing</div>
+      <div class="why-text">Western Montana is one of the fastest-growing markets in the Mountain West. That growth translates directly into transaction volume — more buyers, more sellers, more opportunity for a skilled broker.</div>
+    </div>
+    <div class="why-card">
+      <div class="why-icon">
+        <svg width="20" height="20" viewBox="0 0 20 20" fill="none"><path d="M3 10h14M10 3l7 7-7 7" stroke="#E8601C" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="why-title">Clear Path Forward</div>
+      <div class="why-text">No corporate bureaucracy. No waiting for someone above you to retire. If you produce, you advance — it's that straightforward. Your career moves at the pace of your performance.</div>
+    </div>
+  </div>
+
+  <!-- JESSIE QUOTE -->
+  <div class="founder-quote">
+    <div class="quote-text">I've been in this market for 34 years. The brokers who succeed here aren't the slickest talkers — they're the ones who do the work, know the market cold, and treat every client like a long-term relationship. That's what I look for, and that's what I'll teach.</div>
+    <div class="quote-attr">
+      <img src="https://jessieeagen.com/wp-content/uploads/2026/01/MRI9931-Edit-scaled.jpg" alt="Jessie Eagen" class="quote-img" />
+      <div>
+        <div class="quote-name">Jessie Eagen</div>
+        <div class="quote-title">Broker / Owner · Eagen Real Estate</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MISSOULA MARKET -->
+  <h2>The Missoula Market Opportunity</h2>
+  <p>Missoula is not a saturated market with 500 brokers fighting over the same listings. It's a growing city with real transaction volume, limited competition among serious commercial brokers, and significant opportunity for someone willing to put in the work to build market knowledge and client relationships.</p>
+
+  <div class="market-stats">
+    <div class="market-stat">
+      <div class="market-stat-value">$1B</div>
+      <div class="market-stat-label">In transactions closed by Eagen Real Estate</div>
+    </div>
+    <div class="market-stat">
+      <div class="market-stat-value">34</div>
+      <div class="market-stat-label">Years of market relationships and deal flow</div>
+    </div>
+    <div class="market-stat">
+      <div class="market-stat-value">1,200+</div>
+      <div class="market-stat-label">Successful transactions completed</div>
+    </div>
+    <div class="market-stat">
+      <div class="market-stat-value">Growing</div>
+      <div class="market-stat-label">One of the fastest-growing markets in the Mountain West</div>
+    </div>
+  </div>
+
+  <!-- WHAT WE LOOK FOR -->
+  <h2>What We Look For</h2>
+  <p>We don't require a commercial real estate background — we can teach the market. What we can't teach is work ethic, integrity, and genuine care for clients. Those have to come with you.</p>
+
+  <div class="traits">
+    <div class="trait">
+      <div class="trait-check">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5L4 7.5L8.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="trait-text"><strong>Client-First Mentality</strong>You genuinely care about the outcome for the person across the table — not just the commission.</div>
+    </div>
+    <div class="trait">
+      <div class="trait-check">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5L4 7.5L8.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="trait-text"><strong>Self-Directed Work Ethic</strong>You don't need to be managed. You set your own pace, take ownership of your pipeline, and hold yourself accountable.</div>
+    </div>
+    <div class="trait">
+      <div class="trait-check">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5L4 7.5L8.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="trait-text"><strong>Curiosity About the Market</strong>You want to understand cap rates, valuation methodology, and market dynamics — not just list properties and wait.</div>
+    </div>
+    <div class="trait">
+      <div class="trait-check">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5L4 7.5L8.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="trait-text"><strong>Integrity Under Pressure</strong>Commercial real estate deals get complicated. You tell the truth even when it's not what people want to hear.</div>
+    </div>
+    <div class="trait">
+      <div class="trait-check">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5L4 7.5L8.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="trait-text"><strong>Community Roots</strong>You know Missoula, you're invested in it, and you understand that relationships here are built over years — not a single transaction.</div>
+    </div>
+    <div class="trait">
+      <div class="trait-check">
+        <svg width="10" height="10" viewBox="0 0 10 10" fill="none"><path d="M1.5 5L4 7.5L8.5 2.5" stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+      <div class="trait-text"><strong>Long-Term Thinking</strong>You're building a career, not chasing quick deals. You understand that the best clients come from consistent, trustworthy work over time.</div>
+    </div>
+  </div>
+
+  <!-- OPEN POSITIONS -->
+  <h2>Current Opportunities</h2>
+
+  <div class="position-card">
+    <div class="position-badge">Open Position</div>
+    <div class="position-title">Commercial Real Estate Agent</div>
+    <div class="position-desc">We're looking for a licensed Montana real estate agent — or someone actively working toward licensure — who wants to build a career in commercial brokerage. This is a ground-floor opportunity to learn the full spectrum of commercial real estate under one of Montana's most experienced brokers.</div>
+    <div class="position-details">
+      <div class="position-detail">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#888" stroke-width="1.2"/><path d="M7 4v3l2 2" stroke="#888" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Full-time
+      </div>
+      <div class="position-detail">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5C4.5 1.5 2.5 3.5 2.5 6c0 3.5 4.5 7 4.5 7s4.5-3.5 4.5-7c0-2.5-2-4.5-4.5-4.5z" stroke="#888" stroke-width="1.2"/><circle cx="7" cy="6" r="1.5" stroke="#888" stroke-width="1.2"/></svg>
+        Missoula, MT
+      </div>
+      <div class="position-detail">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="3" width="10" height="9" rx="1.5" stroke="#888" stroke-width="1.2"/><path d="M5 3V2M9 3V2M2 6h10" stroke="#888" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Commission-based
+      </div>
+    </div>
+    <ul class="position-reqs">
+      <li><span class="req-dot"></span>Montana real estate license (or actively pursuing)</li>
+      <li><span class="req-dot"></span>Genuine interest in commercial real estate — not a residential agent looking for a side specialty</li>
+      <li><span class="req-dot"></span>Strong communication skills and professional presence</li>
+      <li><span class="req-dot"></span>Missoula-based and community-connected</li>
+      <li><span class="req-dot"></span>Self-motivated with a long-term career mindset</li>
+      <li><span class="req-dot"></span>Prior commercial real estate experience is a plus but not required</li>
+    </ul>
+  </div>
+
+  <div class="position-card">
+    <div class="position-badge">Always Considering</div>
+    <div class="position-title">Experienced Commercial Broker</div>
+    <div class="position-desc">If you're an experienced commercial broker — in Montana or relocating to the Missoula market — we're always open to a conversation. The right person with market experience and client relationships doesn't need to wait for a formal opening.</div>
+    <div class="position-details">
+      <div class="position-detail">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><circle cx="7" cy="7" r="5.5" stroke="#888" stroke-width="1.2"/><path d="M7 4v3l2 2" stroke="#888" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Open
+      </div>
+      <div class="position-detail">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><path d="M7 1.5C4.5 1.5 2.5 3.5 2.5 6c0 3.5 4.5 7 4.5 7s4.5-3.5 4.5-7c0-2.5-2-4.5-4.5-4.5z" stroke="#888" stroke-width="1.2"/><circle cx="7" cy="6" r="1.5" stroke="#888" stroke-width="1.2"/></svg>
+        Missoula, MT
+      </div>
+      <div class="position-detail">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none"><rect x="2" y="3" width="10" height="9" rx="1.5" stroke="#888" stroke-width="1.2"/><path d="M5 3V2M9 3V2M2 6h10" stroke="#888" stroke-width="1.2" stroke-linecap="round"/></svg>
+        Negotiable
+      </div>
+    </div>
+    <ul class="position-reqs">
+      <li><span class="req-dot"></span>Active Montana broker or agent license</li>
+      <li><span class="req-dot"></span>Demonstrated commercial transaction history</li>
+      <li><span class="req-dot"></span>Established client relationships in Montana or adjacent markets</li>
+      <li><span class="req-dot"></span>Alignment with a client-first, relationship-driven approach</li>
+    </ul>
+  </div>
+
+  <!-- NO PRESSURE -->
+  <div class="no-pressure">
+    <h3>Not Sure If You're the Right Fit?</h3>
+    <p>Send us a note anyway. The worst outcome is a conversation that doesn't go anywhere. The best outcome is the start of a career you're proud of. We'll be straight with you either way.</p>
+  </div>
+
+  <!-- APPLICATION FORM -->
+  <div class="apply-form-wrap">
+    <div class="form-headline">Tell Us About Yourself</div>
+    <p class="form-sub">No formal cover letter required. Just tell us who you are, what you've done, and why commercial real estate in Missoula interests you. We'll take it from there.</p>
+    <div class="form-grid">
+      <div class="form-group">
+        <label class="form-label">Your Name</label>
+        <input type="text" class="form-input" placeholder="First and last name" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Phone Number</label>
+        <input type="tel" class="form-input" placeholder="Best number to reach you" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Email Address</label>
+        <input type="email" class="form-input" placeholder="Your email" />
+      </div>
+      <div class="form-group">
+        <label class="form-label">Position of Interest</label>
+        <select class="form-select">
+          <option value="" disabled selected>Select one</option>
+          <option>Commercial Real Estate Agent</option>
+          <option>Experienced Commercial Broker</option>
+          <option>Not sure yet — just want to connect</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Do You Have a Montana Real Estate License?</label>
+        <select class="form-select">
+          <option value="" disabled selected>Select one</option>
+          <option>Yes — active license</option>
+          <option>In progress — pursuing licensure</option>
+          <option>No — but interested in getting one</option>
+          <option>Not applicable</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Years of Real Estate Experience</label>
+        <select class="form-select">
+          <option value="" disabled selected>Select one</option>
+          <option>No experience yet</option>
+          <option>1–3 years</option>
+          <option>3–5 years</option>
+          <option>5–10 years</option>
+          <option>10+ years</option>
+        </select>
+      </div>
+      <div class="form-group full">
+        <label class="form-label">Tell Us About Yourself</label>
+        <textarea class="form-textarea" placeholder="Who are you, what have you done, and why does a career in Montana commercial real estate interest you? No formal language required — just be direct."></textarea>
+      </div>
+    </div>
+    <button class="form-submit">Submit My Application</button>
+    <p class="form-privacy">All applications are reviewed personally by Jessie Eagen and kept strictly confidential.</p>
+  </div>
+
+</div>
+</body>
+</html>
