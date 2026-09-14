@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Team — Eagen Real Estate</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: 'Nunito Sans', sans-serif;
+  background: #2d2d2d;
+  color: #1a1a1a;
+}
+
+/* Page header */
+.page-header {
+  background: #1e1e1e;
+  padding: 56px 48px 48px;
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  box-sizing: border-box;
+}
+.page-header::after {
+  content: '';
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, #f98c05 0%, #f98c05 60%, transparent 100%);
+}
+.page-header h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 600;
+  color: #f98c05;
+  letter-spacing: -0.02em;
+  max-width: 600px;
+  line-height: 1.1;
+  margin-bottom: 14px;
+}
+.page-header p {
+  font-size: 16px;
+  color: #888;
+  max-width: 480px;
+  line-height: 1.7;
+}
+
+/* Team grid */
+.team-wrap {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
+  padding: 48px 32px 80px;
+  background: #2d2d2d;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+  max-width: 100vw;
+  box-sizing: border-box;
+}
+
+/* Card */
+.card {
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+  background: #1e1e1e;
+  cursor: default;
+  /* Subtle lift on hover */
+  transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+              box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 64px rgba(0,0,0,0.28);
+}
+
+/* Photo */
+.card-photo {
+  width: 100%;
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  /* Slight desaturate at rest */
+  filter: saturate(0.85) brightness(0.92);
+  transition: filter 0.45s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.card:hover .card-photo {
+  filter: saturate(1) brightness(1);
+  transform: scale(1.03);
+}
+
+/* Always-visible name strip at bottom */
+.card-base {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 20px 24px 22px;
+  background: linear-gradient(to top, rgba(0,0,0,0.88) 0%, rgba(0,0,0,0.4) 70%, transparent 100%);
+  transition: opacity 0.3s ease;
+}
+.card:hover .card-base {
+  opacity: 0;
+}
+.card-base-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 22px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+}
+.card-base-title {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: #f98c05;
+}
+
+/* Hover overlay — slides up */
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(13,13,13,0.97) 0%,
+    rgba(13,13,13,0.93) 60%,
+    rgba(13,13,13,0.7) 100%
+  );
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 36px 32px;
+  transform: translateY(100%);
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+.card:hover .card-overlay {
+  transform: translateY(0);
+}
+
+.overlay-name {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 600;
+  color: #fff;
+  letter-spacing: -0.01em;
+  margin-bottom: 4px;
+  line-height: 1.1;
+}
+.overlay-title {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #f98c05;
+  margin-bottom: 20px;
+}
+.overlay-divider {
+  width: 32px;
+  height: 2px;
+  background: #f98c05;
+  margin-bottom: 20px;
+  flex-shrink: 0;
+}
+.overlay-bio {
+  font-size: 14px;
+  color: #aaa;
+  line-height: 1.75;
+  margin-bottom: 24px;
+  flex: 1;
+}
+
+/* Credential pills */
+.overlay-creds {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+}
+.cred-pill {
+  background: rgba(249,140,5,0.12);
+  border: 1px solid rgba(249,140,5,0.25);
+  border-radius: 2px;
+  padding: 5px 10px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #f98c05;
+  letter-spacing: 0.06em;
+  white-space: nowrap;
+}
+
+/* Contact button */
+.overlay-contact {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  background: #f98c05;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 13px 22px;
+  border-radius: 2px;
+  text-decoration: none;
+  align-self: flex-start;
+  transition: background 0.2s;
+}
+.overlay-contact:hover { background: #e07d04; }
+.overlay-contact svg { flex-shrink: 0; }
+
+/* Mobile */
+
+.page-header-body {
+  font-size: 15px;
+  color: #666;
+  max-width: 680px;
+  line-height: 1.75;
+  margin-top: 16px;
+}
+
+/* Stats row */
+.stats-row {
+  display: flex;
+  gap: 48px;
+  margin-top: 40px;
+  padding-top: 36px;
+  border-top: 1px solid #2a2a2a;
+  flex-wrap: wrap;
+}
+.stat-item { text-align: left; }
+.stat-value {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 700;
+  color: #f98c05;
+  line-height: 1;
+  margin-bottom: 8px;
+}
+.stat-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: #555;
+}
+
+@media (max-width: 640px) {
+  .team-wrap {
+    grid-template-columns: 1fr;
+    padding: 48px 16px 64px;
+    gap: 20px;
+    left: 50%;
+    margin-left: -50vw;
+    width: 100vw;
+  }
+  .page-header { padding: 40px 24px 36px; }
+  .stats-row { gap: 28px; margin-top: 28px; padding-top: 24px; }
+  .stat-value { font-size: 36px; }
+  .card-overlay {
+    transform: translateY(0);
+    background: linear-gradient(
+      to top,
+      rgba(13,13,13,0.97) 0%,
+      rgba(13,13,13,0.88) 50%,
+      rgba(13,13,13,0.5) 100%
+    );
+  }
+  .card-base { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card, .card-photo, .card-overlay, .card-base {
+    transition: none;
+  }
+  .card-overlay { transform: translateY(0); background: rgba(13,13,13,0.85); }
+  .card-base { opacity: 0; }
+}
+</style>
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Eagen Real Estate Team</h1>
+  <p>At Eagen Real Estate, our clients always come first. We provide unbiased, market-driven advice to help you make confident and informed real estate decisions.</p>
+  <p class="page-header-body">We guide businesses, owners, tenants, and investors with strategic insight to help maximize value and long-term returns in every commercial real estate decision. Eagen Real Estate delivers in-depth market intelligence, clear guidance, and dedicated representation throughout every transaction. We do not practice dual agency — our advisors represent you and only you, ensuring complete loyalty, clarity, and trust at every step.</p>
+  <div class="stats-row">
+    <div class="stat-item">
+      <div class="stat-value">34</div>
+      <div class="stat-label">Years in Business</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">1,200+</div>
+      <div class="stat-label">Successful Transactions</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-value">~$1B</div>
+      <div class="stat-label">Almost 1B Sold</div>
+    </div>
+  </div>
+</div>
+
+<div class="team-wrap">
+
+  <!-- JESSIE -->
+  <div class="card">
+    <img
+      src="https://jessieeagen.com/wp-content/uploads/2026/01/MRI9931-Edit-scaled.jpg"
+      alt="Jessie Eagen — Commercial Real Estate Broker, Missoula MT"
+      class="card-photo"
+    />
+
+    <!-- Resting state -->
+    <div class="card-base">
+      <div class="card-base-name">Jessie Eagen</div>
+      <div class="card-base-title">Broker / Owner</div>
+    </div>
+
+    <!-- Hover reveal -->
+    <div class="card-overlay">
+      <div class="overlay-name">Jessie Eagen</div>
+      <div class="overlay-title">Broker / Owner · Since 1992</div>
+      <div class="overlay-divider"></div>
+      <p class="overlay-bio">Jessie has been selling commercial real estate in Missoula since 1992 — through every market cycle, across every asset class, building the kind of buyer and seller relationships that only 34 years in one market can produce.</p>
+      <div class="overlay-creds">
+        <span class="cred-pill">34 Years</span>
+        <span class="cred-pill">~$1B Closed</span>
+        <span class="cred-pill">1,200+ Transactions</span>
+        <span class="cred-pill">Liquor License Specialist</span>
+      </div>
+      <a href="mailto:jessie@jessieeagen.com" class="overlay-contact">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <rect x="1" y="3" width="12" height="9" rx="1.5" stroke="white" stroke-width="1.3"/>
+          <path d="M1 4.5L7 8.5L13 4.5" stroke="white" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+        jessie@jessieeagen.com
+      </a>
+    </div>
+  </div>
+
+  <!-- CURTIS -->
+  <div class="card">
+    <img
+      src="https://jessieeagen.com/wp-content/uploads/2026/01/MRI9863-Edit-scaled.jpg"
+      alt="Curtis Strohl — Licensed Salesperson, Eagen Real Estate"
+      class="card-photo"
+    />
+
+    <!-- Resting state -->
+    <div class="card-base">
+      <div class="card-base-name">Curtis Strohl</div>
+      <div class="card-base-title">Licensed Salesperson</div>
+    </div>
+
+    <!-- Hover reveal -->
+    <div class="card-overlay">
+      <div class="overlay-name">Curtis Strohl</div>
+      <div class="overlay-title">Licensed Salesperson · 10 Years</div>
+      <div class="overlay-divider"></div>
+      <p class="overlay-bio">Curtis brings 10 years of field experience to Missoula commercial real estate transactions, working alongside Jessie Eagen across multifamily, retail, and commercial property sales throughout Western Montana.</p>
+      <div class="overlay-creds">
+        <span class="cred-pill">10 Years Experience</span>
+        <span class="cred-pill">Licensed MT Salesperson</span>
+        <span class="cred-pill">Western Montana</span>
+      </div>
+      <a href="mailto:curtis@jessieeagen.com" class="overlay-contact">
+        <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <rect x="1" y="3" width="12" height="9" rx="1.5" stroke="white" stroke-width="1.3"/>
+          <path d="M1 4.5L7 8.5L13 4.5" stroke="white" stroke-width="1.3" stroke-linecap="round"/>
+        </svg>
+        curtis@jessieeagen.com
+      </a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
