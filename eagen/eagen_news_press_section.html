@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>In the News — Eagen Real Estate</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Nunito+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+body { font-family: 'Nunito Sans', sans-serif; background: #1e1e1e; color: #fff; }
+
+.press-section {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  margin-left: -50vw;
+  background: #1e1e1e;
+  padding: 64px 32px 80px;
+}
+
+.press-header {
+  text-align: center;
+  margin-bottom: 48px;
+}
+.press-eyebrow {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #f98c05;
+  margin-bottom: 12px;
+}
+.press-title {
+  font-family: 'Playfair Display', serif;
+  font-size: clamp(24px, 3.5vw, 36px);
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 12px;
+}
+.press-sub {
+  font-size: 14px;
+  color: #666;
+  max-width: 480px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.press-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+.press-card {
+  background: #141414;
+  border: 1px solid #2a2a2a;
+  border-radius: 6px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color 0.25s, transform 0.25s, box-shadow 0.25s;
+  text-decoration: none;
+}
+.press-card:hover {
+  border-color: #f98c05;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(0,0,0,0.4);
+}
+
+.press-img-wrap {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: #0d0d0d;
+}
+.press-img-wrap img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  filter: grayscale(20%) brightness(0.85);
+  transition: filter 0.3s ease, transform 0.3s ease;
+}
+.press-card:hover .press-img-wrap img {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.03);
+}
+
+.press-body {
+  padding: 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+.press-outlet {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: #f98c05;
+  margin-bottom: 8px;
+}
+.press-headline {
+  font-family: 'Playfair Display', serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: #fff;
+  line-height: 1.4;
+  margin-bottom: 10px;
+}
+.press-excerpt {
+  font-size: 13px;
+  color: #666;
+  line-height: 1.65;
+  flex: 1;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  margin-bottom: 16px;
+}
+.press-read-more {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #f98c05;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+.press-read-more svg {
+  transition: transform 0.2s;
+}
+.press-card:hover .press-read-more svg {
+  transform: translateX(3px);
+}
+
+@media (max-width: 900px) {
+  .press-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 580px) {
+  .press-grid { grid-template-columns: 1fr; }
+  .press-section { padding: 48px 20px 60px; }
+}
+</style>
+</head>
+<body>
+<div class="press-section">
+  <div class="press-header">
+    <div class="press-eyebrow">Media Coverage</div>
+    <div class="press-title">Eagen Real Estate in the News</div>
+    <p class="press-sub">Jessie Eagen and Eagen Real Estate as covered by local and regional media.</p>
+  </div>
+
+  <div class="press-grid">
+
+    <a class="press-card" href="https://missoulian.com/news/local/new-16m-commercial-plaza-planned-for-mullan-road-intersection/article_d27ad962-4d55-11e7-9ecb-ff5cd571d7d3.html" target="_blank" rel="noopener">
+      <div class="press-img-wrap">
+        <img src="https://jessieeagen.com/wp-content/uploads/2025/12/mullan-crossing-eagen.webp" alt="New commercial plaza planned for Mullan Road" />
+      </div>
+      <div class="press-body">
+        <div class="press-outlet">Missoulian</div>
+        <div class="press-headline">New $16M Commercial Plaza Planned for Mullan Road Intersection</div>
+        <p class="press-excerpt">A new retail, dining and office plaza will transform a large, nearly vacant lot near the intersection of Mullan and Reserve — one of the most significant commercial developments on Missoula's west side.</p>
+        <div class="press-read-more">Read More <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="#f98c05" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>
+    </a>
+
+    <a class="press-card" href="https://missoulacurrent.com/montana-club-perkins/" target="_blank" rel="noopener">
+      <div class="press-img-wrap">
+        <img src="https://jessieeagen.com/wp-content/uploads/2025/12/perkins-350x237-1.webp" alt="Perkins property sale Missoula" />
+      </div>
+      <div class="press-body">
+        <div class="press-outlet">Missoula Current</div>
+        <div class="press-headline">Jessie Eagen Closes Sale of Former Perkins Property to Club Properties</div>
+        <p class="press-excerpt">Fans of beer on tap and fine pub fare close to home may be pleased with a developer's plans for the former Perkins property on North Reserve. Jessie Eagen of Eagen Real Estate closed on the property's sale to Club Properties.</p>
+        <div class="press-read-more">Read More <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="#f98c05" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>
+    </a>
+
+    <a class="press-card" href="https://missoulacurrent.com/downtown-real-estate/" target="_blank" rel="noopener">
+      <div class="press-img-wrap">
+        <img src="https://jessieeagen.com/wp-content/uploads/2025/12/Facebook-old-post-1.webp" alt="Old Post and Worden's Market listed for sale" />
+      </div>
+      <div class="press-body">
+        <div class="press-outlet">Missoula Current</div>
+        <div class="press-headline">The Old Post and Worden's Market Listed for $3.9M by Jessie Eagen</div>
+        <p class="press-excerpt">The building housing The Old Post and Worden's Market, located on the corner of Higgins and Spruce Street, were placed on the real estate market for the asking price of $3.9 million. Both properties are listed by Jessie Eagen of Eagen Real Estate.</p>
+        <div class="press-read-more">Read More <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="#f98c05" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>
+    </a>
+
+    <a class="press-card" href="https://missoulian.com/news/local/woodland-neighbors-want-to-set-record-straight/article_88ffb04c-571b-11e2-9339-0019bb2963f4.html" target="_blank" rel="noopener">
+      <div class="press-img-wrap">
+        <img src="https://jessieeagen.com/wp-content/uploads/2025/12/572bcc076d413.image_-1024x768-1.webp" alt="Woodland Drive development Missoula" />
+      </div>
+      <div class="press-body">
+        <div class="press-outlet">Missoulian</div>
+        <div class="press-headline">Woodland Drive Development to Add 12 Townhouses on 7.7-Acre Property</div>
+        <p class="press-excerpt">Real estate broker Jessie Eagen points out the pond on the property at the north end of Woodland Drive. The 7.7 acres of land will be developed to include 12 townhouses.</p>
+        <div class="press-read-more">Read More <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="#f98c05" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>
+    </a>
+
+    <a class="press-card" href="https://missoulian.com/news/local/four-story-27-unit-high-end-condo-building-downtown/article_7df0e302-c766-11e4-bcc3-5b88c7d9095c.html" target="_blank" rel="noopener">
+      <div class="press-img-wrap">
+        <img src="https://jessieeagen.com/wp-content/uploads/2025/12/firestone-building-missoula-1024x830-1.webp" alt="Firestone Flats development downtown Missoula" />
+      </div>
+      <div class="press-body">
+        <div class="press-outlet">Missoulian</div>
+        <div class="press-headline">Firestone Building to Become 27-Unit Condo Tower — "Firestone Flats"</div>
+        <p class="press-excerpt">The old Firestone tire shop building at 139 E. Main St. in downtown Missoula will be transformed into a four-story, 27-unit high-end condominium building with 10,000 square feet of ground-floor retail space, underground parking, and rooftop terraces.</p>
+        <div class="press-read-more">Read More <svg width="12" height="12" viewBox="0 0 12 12" fill="none"><path d="M2 6h8M6 2l4 4-4 4" stroke="#f98c05" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+      </div>
+    </a>
+
+  </div>
+</div>
+</body>
+</html>
